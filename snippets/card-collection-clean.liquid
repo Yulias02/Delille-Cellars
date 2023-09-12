@@ -1,0 +1,10 @@
+<a class="collection-item link" href="{{ card_collection.url }}">
+  <img
+    src="{{ card_collection.featured_image | image_url: width: 1500 }}"
+    alt=" {{ card_collection.featured_image.alt }}"
+    height="{{ card_collection.featured_image.height }}"
+    width="{{ card_collection.featured_image.width }}"
+    loading="lazy"
+    class="collection-img"
+  >
+</a>

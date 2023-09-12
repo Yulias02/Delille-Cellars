@@ -1,0 +1,148 @@
+{
+  "sections": {
+    "91519e57-1f17-4166-ba0d-ab8a39b2c817": {
+      "type": "slideshow",
+      "blocks": {
+        "template--20761380520238__91519e57-1f17-4166-ba0d-ab8a39b2c817-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slider.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "template--20761380520238__91519e57-1f17-4166-ba0d-ab8a39b2c817-slide-2": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slider2.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--20761380520238__91519e57-1f17-4166-ba0d-ab8a39b2c817-slide-1",
+        "template--20761380520238__91519e57-1f17-4166-ba0d-ab8a39b2c817-slide-2"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "6e6e2690-021e-43a2-bfcb-eba8f787d18d": {
+      "type": "info-section",
+      "blocks": {
+        "template--20761380520238__6e6e2690-021e-43a2-bfcb-eba8f787d18d-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "visit-us"
+          }
+        },
+        "9175e427-2117-4ae7-8fe9-d670496a4204": {
+          "type": "custom_form_block",
+          "settings": {
+            "form_id": ""
+          }
+        },
+        "template--20761380520238__6e6e2690-021e-43a2-bfcb-eba8f787d18d-featured_collection-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shipping-1"
+          }
+        }
+      },
+      "block_order": [
+        "template--20761380520238__6e6e2690-021e-43a2-bfcb-eba8f787d18d-featured_collection-1",
+        "9175e427-2117-4ae7-8fe9-d670496a4204",
+        "template--20761380520238__6e6e2690-021e-43a2-bfcb-eba8f787d18d-featured_collection-3"
+      ],
+      "settings": {
+      }
+    },
+    "e172517b-6347-4952-8b6c-e6dd9e432845": {
+      "type": "custom-product-section",
+      "blocks": {
+        "template--20761380520238__e172517b-6347-4952-8b6c-e6dd9e432845-featured_product-1": {
+          "type": "featured_product",
+          "settings": {
+            "product": "order-your-d2-2010-release-today"
+          }
+        },
+        "template--20761380520238__e172517b-6347-4952-8b6c-e6dd9e432845-featured_product-2": {
+          "type": "featured_product",
+          "settings": {
+            "product": "meet-the-2012-chaleur-estate-blanc"
+          }
+        }
+      },
+      "block_order": [
+        "template--20761380520238__e172517b-6347-4952-8b6c-e6dd9e432845-featured_product-1",
+        "template--20761380520238__e172517b-6347-4952-8b6c-e6dd9e432845-featured_product-2"
+      ],
+      "settings": {
+      }
+    },
+    "090f684e-6094-4a77-8384-5b031cfdb595": {
+      "type": "collections-clean",
+      "blocks": {
+        "template--20761380520238__090f684e-6094-4a77-8384-5b031cfdb595-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "delille-cellars"
+          }
+        },
+        "template--20761380520238__090f684e-6094-4a77-8384-5b031cfdb595-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "grand-ciel"
+          }
+        },
+        "template--20761380520238__090f684e-6094-4a77-8384-5b031cfdb595-featured_collection-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "doyenne"
+          }
+        }
+      },
+      "block_order": [
+        "template--20761380520238__090f684e-6094-4a77-8384-5b031cfdb595-featured_collection-1",
+        "template--20761380520238__090f684e-6094-4a77-8384-5b031cfdb595-featured_collection-2",
+        "template--20761380520238__090f684e-6094-4a77-8384-5b031cfdb595-featured_collection-3"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "91519e57-1f17-4166-ba0d-ab8a39b2c817",
+    "6e6e2690-021e-43a2-bfcb-eba8f787d18d",
+    "e172517b-6347-4952-8b6c-e6dd9e432845",
+    "090f684e-6094-4a77-8384-5b031cfdb595"
+  ]
+}

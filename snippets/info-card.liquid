@@ -1,0 +1,13 @@
+<div class="info-container">
+  <a href="" class="img-link">
+    <img
+      class="info-img"
+      src="{{ card_collection.featured_image | image_url: width: 1500 }}"
+      alt="{{ card_collection.featured_image.alt }}"
+      height="{{ card_collection.featured_image.height }}"
+      width="{{ card_collection.featured_image.width }}"
+      loading="lazy"
+    >
+    <h2 class="info-desc">{{ card_collection.title }}</h2>
+  </a>
+</div>

@@ -1,0 +1,76 @@
+.collection-list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.collection-list-title {
+  margin: 0;
+}
+.collection-heading {
+  color: #4b4b4b;
+  font: 400 60px/72px "High Tower";
+  margin: 0;
+  padding-top: 16px;
+  padding-bottom: 21px;
+  text-align: center;
+}
+
+/*.card__content {*/
+/*  display: none !important;*/
+/*}*/
+.icon-wrapcd {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .collection-list:not(.slider) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section-collection-list .page-width {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section-collection-list .collection-list:not(.slider) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.collection-list__item:only-child {
+  max-width: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 749px) {
+  .slider.collection-list--1-items {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .slider.collection-list--1-items,
+  .slider.collection-list--2-items,
+  .slider.collection-list--3-items,
+  .slider.collection-list--4-items {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .collection-list__item a:hover {
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .collection-list.slider .collection-list__item {
+    max-width: 100%;
+  }
+}
+
+.collection-list-view-all {
+  margin-top: 2rem;
+}

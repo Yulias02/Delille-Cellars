@@ -1,0 +1,53 @@
+<article class="pad wine-promo">
+  <div class="background">
+    <h3 class="new-wine-header">
+      {{ card_product.title | escape }}
+      {{ card_product.first_available_variant.id }}
+    </h3>
+    <img
+      class="new-wine-img"
+      src="{{ card_product.featured_image | image_url: width: 1500 }}"
+      alt="{{ card_product.alt }} "
+      height="{{ card_product.height }}"
+      width="{{ card_product.width }}"
+      loading="lazy"
+    >
+    <p class="new-wine-desc">
+      {{ card_product.description }}
+    </p>
+    <div class="purchase">
+      <div class="purchase-element">
+        <p class="price-element">Price</p>
+        <p class="price-element">Bottle / Case</p>
+        <p class="price-element">{{ card_product.price | money }} / {{ card_product.price | times: 12 | money }}</p>
+      </div>
+      <div class="purchase-element">
+        <form class="qty-form" method="post" action="/cart/add" id="add-to-cart-form">
+          <label for="qty" class="qty-label">QTY</label>
+          <input
+            class="qty-input"
+            type="number"
+            name="qty"
+            id="qty"
+            min="1"
+            max="100"
+            value="1"
+          >
+          <input type="submit" value="BUY NOW" class="submit">
+        </form>
+      </div>
+      <div class="purchase-element">
+        <a href="{{ card_product.url }}">
+          <img
+            class="crest-emblem"
+            src="{{ 'crest-emblem.png' | file_img_url }}"
+            alt="{{ card_product.alt }}"
+            height="{{ card_product.height }}"
+            width="{{ card_product.width }}"
+            loading="lazy"
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+</article>

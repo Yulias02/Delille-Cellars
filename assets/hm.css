@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "SFProText-Regular";
+    src: url("../assets/SFProText-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "SFPro-Display";
+    src: url("../assets/SFPro-Display.OTF");
+    font-style: normal;
+    font-weight: 400;
+}
+
+form,
+p,
+h1 {
+    margin: 0;
+}
+p {
+    color: #6D7175;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+body {
+    margin: 0;
+    background-color: #F6F6F7;
+    font-family: "SFProText-Regular";
+    text-align: center;
+
+}
+
+main {
+    padding: 0 32px;
+}
+.success-block > p,
+.unsubscribe-block > p {
+    margin: 0 auto;
+}
+
+header {
+    background: #FFF;
+    box-shadow: 0px -1px 0px 0px #DFE3E8 inset;
+    margin-bottom: 32px;
+}
+
+header > .container {
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-caption {
+    color: #202223;
+    font-family: "SFPro-Display";
+    font-size: 20px;
+    padding: 15px 0 17px 0;
+}
+
+.unsubscribe-block,
+.success-block {
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15), 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
+}
+
+.unsubscribe-block {
+    padding: 26px 16px;
+}
+
+h1 {
+    color: #202223;
+    font: 400 20px/28px SFPro-Display;
+}
+
+.unsubscribe-block > p {
+    margin-bottom: 16px;
+}
+
+form > span {
+    display: block;
+    color: #202223;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+
+}
+
+label {
+    display: inline-block;
+    color: #202223;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 16px 0;
+}
+
+.confirm-btn {
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    background: #008060;
+    box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.20) inset, 0px 1px 0px 0px rgba(0, 0, 0, 0.08);
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+.confirm-btn:hover {
+    background-color: #056d53;
+}
+
+.success-block {
+    padding: 170px 16px;
+}
+
+p > a {
+    text-decoration: none;
+}
+.page-svg {
+    margin: 16px 0;
+    width: 64px;
+    height: 64px;
+}
+
+@media screen and (min-width: 1136px) {
+    .unsubscribe-block {
+        padding: 39px 0;
+    }
+
+    .unsubscribe-block > p {
+        width: 958px;
+        margin-bottom: 20px;
+    }
+
+    .unsubscribe-block > .bottom-text {
+        margin-bottom: 24px;
+    }
+
+    label {
+        margin-top: 24px;
+    }
+
+    .success-block {
+        padding: 123px 0 183px 0;
+    }
+
+    .success-block > p {
+        width: 718px;
+    }
+
+    p > a {
+        text-decoration: none;
+    }
+    .page-svg {
+        width: 148px;
+        height: 148px;
+        margin: 36px 0;
+    }
+}
