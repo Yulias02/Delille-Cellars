@@ -34,16 +34,18 @@
         role="list"
       >
         {% for recommendation in recommendations.products %}
-          <li class="grid__item">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
-            %}
-          </li>
+          {% if card_product.tags == card_product.selected_variant.tags %}
+            <li class="grid__item">
+              {% render 'card-product',
+                card_product: recommendation,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: section.settings.image_shape,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating
+              %}
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     {% endif %}
@@ -57,7 +59,7 @@
 {
   "name": "t:sections.related-products.name",
   "tag": "section",
-  "class": "section",
+  "class": "section container",
   "settings": [
     {
       "type": "paragraph",

@@ -1,6 +1,7 @@
 {%- for block in section.blocks -%}
   {% render 'custom-product', placeholder_image: placeholder_image, card_product: block.settings.product %}
 {% endfor %}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {% schema %}
  {
   "name": "Product Section",
@@ -40,6 +41,12 @@
 {% endschema %}
 
 {% stylesheet %}
+  .path {
+    stroke: #fff !important;
+  }
+  .loading-overlay__spinner {
+    margin-left: 35px !important;
+  }
    .section+.section {
     padding: 0;
   }
@@ -48,6 +55,7 @@
     background-color: #303030;
     width: 430px;
     margin: 0 auto;
+    display: table;
   }
   .new-wine {
     margin-top: 50px !important;
@@ -119,7 +127,7 @@
     border: transparent;
     background-color: transparent;
     color: #fff;
-    font-size: 18px;
+    font-size: 18px; 
     font-family: "Neutra Text";
     line-height: 1.5;
     margin-top: 26px;
@@ -134,11 +142,12 @@
     margin-bottom: 50px;
   }
   /* Form */
-  .form {
+  .qty-form {
+
     background-color: #e9e8e8;
     padding: 2px 15px 20px 15px;
-    width: 210px;
-    margin: 0 18px;
+    width: 131px !important;
+
   }
   .form-title {
     font-size: 16px;
@@ -261,33 +270,41 @@
 {% endstylesheet %}
 
 {% javascript %}
-   const addToCartForms = document.querySelectorAll('form[action="/cart/add"]');
+  const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
 
-addToCartForms.forEach((form) => {
-  form.addEventListener("submit", async (event) => {
-    // Prevent normal submission
-    event.preventDefault();
+  addToCartForms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-    // Submit form with ajax
-    await fetch("/cart/add", {
-      method: "post",
-      body: new FormData(form),
+      const submitButton = form.querySelector('.buy-now');
+      const spinner = form.querySelector('.loading-overlay__spinner');
+
+
+        submitButton.classList.add('hidden');
+        spinner.classList.remove('hidden');
+
+      fetch("/cart/add.js", {
+        method: "post",
+        body: new FormData(form),
+      })
+        .then((response) => {
+
+            return response.json();
+
+        })
+        .then((data) => {
+            spinner.classList.add('hidden');
+          
+            submitButton.classList.remove('hidden');
+
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+
+            spinner.classList.add('hidden');
+            submitButton.classList.add('hidden');
+
+        });
     });
-
-    // Get new cart object
-    const res = await fetch("/cart.json");
-    const cart = await res.json();
-
-    // Update cart count
-    document.querySelectorAll(".cart-count").forEach((el) => {
-      el.textContent = cart.item_count;
-    });
-
-    // Display message
-    const message = document.createElement("p");
-    message.classList.add("added-to-cart");
-    message.textContent = "Added to cart!";
-    form.appendChild(message);
   });
-});
 {% endjavascript %}
