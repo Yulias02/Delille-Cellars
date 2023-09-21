@@ -1,7 +1,9 @@
 .product {
   margin: 0;
 }
-
+textarea {
+  resize: vertical;
+}
 .product.grid {
   gap: 0;
 }
