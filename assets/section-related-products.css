@@ -1,7 +1,41 @@
 .related-products {
   display: block;
 }
-
-.related-products__heading {
-  margin: 0 0 3rem;
+@media screen and (min-width: 320px) {
+  .related-products__heading {
+    margin: 0 0 20px 0;
+    font-family: "High Tower";
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 42px;
+    text-align: center;
+  }
+  .card-information,
+  .card__information {
+    text-align: center;
+  }
+  .shop-now-link {
+    border: 1px solid #121212;
+    padding: 11px 0;
+  }
+  .price,
+  .shop-now-link
+  {
+    margin: 0;
+  }
+  .product-grid {
+    justify-content: center;
+  }
 }
+@media screen and (min-width: 960px) {
+  .related-products__heading {
+    font-size: 36px;
+  }
+
+  .shop-now-link {
+    padding: 14px 0;
+    margin-bottom: 0;
+    margin-top: 17px !important;
+  }
+}
+
