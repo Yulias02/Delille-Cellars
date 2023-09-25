@@ -52,7 +52,7 @@
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
       {%- if section.settings.title != blank -%}
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h2 class=" featured-prod-title {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           {{ section.settings.title }}
         </h2>
       {%- endif -%}
@@ -86,7 +86,7 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            {% render 'card-product',
+            {% render 'custom-card-product',
               card_product: product,
               media_aspect_ratio: section.settings.image_ratio,
               image_shape: section.settings.image_shape,
@@ -107,7 +107,7 @@
               {% endif %}
             >
               {%- assign placeholder_image = 'product-apparel-' | append: forloop.rindex -%}
-              {% render 'card-product',
+              {% render 'custom-card-product',
                 show_vendor: section.settings.show_vendor,
                 placeholder_image: placeholder_image
               %}
@@ -166,7 +166,7 @@
 {
   "name": "t:sections.featured-collection.name",
   "tag": "section",
-  "class": "section container page-width",
+  "class": "section container page-width featured-prod-list",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -444,3 +444,39 @@
   ]
 }
 {% endschema %}
+{% stylesheet %}
+.shop-now-link {
+border: 1px solid #121212;
+padding: 14px 0;
+width: 100%;
+text-align: center;
+}
+
+.quick-add {
+width: 100%;
+}
+.quick-add-button {
+color: #fff !important;
+background-color: #121212 !important}
+
+.card__heading {
+width: 208px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.prod-form {
+width: 100%;
+}
+.featured-prod-list {
+margin-bottom: 70px !important;
+}
+.featured-prod-title {
+font-family: "High Tower" ;
+text-transform: uppercase;
+font-size: 37px;
+line-height: 42px;
+text-align: center;
+margin-top: 0;
+}
+{% endstylesheet %}
