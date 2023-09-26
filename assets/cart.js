@@ -76,6 +76,7 @@ class CartItems extends HTMLElement {
           console.error(e);
         });
     }
+    console.log('arthur3');
   }
 
   getSectionsToRender() {
