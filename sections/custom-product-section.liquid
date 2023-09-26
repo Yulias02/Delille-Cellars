@@ -80,7 +80,7 @@
     display: block;
     margin-bottom: 16px;
   }
-  .new-wine-desc { 
+  .new-wine-desc {
     font-family: "Neutra Text";
     color: aliceblue;
     padding: 0 25px;
@@ -124,7 +124,7 @@
     border: transparent;
     background-color: transparent;
     color: #fff;
-    font-size: 18px; 
+    font-size: 18px;
     font-family: "Neutra Text";
     line-height: 1.5;
     margin-top: 26px;
@@ -272,10 +272,13 @@
       event.preventDefault();
 
       const submitButton = form.querySelector('.buy-now');
-      const spinner = form.querySelector('.loading-overlay__spinner');
+      // const spinner = form.querySelector('.loading-overlay__spinner');
 
         submitButton.classList.add('hidden');
-        spinner.classList.remove('hidden');
+        // spinner.classList.remove('hidden');
+      const adding = form.querySelector('.adding-to-cart');
+      const added = form.querySelector('.added-to-cart');
+
 
       fetch("/cart/add.js", {
         method: "post",
@@ -287,6 +290,7 @@
         .then((data) => {
             spinner.classList.add('hidden');
             submitButton.classList.remove('hidden');
+          added.classList.remove('hidden');
         })
         .catch((error) => {
           console.error('Error:', error);
