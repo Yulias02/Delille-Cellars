@@ -498,11 +498,11 @@
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
-       const submitButton = form.querySelector('.cart-add');
+       const submitBtn = form.querySelector('.cart-add');
        const adding = form.querySelector('.adding-to-cart');
        const added = form.querySelector('.added-to-cart');
 
-        submitButton.classList.add('hidden');
+        submitBtn.classList.add('hidden');
         adding.classList.remove('hidden');
 
       fetch("/cart/add.js", {
@@ -518,13 +518,13 @@
 
           setTimeout(() => {
           added.classList.add('hidden');
-          submitButton.classList.remove('hidden');
+          submitBtn.classList.remove('hidden');
         }, 2000);
 
         })
         .catch((error) => {
           console.error('Error:', error);
-            submitButton.classList.add('hidden');
+            submitBtn.classList.add('hidden');
         });
     });
   });
