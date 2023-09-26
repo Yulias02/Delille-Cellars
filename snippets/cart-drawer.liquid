@@ -470,13 +470,6 @@
               <input type="datetime-local" name="attributes[Delivery details]" id="delivery-details">
             </div>
           </div>
-
-          {% if request.params.quick_add == 'true' %}
-            <script>
-              let orderTags = {{ cart.attributes | json }};
-              orderTags.push('bought_featured');
-            </script>
-          {% endif %}
         </form>
         {%- if cart != empty -%}
           <h2>You may also like</h2>
