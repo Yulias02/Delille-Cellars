@@ -513,6 +513,7 @@
             return response.json();
         })
         .then((data) => {
+          submitButton.classList.remove('hidden');
             adding.classList.add('hidden');
           added.classList.remove('hidden');
         })
