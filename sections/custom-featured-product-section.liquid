@@ -505,7 +505,6 @@
         submitButton.classList.add('hidden');
         adding.classList.remove('hidden');
 
-
       fetch("/cart/add.js", {
         method: "post",
         body: new FormData(form),
@@ -514,7 +513,6 @@
             return response.json();
         })
         .then((data) => {
-
             adding.classList.add('hidden');
           added.classList.remove('hidden');
 
