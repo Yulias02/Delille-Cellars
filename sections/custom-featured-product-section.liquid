@@ -487,6 +487,7 @@
      color: #121212
   }
 {% endstylesheet %}
+
 {% javascript %}
   const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
 
@@ -516,7 +517,6 @@
           added.classList.add('hidden');
           submitButton.classList.remove('hidden');
         }, 2000);
-
         })
         .catch((error) => {
           console.error('Error:', error);
