@@ -265,38 +265,34 @@
 {% endstylesheet %}
 
 {% javascript %}
-   const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
+  const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
 
-   addToCartForms.forEach((form) => {
-     form.addEventListener("submit", (event) => {
-       event.preventDefault();
+  addToCartForms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-       const submitButton = form.querySelector('.buy-now');
-       // const spinner = form.querySelector('.loading-overlay__spinner');
-  const adding = form.querySelector('.adding-to-cart');
-       const added = form.querySelector('.added-to-cart');
+      const submitButton = form.querySelector('.buy-now');
+      const spinner = form.querySelector('.loading-overlay__spinner');
 
-         submitButton.classList.add('hidden');
-         // spinner.classList.remove('hidden');
+        submitButton.classList.add('hidden');
+        spinner.classList.remove('hidden');
 
-
-       fetch("/cart/add.js", {
-         method: "post",
-         body: new FormData(form),
-       })
-         .then((response) => {
-             return response.json();
-         })
-         .then((data) => {
-             // spinner.classList.add('hidden');
-             submitButton.classList.remove('hidden');
-           added.classList.remove('hidden');
-         })
-         .catch((error) => {
-           console.error('Error:', error);
-             // spinner.classList.add('hidden');
-             submitButton.classList.add('hidden');
-         });
-     });
-   });
+      fetch("/cart/add.js", {
+        method: "post",
+        body: new FormData(form),
+      })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            spinner.classList.add('hidden');
+            submitButton.classList.remove('hidden');
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+            spinner.classList.add('hidden');
+            submitButton.classList.add('hidden');
+        });
+    });
+  });
 {% endjavascript %}
