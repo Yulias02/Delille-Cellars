@@ -445,41 +445,75 @@
 }
 {% endschema %}
 {% stylesheet %}
-.shop-now-link {
-border: 1px solid #121212;
-padding: 14px 0;
-width: 100%;
-text-align: center;
-}
+  .shop-now-link {
+  border: 1px solid #121212;
+  padding: 14px 0;
+  width: 100%;
+  text-align: center;
+  }
 
 
-.quick-add {
-width: 100%;
-}
+  .quick-add {
+  width: 100%;
+  }
 
-.quick-add-button {
-color: #fff !important;
-background-color: #121212 !important
-}
+  .quick-add-button {
+  color: #fff !important;
+  background-color: #121212 !important
+  }
 
-.card__heading {
-width: 208px;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-}
-.prod-form {
-width: 100%;
-}
-.featured-prod-list {
-margin-bottom: 70px !important;
-}
-.featured-prod-title {
-font-family: "High Tower" ;
-text-transform: uppercase;
-font-size: 37px;
-line-height: 42px;
-text-align: center;
-margin-top: 0;
-}
+  .card__heading {
+  width: 208px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+  .prod-form {
+  width: 100%;
+  }
+  .featured-prod-list {
+  margin-bottom: 70px !important;
+  }
+  .featured-prod-title {
+  font-family: "High Tower" ;
+  text-transform: uppercase;
+  font-size: 37px;
+  line-height: 42px;
+  text-align: center;
+  margin-top: 0;
+  }
 {% endstylesheet %}
+{% javascript %}
+  const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
+
+  addToCartForms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+       const submitButton = form.querySelector('.custom-quick-add');
+       const adding = form.querySelector('.adding-to-cart');
+       const added = form.querySelector('.added-to-cart');
+
+        submitButton.classList.add('hidden');
+        adding.classList.remove('hidden');
+
+      fetch("/cart/add.js", {
+        method: "post",
+        body: new FormData(form),
+      })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            adding.classList.add('hidden');
+          added.classList.remove('hidden');
+
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+
+            submitButton.classList.add('hidden');
+        });
+    });
+  });
+{% endjavascript %}
