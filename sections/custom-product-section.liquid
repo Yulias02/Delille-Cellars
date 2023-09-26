@@ -288,13 +288,13 @@
             return response.json();
         })
         .then((data) => {
-            spinner.classList.add('hidden');
+            // spinner.classList.add('hidden');
             submitButton.classList.remove('hidden');
           added.classList.remove('hidden');
         })
         .catch((error) => {
           console.error('Error:', error);
-            spinner.classList.add('hidden');
+            // spinner.classList.add('hidden');
             submitButton.classList.add('hidden');
         });
     });
