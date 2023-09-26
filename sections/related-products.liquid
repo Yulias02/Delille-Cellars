@@ -35,7 +35,7 @@
       >
         {% for recommendation in recommendations.products %}
           {% if card_product.tags == card_product.selected_variant.tags %}
-            <li class="grid__item">
+            <li class="grid__item ">
               {% render 'card-product',
                 card_product: recommendation,
                 media_aspect_ratio: section.settings.image_ratio,
