@@ -573,9 +573,6 @@
           >
             {{ 'sections.cart.checkout' | t }}
           </button>
-           {% if attributes.bought_featured == "true" %}
-              {{ order.tags | append: ', bought_featured' | json }}
-          {% endif %}
         </div>
       </div>
     </div>
