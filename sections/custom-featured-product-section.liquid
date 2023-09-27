@@ -232,6 +232,7 @@
       "type": "collection",
       "id": "collection",
       "label": "t:sections.featured-collection.settings.collection.label"
+
     },
 {
   "type": "image_picker",
@@ -469,7 +470,7 @@
         submitBtn.classList.add('hidden');
         adding.classList.remove('hidden');
 
-     
+
       fetch("/cart/add.js", {
         method: "post",
         body: new FormData(form),
@@ -480,8 +481,8 @@
         .then((data) => {
             adding.classList.add('hidden');
           added.classList.remove('hidden');
-          
-          
+
+
           setTimeout(() => {
           added.classList.add('hidden');
           submitBtn.classList.remove('hidden');
@@ -494,5 +495,4 @@
         });
     });
   });
-  
 {% endjavascript %}
