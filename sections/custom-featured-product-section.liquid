@@ -237,7 +237,7 @@
       "type": "range",
       "id": "products_to_show",
       "min": 2,
-      "max": 25,
+      "max": 4,
       "step": 1,
       "default": 4,
       "label": "t:sections.featured-collection.settings.products_to_show.label"
@@ -245,11 +245,27 @@
     {
       "type": "range",
       "id": "columns_desktop",
-      "min": 1,
-      "max": 5,
+      "min": 2,
+      "max": 4,
       "step": 1,
       "default": 4,
       "label": "t:sections.featured-collection.settings.columns_desktop.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.featured-collection.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.featured-collection.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.featured-collection.settings.columns_mobile.options__2.label"
+        }
+      ]
     },
     {
       "type": "checkbox",
@@ -305,62 +321,26 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "adapt",
+          "value": "1:1",
           "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
         },
         {
-          "value": "portrait",
+          "value": "16:9",
           "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
         },
         {
-          "value": "square",
+          "value": "4:3",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "3:4",
           "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
         }
       ],
-      "default": "adapt",
+      "default": "1:1",
       "label": "t:sections.featured-collection.settings.image_ratio.label"
     },
-    {
-      "type": "select",
-      "id": "image_shape",
-      "options": [
-        {
-          "value": "default",
-          "label": "t:sections.all.image_shape.options__1.label"
-        },
-        {
-          "value": "arch",
-          "label": "t:sections.all.image_shape.options__2.label"
-        },
-        {
-          "value": "blob",
-          "label": "t:sections.all.image_shape.options__3.label"
-        },
-        {
-          "value": "chevronleft",
-          "label": "t:sections.all.image_shape.options__4.label"
-        },
-        {
-          "value": "chevronright",
-          "label": "t:sections.all.image_shape.options__5.label"
-        },
-        {
-          "value": "diamond",
-          "label": "t:sections.all.image_shape.options__6.label"
-        },
-        {
-          "value": "parallelogram",
-          "label": "t:sections.all.image_shape.options__7.label"
-        },
-        {
-          "value": "round",
-          "label": "t:sections.all.image_shape.options__8.label"
-        }
-      ],
-      "default": "default",
-      "label": "t:sections.all.image_shape.label",
-      "info": "t:sections.all.image_shape.info"
-    },
+
     {
       "type": "checkbox",
       "id": "show_secondary_image",
@@ -390,22 +370,7 @@
       "type": "header",
       "content": "t:sections.featured-collection.settings.header_mobile.content"
     },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "default": "2",
-      "label": "t:sections.featured-collection.settings.columns_mobile.label",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:sections.featured-collection.settings.columns_mobile.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.featured-collection.settings.columns_mobile.options__2.label"
-        }
-      ]
-    },
+
     {
       "type": "checkbox",
       "id": "swipe_on_mobile",
