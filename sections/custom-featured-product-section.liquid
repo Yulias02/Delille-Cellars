@@ -469,6 +469,7 @@
         submitBtn.classList.add('hidden');
         adding.classList.remove('hidden');
 
+      const isQuickAdd = form.querySelector('#bought-featured').value === 'true';
       fetch("/cart/add.js", {
         method: "post",
         body: new FormData(form),
@@ -479,7 +480,23 @@
         .then((data) => {
             adding.classList.add('hidden');
           added.classList.remove('hidden');
+          
+if (isQuickAdd) {
+        // Use the Shopify AJAX API to update the order with the tag
+        const orderId = data.id; // Assuming you get the order ID from the response
+        const tag = 'bought_featured';
 
+        fetch(`/cart/update.js?updates[${orderId}][note]=${tag}`, {
+          method: "post",
+        })
+        .then(() => {
+          console.log(`Tag "${tag}" added to order ${orderId}`);
+        })
+        .catch((error) => {
+          console.error('Error adding tag to order:', error);
+        });
+      }
+          
           setTimeout(() => {
           added.classList.add('hidden');
           submitBtn.classList.remove('hidden');
