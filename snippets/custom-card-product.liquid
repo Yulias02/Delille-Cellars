@@ -28,8 +28,15 @@
     assign ratio = 1
     if card_product.featured_media and media_aspect_ratio == '16:9'
       assign ratio = 0.8
+
     elsif card_product.featured_media and media_aspect_ratio == '1:1'
       assign ratio = card_product.featured_media.aspect_ratio
+
+    elsif card_product.featured_media and media_aspect_ratio == '4:3'
+      assign ratio = 1.3333
+
+    elsif card_product.featured_media and media_aspect_ratio == '3:4'
+      assign ratio = 0.75
     endif
     if ratio == 0 or ratio == null
       assign ratio = 1
