@@ -169,7 +169,7 @@
         "heading_size": "h1",
         "collection": "frontpage",
         "page_width": 960,
-        "products_to_show": 3,
+        "products_to_show": 4,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "full_width": true,
