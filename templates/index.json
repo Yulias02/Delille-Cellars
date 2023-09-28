@@ -131,22 +131,51 @@
     },
     "ca8a67c2-aae3-4675-8760-597315d474ad": {
       "type": "custom-featured-product-section",
+      "blocks": {
+        "0a799367-664f-4956-a0dc-d6d6bfd1602f": {
+          "type": "featured_product",
+          "settings": {
+            "product": "meet-the-2012-la-blanc",
+            "image": "shopify:\/\/shop_images\/the-blowup-xXTLmxuwaH8-unsplash.jpg"
+          }
+        },
+        "efd242ed-ac12-4de8-abd8-d4f1f78f56e7": {
+          "type": "featured_product",
+          "settings": {
+            "product": "order-your-d2-2010-release-today"
+          }
+        },
+        "63ea8842-7747-46ed-96d0-a734cce34727": {
+          "type": "featured_product",
+          "settings": {
+            "product": "order-your-crest-2010-release"
+          }
+        },
+        "71be7f84-f655-4a3f-91a0-1d9b0fa8f585": {
+          "type": "featured_product",
+          "settings": {
+            "product": "meet-the-2012-chaleur-estate-blanc"
+          }
+        }
+      },
+      "block_order": [
+        "0a799367-664f-4956-a0dc-d6d6bfd1602f",
+        "efd242ed-ac12-4de8-abd8-d4f1f78f56e7",
+        "63ea8842-7747-46ed-96d0-a734cce34727",
+        "71be7f84-f655-4a3f-91a0-1d9b0fa8f585"
+      ],
       "settings": {
         "title": "Featured products",
         "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
         "collection": "frontpage",
         "page_width": 960,
-        "products_to_show": 4,
+        "products_to_show": 3,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "",
         "image_ratio": "adapt",
         "show_secondary_image": true,
         "show_vendor": false,
