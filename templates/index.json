@@ -176,7 +176,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "image_ratio": "adapt",
+        "image_ratio": "4:3",
         "show_secondary_image": true,
         "show_vendor": false,
         "enable_quick_add": true,
