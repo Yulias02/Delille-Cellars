@@ -78,19 +78,19 @@
         aria-label="{{ 'general.slider.name' | t }}"
       >
         {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
-          <li
-            id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {%- for block in section.blocks -%}
-              {%- case block.type -%}
-                {%- when '@app' -%}
-                  {% render block %}
-                {%- when 'image_picker' -%}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {%- when 'image_picker' -%}
+                <li
+                  id="Slide-{{ section.id }}-{{ forloop.index }}"
+                  class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
                   {% render 'custom-card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
@@ -101,10 +101,9 @@
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
                   %}
-              {%- endcase -%}
-            {% endfor %}
-          </li>
-
+                </li>
+            {%- endcase -%}
+          {% endfor %}
         {%- else -%}
           {%- for i in (1..4) -%}
             <li
