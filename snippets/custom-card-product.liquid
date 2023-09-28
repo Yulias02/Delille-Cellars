@@ -26,23 +26,22 @@
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
-    if section.blocks.settings.image and media_aspect_ratio == '16:9'
+    if card_product.featured_media and media_aspect_ratio == '16:9'
       assign ratio = 0.5625
 
-    elsif section.blocks.settings.image and media_aspect_ratio == '1:1'
-      assign ratio = section.blocks.settings.image.aspect_ratio
+    elsif card_product.featured_media and media_aspect_ratio == '1:1'
+      assign ratio = card_product.featured_media.aspect_ratio
 
-    elsif section.blocks.settings.image and media_aspect_ratio == '4:3'
+    elsif card_product.featured_media and media_aspect_ratio == '4:3'
       assign ratio = 1.3333
 
-    elsif section.blocks.settings.image and media_aspect_ratio == '3:4'
+    elsif card_product.featured_media and media_aspect_ratio == '3:4'
       assign ratio = 0.75
     endif
     if ratio == 0 or ratio == null
       assign ratio = 1
     endif
   -%}
-
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -51,16 +50,16 @@
         {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
         {% if image_shape and image_shape != 'default' %} card--shape{% endif %}
         {% if extend_height %} card--extend-height{% endif %}
-        {% if  section.blocks.settings.image == nil and settings.card_style == 'card' %} ratio{% endif %}
+        {% if card_product.featured_media == nil and settings.card_style == 'card' %} ratio{% endif %}
         {% if horizontal_class %} card--horizontal{% endif %}
       "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       <div
-        class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if  section.blocks.settings.image or settings.card_style == 'standard' %} ratio{% endif %}"
+        class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
-        {%- if section.blocks.settings.image -%}
+        {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
@@ -74,7 +73,7 @@
                   {%- if card_product.featured_media.width >= 1066 -%}{{ card_product.featured_media | image_url: width: 1066 }} 1066w,{%- endif -%}
                   {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
                 "
-                src="{{  section.blocks.settings.image | image_url: width: 533 }}"
+                src="{{ card_product.featured_media | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                 alt="{{ card_product.featured_media.alt | escape }}"
                 class="motion-reduce"
