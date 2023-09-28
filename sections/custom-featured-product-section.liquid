@@ -173,13 +173,15 @@
     "groups": ["header", "footer"]
   },
   "blocks": [
-     {
-      "type": "@app"
-    },
     {
-      "type": "product",
-      "name": "Custom product",
+     "type": "featured_product",
+      "name": "Product",
       "settings": [
+         {
+          "type": "product",
+          "id": "product",
+          "label": "t:sections.featured-product.blocks.featured-product.settings.product.label"
+        },
         {
           "id": "image",
           "type": "image_picker",
@@ -401,19 +403,19 @@
       "name": "t:sections.featured-collection.presets.name",
        "blocks": [
         {
-          "type": "product"
+          "type": "featured_product"
         },
         {
-          "type": "product"
+          "type": "featured_product"
         },
         {
-          "type": "product"
+          "type": "featured_product"
         },
          {
-          "type": "product"
+          "type": "featured_product"
         },
          {
-          "type": "product"
+          "type": "featured_product"
         }
       ]
     }
