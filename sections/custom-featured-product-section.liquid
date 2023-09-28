@@ -86,7 +86,7 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %} {{ section.settings.page_width }}">
+            <div class="{% if section.blocks.settings.full_width %} collection--full-width{% endif %}">
               {% render 'custom-card-product',
                 card_product: block.settings.product,
                 media_aspect_ratio: section.settings.image_ratio,
