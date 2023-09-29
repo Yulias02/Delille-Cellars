@@ -87,7 +87,7 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            {{ block.settings.product_image }}
+            {{ block.settings.product_image  | image_url }}
             {% render 'custom-card-product',
               card_product: block.settings.product,
               media_aspect_ratio: section.settings.image_ratio,
