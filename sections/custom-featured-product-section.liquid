@@ -78,6 +78,7 @@
         aria-label="{{ 'general.slider.name' | t }}"
       >
         {%- for block in section.blocks limit: section.settings.products_to_show -%}
+           <div class="card-wrapper product-card-wrapper underline-links-hover {% if block.settings.full_width %}collection--full-width{% endif %}">
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
             class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -97,7 +98,7 @@
               section_id: section.id
             %}
           </li>
-
+           </div>
         {%- else -%}
           {%- for i in (1..4) -%}
             <li
