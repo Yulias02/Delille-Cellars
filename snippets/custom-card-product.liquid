@@ -2,10 +2,7 @@
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 
 {%- if card_product and card_product != empty -%}
-
   {%- liquid
-     
-    assign ratio = 1
     if card_product.featured_media and media_aspect_ratio == '16:9'
       assign ratio = 0.5625
 
@@ -66,8 +63,6 @@
               >
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
-
-          
               {%- if card_product.media[1] != null and show_secondary_image -%}
                 {% liquid
                   assign alternateMediaIsVideo = false
