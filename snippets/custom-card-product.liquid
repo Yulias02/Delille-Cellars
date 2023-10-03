@@ -93,13 +93,14 @@
                     onmouseover="playVideo(this);"
                   >
                   <script>
-                    function playVideo(imageElement) {
-                      let videoElement = document.querySelector('.video-hover');
-                      if (videoElement) {
-                        videoElement.currentTime = 0;
-                        videoElement.play();
+                      function playVideo(imageElement) {
+                        let videoElement = document.querySelector('.video-hover');
+                        if (videoElement) {
+                          videoElement.currentTime = 0;
+                          videoElement.play();
+                    console.log('Mouse over image')
+                        }
                       }
-                    }
                   </script>
                 {% else %}
                   {{
