@@ -86,7 +86,8 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            {% render 'custom-card-product',
+            {%
+              render 'custom-card-product',
               card_product: block.settings.product,
               media_aspect_ratio: section.settings.image_ratio,
               show_secondary_image: section.settings.show_secondary_image,
@@ -96,7 +97,6 @@
               section_id: section.id,
               selected_photo: block.settings.product_image,
               full_width: block.settings.full_width,
-              extend_height: block.settings.extend_height
             %}
           </li>
 
@@ -193,12 +193,6 @@
       "type": "checkbox",
       "id": "full_width",
       "label": "t:sections.featured-collection.settings.full_width.label",
-      "default": false
-    },
-        {
-      "type": "checkbox",
-      "id": "extend_height",
-      "label": "t:sections.featured-collection.settings.extend_height.label",
       "default": false
     }
       ]
