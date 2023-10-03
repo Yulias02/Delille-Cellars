@@ -10,20 +10,20 @@
     {% endif %}
 
     <ul>
-      {%- for product in recommendations.products -%}
-        <li class="product">
-          <a href="{{ product.url }}">
-            <img
-              class="product__img"
-              src="{{ product.featured_image | image_url: width: 300, height: 300 }}"
-              alt="{{ product.featured_image.alt }}"
-            />
-
-            <p class="product__title">{{ product.title }}</p>
-            <p class="product__price">{{ product.price | money}}</p>
-          </a>
-        </li>
-      {%- endfor -%}
+     {% for recommendation in recommendations.products %}
+          {% if card_product.tags == card_product.selected_variant.tags %}
+            <li class="grid__item ">
+              {% render 'card-product',
+                card_product: recommendation,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: section.settings.image_shape,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating
+              %}
+            </li>
+          {% endif %}
+        {% endfor %}
     </ul>
   {%- endif -%}
 </div>
