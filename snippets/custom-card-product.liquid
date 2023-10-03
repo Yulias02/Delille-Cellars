@@ -19,7 +19,7 @@
       assign ratio = 1
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper underline-links-hover {% if section.block.settings.full_width %} collection--full-width{% endif %}">
     <div
       class="
         card card--{{ settings.card_style }}
