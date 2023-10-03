@@ -90,23 +90,7 @@
                     loading="lazy"
                     width="{{ card_product.media[1].width }}"
                     height="{{ card_product.media[1].height }}"
-                    id="myVideo"
                   >
-                  <script>
-                    // Get a reference to the video element
-                    var video = document.getElementById('myVideo');
-
-                    // Add a mouseover event listener to play the video from the beginning
-                    video.addEventListener('mouseover', function () {
-                      video.currentTime = 0; // Start playing from the beginning
-                      video.play();
-                    });
-
-                    // Add a mouseout event listener to pause the video when the mouse leaves
-                    video.addEventListener('mouseout', function () {
-                      video.pause();
-                    });
-                  </script>
 
                 {% else %}
                   {{
