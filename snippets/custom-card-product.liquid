@@ -90,6 +90,7 @@
                     loading="lazy"
                     width="{{ card_product.media[1].width }}"
                     height="{{ card_product.media[1].height }}"
+                    onmouseover="this.src = '{{ card_product.media[1] | image_url: width: 533 }}#t=0';"
                   >
                 {% else %}
                   {{
