@@ -90,18 +90,18 @@
                     loading="lazy"
                     width="{{ card_product.media[1].width }}"
                     height="{{ card_product.media[1].height }}"
-                    onmouseover="this.src = '{{ card_product.media[1] | image_url: width: 533 }}#t=0';"
+                    onmouseover="this.nextElementSibling.currentTime = 0"
                   >
                 {% else %}
                   {{
                     card_product.media[1]
                     | video_tag:
-                      controls: false,
-                      muted: true,
-                      loop: true,
-                      autoplay: true,
-                      image_size: '1066x',
-                      class: 'motion-reduce'
+                    controls: false,
+                    muted: true,
+                    loop: true,
+                    autoplay: true,
+                    image_size: '1066x',
+                    class: 'motion-reduce',
                   }}
                 {% endunless %}
               {%- endif -%}
