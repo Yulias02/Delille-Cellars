@@ -94,7 +94,13 @@
                 {% else %}
                   {{
                     card_product.media[1]
-                    | video_tag: controls: false, muted: true, loop: true, image_size: '1066x', class: 'motion-reduce'
+                    | video_tag:
+                      controls: false,
+                      muted: true,
+                      loop: true,
+                      autoplay: true,
+                      image_size: '1066x',
+                      class: 'motion-reduce'
                   }}
                 {% endunless %}
               {%- endif -%}
