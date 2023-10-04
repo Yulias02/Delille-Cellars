@@ -20,4 +20,5 @@ width: 195px;
 }
 .compl-container {
 display: flex;
+  gap: 20px;
 }
