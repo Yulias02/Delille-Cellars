@@ -494,7 +494,6 @@
                       </div>
                       {%- if block.settings.make_collapsible_row -%}
                           {% render 'icon-caret' %}
-                        
                         </summary>
                       {%- endif -%}
                       <slideshow-component class="slider-mobile-gutter">
@@ -520,7 +519,7 @@
                               </ul>
                             </div>
                           {%- endfor -%}
-                        </div> 
+                        </div>
                         {%- if number_of_slides > 1 -%}
                           <div class="slider-buttons no-js-hidden">
                             <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
@@ -556,7 +555,7 @@
                   {{ 'quick-add.css' | asset_url | stylesheet_tag }}
                   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
                 {%- endif -%}
-              </product-recommendations>
+              </product-recommendations> 
             {%- when 'icon-with-text' -%}
               {% render 'icon-with-text',
                 block: block
@@ -696,7 +695,6 @@
       ]
     }
   </script>
-                          
 </section>
 
 {% schema %}
