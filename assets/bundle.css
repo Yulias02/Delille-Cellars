@@ -8,6 +8,9 @@ width: 200px;
 height: 200px;
 }
 .prod-heading {
+  margin-top: 0;
+  margin-bottom: 15px;
+    font-size: 166px;
 font-size: 14px;
   width: 195px;
 }
