@@ -28,5 +28,8 @@ display: flex;
     background: transparent;
     border: 1px solid #121212;
     font-size: 14px;
-  display: block;
+}
+.total-cont {
+  display: flex;
+  flex-direction: column;
 }
