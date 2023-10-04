@@ -1,43 +1,47 @@
-{%- for block in section.blocks -%}
-  {% render 'bundle', bundle_product: block.settings.product %}
-{% endfor %}
+{{ 'bundle.css' | asset_url | stylesheet_tag }}
+<h1 class="compl-heading">Perfectly pairs with</h1>
+<div class="compl-container">
+  {%- for block in section.blocks -%}
+    {% render 'bundle', bundle_product: block.settings.product %}
+  {% endfor %}
+</div>
 
 {% schema %}
+{
+  "name": "Section name",
+  "tag": "section",
+   "class": "container product-container pad",
+  "blocks": [
   {
-    "name": "Section name",
-    "tag": "section",
-     "class": "section container product-container pad",
-    "blocks": [
-    {
-      "type": "featured_product",
-      "name": "t:sections.featured-product.name",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "t:sections.featured-product.blocks.featured-product.settings.product.label"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Product section",
-      "blocks": [
-        {
-          "type": "featured_product"
-        },
-        {
-          "type": "featured_product"
-        },
-        {
-          "type": "featured_product"
-        }
-
-      ]
-    }
-  ]
+    "type": "featured_product",
+    "name": "t:sections.featured-product.name",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "t:sections.featured-product.blocks.featured-product.settings.product.label"
+      }
+    ]
   }
+],
+"presets": [
+  {
+    "name": "Product section",
+    "blocks": [
+      {
+        "type": "featured_product"
+      },
+      {
+        "type": "featured_product"
+      },
+      {
+        "type": "featured_product"
+      }
+
+    ]
+  }
+]
+}
 {% endschema %}
 
 {% stylesheet %}
