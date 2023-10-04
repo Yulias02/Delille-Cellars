@@ -20,7 +20,7 @@ width: 195px;
 }
 .compl-container {
 display: flex;
-  gap: 20px;
+  gap: 36px;
 }
 .compl-add {
       height: 50px;
@@ -39,7 +39,7 @@ display: flex;
   font-weight: 600;
     position: relative;
     bottom: 223px;
-    left: 205px;
+    left: 212px;
 }
 .card-wrap:nth-child(1)::after {
   content: "+";
@@ -47,7 +47,7 @@ display: flex;
   font-weight: 600;
     position: relative;
     bottom: 246px;
-    left: 205px;
+    left: 212px;
 }
 .card-wrap:nth-child(3)::after {
   content: "=";
@@ -55,5 +55,5 @@ display: flex;
   font-weight: 600;
     position: relative;
     bottom: 223px;
-    left: 205px;
+    left: 212px;
 }
