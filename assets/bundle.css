@@ -20,4 +20,12 @@ width: 195px;
 }
 .compl-container {
 display: flex;
+  gap: 20px;
+}
+.compl-add {
+      height: 50px;
+    width: 200px;
+    background: transparent;
+    border: 1px solid #121212;
+    font-size: 14px;
 }
