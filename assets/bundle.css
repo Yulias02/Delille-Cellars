@@ -6,7 +6,10 @@ a {
 margin-top: 50px !important;
 padding: 30px !important;
 }
-
+.compl-heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 .prod-img {
 width: 200px;
 height: 200px;
