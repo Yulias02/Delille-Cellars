@@ -1,5 +1,5 @@
 {%- for block in section.blocks -%}
-  {% render 'card-product' %}
+  {% render 'bundle', bundle_product: block.settings.product %}
 {% endfor %}
 
 {% schema %}
