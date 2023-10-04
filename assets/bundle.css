@@ -49,4 +49,11 @@ display: flex;
     bottom: 246px;
     left: 205px;
 }
-
+.card-wrap:nth-child(3)::after {
+  content: "=";
+  font-size: 25px;
+  font-weight: 600;
+    position: relative;
+    bottom: 223px;
+    left: 205px;
+}
