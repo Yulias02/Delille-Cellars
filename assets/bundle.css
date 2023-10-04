@@ -11,11 +11,9 @@ padding: 30px !important;
 width: 200px;
 height: 200px;
 }
-.compl-heading {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 26px;
-  width: 195px;
+.prod-heading {
+ font-size: 16px;
+width: 195px;
 }
 .compl-container {
 display: flex;
