@@ -1,19 +1,12 @@
-<a>
-  <img
-    class="complementary-img"
-      src="{{ card_product.featured_image | image_url: width: 1500 }}"
-      alt="{{ card_product.alt }} "
-      height="{{ card_product.height }}"
-      width="{{ card_product.width }}"
-      loading="lazy"
-    >
-</a>
+{%- for block in section.blocks -%}
+  {% render 'bundle', bundle_product: block.settings.product %}
+{% endfor %}
 
 {% schema %}
   {
     "name": "Section name",
     "tag": "section",
-     "class": "section container product-container",
+     "class": "section container product-container pad",
     "blocks": [
     {
       "type": "featured_product",
@@ -29,8 +22,11 @@
   ],
   "presets": [
     {
-      "name": "Product sct",
+      "name": "Product section",
       "blocks": [
+        {
+          "type": "featured_product"
+        },
         {
           "type": "featured_product"
         },
