@@ -38,6 +38,15 @@ display: flex;
   font-size: 25px;
   font-weight: 600;
     position: relative;
-    bottom: 220px;
-    right: 17px;
+    bottom: 223px;
+    left: 205px;
 }
+.card-wrap:nth-child(1)::after {
+  content: "+";
+  font-size: 25px;
+  font-weight: 600;
+    position: relative;
+    bottom: 223px;
+    left: 205px;
+}
+
