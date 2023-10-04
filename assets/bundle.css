@@ -9,6 +9,7 @@ height: 200px;
 }
 .prod-heading {
 font-size: 14px;
+  width: 195px;
 }
 .compl-container {
 display: flex;
