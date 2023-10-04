@@ -41,11 +41,3 @@ display: flex;
     bottom: 220px;
     right: 17px;
 }
-.card-wrap:nth-child(2)::before {
-  content: "+";
-  font-size: 25px;
-  font-weight: 600;
-    position: relative;
-    bottom: 220px;
-    right: 17px;
-}
