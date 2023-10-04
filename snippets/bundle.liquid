@@ -8,7 +8,8 @@
       width="{{ bundle_product.width }}"
       loading="lazy"
     >
+
+    <h2 class="prod-heading">{{ bundle_product.title | escape }}</h2>
+    <p>{{ bundle_product.price | money }}</p>
   </a>
-  <h2 class="prod-heading">{{ bundle_product.title | escape }}</h2>
-  <p>{{ bundle_product.price | money }}</p>
 </div>
