@@ -1,0 +1,15 @@
+.product-container {
+margin-top: 50px !important;
+padding: 30px !important;
+}
+
+.prod-img {
+width: 200px;
+height: 200px;
+}
+.prod-heading {
+font-size: 14px;
+}
+.compl-container {
+display: flex;
+}
