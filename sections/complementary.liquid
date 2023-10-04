@@ -26,6 +26,7 @@
     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
+       {% if recommendations.intent == 'complementary' %}
       <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
         {{ section.settings.heading }}
       </h2>
@@ -48,6 +49,7 @@
           {% endif %}
         {% endfor %}
       </ul>
+          {% endif %}
     {% endif %}
   </product-recommendations>
   {% if section.settings.image_shape == 'arch' %}
