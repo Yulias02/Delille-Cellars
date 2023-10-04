@@ -1,0 +1,13 @@
+<div class="card-wrap">
+  <a class="product-link">
+    <img
+       class="prod-img"
+      src="{{ bundle_product.featured_image | image_url: width: 1500 }}"
+      alt="{{ bundle_product.alt }} "
+      height="{{ bundle_product.height }}"
+      width="{{ bundle_product.width }}"
+      loading="lazy">
+  </a>
+  <h2>{{ bundle_product.title | escape }}</h2>
+  <p>{{ bundle_product.price | money }}</p>
+</div>
