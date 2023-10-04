@@ -33,4 +33,27 @@ display: flex;
   display: flex;
   flex-direction: column;
 }
-
+.card-wrap:nth-child(2)::after {
+  content: "+";
+  font-size: 25px;
+  font-weight: 600;
+    position: relative;
+    bottom: 223px;
+    left: 212px;
+}
+.card-wrap:nth-child(1)::after {
+  content: "+";
+  font-size: 25px;
+  font-weight: 600;
+    position: relative;
+    bottom: 246px;
+    left: 212px;
+}
+.card-wrap:nth-child(3)::after {
+  content: "=";
+  font-size: 25px;
+  font-weight: 600;
+    position: relative;
+    bottom: 223px;
+    left: 212px;
+}
