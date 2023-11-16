@@ -90,20 +90,27 @@
                     loading="lazy"
                     width="{{ card_product.media[1].width }}"
                     height="{{ card_product.media[1].height }}"
+                    onmouseover="playVideo()"
                   >
 
                 {% else %}
                   {{
                     card_product.media[1]
                     | video_tag:
-                      controls: false,
-                      muted: true,
-                      loop: true,
-                      autoplay: true,
-                      image_size: '1066x',
-                      class: 'motion-reduce',
-                      currentTime: 0
+                    controls: false,
+                    muted: true,
+                    loop: true,
+                    autoplay: true,
+                    image_size: '1066x',
+                    class: 'motion-reduce',
+                    id: 'productVideo',
                   }}
+                  <script>
+                    function playVideo() {
+                      let video = document.getElementById('productVideo');
+                      video.currentTime = 0;
+                    }
+                  </script>
                 {% endunless %}
               {%- endif -%}
             </div>
