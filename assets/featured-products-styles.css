@@ -15,13 +15,7 @@
   background-color: #121212 ;
   }
 
-  .card__heading {
-  width: 208px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-    
-  }
+  
 
   .prod-form {
   width: 100%;
