@@ -103,21 +103,6 @@
                       image_size: '1066x',
                       class: 'motion-reduce'
                   }}
-                  <script>
-                      document.addEventListener('DOMContentLoaded', function () {
-                    document.querySelectorAll('.card').forEach((video) => {
-                        video.addEventListener('mouseover', function() {
-                          var playItem = this.querySelector('video');
-                          playItem.currentTime = 0;
-                          playItem.play();
-                        });
-
-                        video.addEventListener('mouseout', function() {
-                          this.querySelector('video').pause();
-                        });
-                      });
-                      });
-                  </script>
                 {% endunless %}
               {%- endif -%}
             </div>
@@ -421,3 +406,18 @@
     </div>
   </div>
 {%- endif -%}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.card').forEach((video) => {
+      video.addEventListener('mouseover', function() {
+        var playItem = this.querySelector('video');
+        playItem.currentTime = 0;
+        playItem.play();
+      });
+
+      video.addEventListener('mouseout', function() {
+        this.querySelector('video').pause();
+      });
+    });
+    });
+</script>
