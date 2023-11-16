@@ -143,8 +143,8 @@
         "efd242ed-ac12-4de8-abd8-d4f1f78f56e7": {
           "type": "featured_product",
           "settings": {
-            "product": "order-your-d2-2010-release-today",
-            "product_image": "shopify:\/\/shop_images\/d2.jpg",
+            "product": "order-your-ladell-2010-release-today",
+            "product_image": "shopify:\/\/shop_images\/wine-bottle-label-mockup-db.jpg",
             "full_width": true
           }
         },
@@ -187,7 +187,7 @@
         "show_vendor": false,
         "enable_quick_add": true,
         "swipe_on_mobile": true,
-        "page_width": 900,
+        "page_width": 960,
         "padding_top": 36,
         "padding_bottom": 36
       }
