@@ -1,5 +1,4 @@
-
-  .shop-now-link {
+.shop-now-link {
   border: 1px solid #121212;
   padding: 14px 0;
   width: 100%;
@@ -14,6 +13,7 @@
   .quick-add-button {
   color: #fff;
   background-color: #121212 ;
+  }
 
   .card__heading {
   width: 208px;
@@ -21,13 +21,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
   }
+
   .prod-form {
   width: 100%;
   }
+
   .featured-prod-list {
-margin-bottom: 50px !important;
+    margin-bottom: 50px;
     margin: 0 auto;
   }
+
   .featured-prod-title {
   font-family: "High Tower" ;
   text-transform: uppercase;
@@ -36,13 +39,16 @@ margin-bottom: 50px !important;
   text-align: center;
   margin-top: 0;
   }
+
   .adding-to-cart,
   .added-to-cart {
      color: #121212
   }
+
   .prod-form {
     width: 100%;
   }
+
   .centered {
      margin: 0 auto; 
   }
