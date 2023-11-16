@@ -104,6 +104,17 @@
                       class: 'motion-reduce',
                       id: 'productVideo'
                   }}
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                      let video = document.querySelector('.motion-reduce video-hover');
+                      if (video) {
+                        video.addEventListener('mouseover', function () {
+                          video.currentTime = 0;
+                          video.play();
+                        });
+                      }
+                    });
+                  </script>
                 {% endunless %}
               {%- endif -%}
             </div>
