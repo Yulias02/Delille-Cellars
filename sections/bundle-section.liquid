@@ -10,6 +10,39 @@
     <button type="submit" class="button button--secondary">Add to cart</button>
   </div>
 </div>
+<script>
+  function addToCart() {
+    var products = [];
+
+    // Assuming your bundle snippet generates product information with IDs and quantities
+    {%- for block in section.blocks -%}
+      var product = {
+        id: '{{ block.settings.product.id }}',
+        quantity: 1, // You can adjust the quantity as needed
+      };
+      products.push(product);
+    {% endfor %}
+
+    var data = {
+      items: products,
+    };
+
+    fetch('/cart/add-multi.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Handle the response, maybe redirect to the cart page
+      window.location.href = '/cart';
+    })
+    .catch(error => console.error('Error:', error));
+  }
+</script>
 
 {% schema %}
 {
