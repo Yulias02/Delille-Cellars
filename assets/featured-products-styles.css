@@ -43,3 +43,6 @@ margin-bottom: 50px !important;
   .prod-form {
     width: 100%;
   }
+  .centered {
+     margin: 0 auto; 
+  }
