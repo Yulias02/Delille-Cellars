@@ -90,7 +90,6 @@
                     loading="lazy"
                     width="{{ card_product.media[1].width }}"
                     height="{{ card_product.media[1].height }}"
-                    onmouseover="playVideo()"
                   >
 
                 {% else %}
@@ -105,12 +104,6 @@
                       class: 'motion-reduce',
                       id: 'productVideo'
                   }}
-                  <script>
-                    function playVideo() {
-                      let video = document.getElementById('productVideo');
-                      video.currentTime = 0;
-                    }
-                  </script>
                 {% endunless %}
               {%- endif -%}
             </div>
