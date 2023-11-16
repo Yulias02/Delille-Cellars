@@ -1,15 +1,15 @@
+
+
 <div class="card-wrap">
-  <a href="{{ bundle_product.url }}" class="product-link">
+  <a href="{{ bundle_product.url }}" class="product-link" >
     <img
-      class="prod-img"
+       class="prod-img"
       src="{{ bundle_product.featured_image | image_url }}"
       alt="{{ bundle_product.alt }} "
       height="{{ bundle_product.height }}"
       width="{{ bundle_product.width }}"
-      loading="lazy"
-    >
-
-    <h2 class="prod-heading">{{ bundle_product.title | escape }}</h2>
-    <p>{{ bundle_product.price | money }}</p>
+      loading="lazy">
   </a>
+  <h2 class="prod-heading">{{ bundle_product.title | escape }}</h2>
+  <p>{{ bundle_product.price | money }}</p>
 </div>
