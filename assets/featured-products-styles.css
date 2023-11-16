@@ -1,14 +1,11 @@
 .shop-now-link {
   border: 1px solid #121212;
   padding: 14px 0;
-  width: 90%;
+  width: 100%;
   text-align: center;
   }
 
-.card__content {
-  padding-right: 10px !important;
-  padding-left: 10px !important;
-}
+
   .quick-add {
   width: 100%;
   }
@@ -16,7 +13,6 @@
   .quick-add-button {
   color: #fff;
   background-color: #121212 ;
-  max-width: 90% !important;
   }
 
   .card__heading {
