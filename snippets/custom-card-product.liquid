@@ -99,11 +99,25 @@
                       controls: false,
                       muted: true,
                       loop: true,
-                      autoplay: true,
+                      autoplay: false,
                       image_size: '1066x',
-                      class: 'motion-reduce',
-                      id: 'productVideo'
+                      class: 'motion-reduce'
                   }}
+                  <script>
+                      document.addEventListener('DOMContentLoaded', function () {
+                    document.querySelectorAll('.card').forEach((video) => {
+                        video.addEventListener('mouseover', function() {
+                          var playItem = this.querySelector('video');
+                          playItem.currentTime = 0;
+                          playItem.play();
+                        });
+
+                        video.addEventListener('mouseout', function() {
+                          this.querySelector('video').pause();
+                        });
+                      });
+                      });
+                  </script>
                 {% endunless %}
               {%- endif -%}
             </div>
@@ -407,14 +421,3 @@
     </div>
   </div>
 {%- endif -%}
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    let video = document.querySelector('.motion-reduce video-hover');
-    if (video) {
-      video.addEventListener('mouseover', function () {
-        video.currentTime = 0;
-        video.play();
-      });
-    }
-  });
-</script>
