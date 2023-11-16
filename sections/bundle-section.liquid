@@ -7,7 +7,7 @@
     {% assign total_price = total_price | plus: block.settings.product.price %}
   {% endfor %}
   <div class="total-cont">
-    <p>Total: {{ total_price | money }}</p>
+    <p>{{ section.settings.paragraph }}: {{ total_price | money }}</p>
     <button type="submit" class="button button--secondary">Add to cart</button>
   </div>
 </div>
@@ -25,8 +25,10 @@
       "label": "Heading"
     },
      {
-      "type": "paragraph",
-      "content": "t:sections.bundle-section.settings.paragraph.content"
+      "type": "inline_richtext",
+      "id": "paragraph",
+      "default": "Total",
+      "label": "Total price"
     }
   ],
 
