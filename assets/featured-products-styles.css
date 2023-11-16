@@ -12,9 +12,8 @@
   }
 
   .quick-add-button {
-  color: #fff !important;
-  background-color: #121212 !important
-  }
+  color: #fff;
+  background-color: #121212 ;
 
   .card__heading {
   width: 208px;
@@ -26,8 +25,8 @@
   width: 100%;
   }
   .featured-prod-list {
-
-    margin: 0 auto
+margin-bottom: 50px;
+    margin: 0 auto;
   }
   .featured-prod-title {
   font-family: "High Tower" ;
