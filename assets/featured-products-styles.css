@@ -1,7 +1,7 @@
 .shop-now-link {
   border: 1px solid #121212;
   padding: 14px 0;
-  width: 100%;
+  width: 90%;
   text-align: center;
   }
 
@@ -20,6 +20,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+    max-width: 90%;
   }
 
   .prod-form {
