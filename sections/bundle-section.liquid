@@ -7,42 +7,37 @@
   {% endfor %}
   <div class="total-cont">
     <p>{{ section.settings.paragraph }}: {{ total_price | money }}</p>
-    <button type="submit" class="button button--secondary">Add to cart</button>
+    <button type="submit" class="button button--secondary adds-btn">Add to cart</button>
   </div>
 </div>
+
 <script>
-  function addToCart() {
-    var products = [];
 
-    // Assuming your bundle snippet generates product information with IDs and quantities
-    {%- for block in section.blocks -%}
-      var product = {
-        id: '{{ block.settings.product.id }}',
-        quantity: 1, // You can adjust the quantity as needed
-      };
-      products.push(product);
-    {% endfor %}
 
-    var data = {
-      items: products,
-    };
+  const addToCartBtn = document.querySelectorAll('.adds-btn');
+  const cart = document.querySelector('cart-drawer');
 
-    fetch('/cart/add.js', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Requested-With': 'XMLHttpRequest'
-      },
-      body: JSON.stringify(data),
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Handle the response, maybe redirect to the cart page
-      window.location.href = '/cart';
-    })
-    .catch(error => console.error('Error:', error));
+  addToCartBtn.addEventListener('click', addToCart);
+
+  function addToCart () {
+
   }
+
+      {%- for block in section.blocks -%}
+        const productId = {{ block.settings.product.id }}
+      {% endfor %}
 </script>
+
+addToCartAddons.forEach((addOn) => { addOn.addEventListener("click", (event) => { event.preventDefault();
+
+const productId = addOn.dataset.id; if (addOn.classList.contains('product-selected')) { return; }
+
+fetch("/cart/add.js", { method: "post", headers: { 'Content-Type': 'application/json', }, body: JSON.stringify({ id:
+productId, quantity: 1, sections: cart.getSectionsToRender().map((section) => section.id) }),
+
+}) .then((response) => { return response.json(); }) .then((response) => { cart.renderContents(response);
+addOn.classList.add('product-selected'); }) .catch((error) => { console.error('Error:', error); }) .finally(() => { if
+(cart && cart.classList.contains('is-empty')) cart.classList.remove('is-empty'); }); }); });
 
 {% schema %}
 {
