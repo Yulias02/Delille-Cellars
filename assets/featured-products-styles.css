@@ -25,7 +25,7 @@
   width: 100%;
   }
   .featured-prod-list {
-margin-bottom: 50px;
+margin-bottom: 50px !important;
     margin: 0 auto;
   }
   .featured-prod-title {
