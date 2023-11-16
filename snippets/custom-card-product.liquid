@@ -90,15 +90,8 @@
                     loading="lazy"
                     width="{{ card_product.media[1].width }}"
                     height="{{ card_product.media[1].height }}"
-                    onmouseover="restartVideo(this)"
                   >
-                  <script>
-                    function restartVideo(element) {
-                      if (element.tagName.toLowerCase() === 'video') {
-                        element.currentTime = 0;
-                      }
-                    }
-                  </script>
+
                 {% else %}
                   {{
                     card_product.media[1]
@@ -108,7 +101,8 @@
                       loop: true,
                       autoplay: true,
                       image_size: '1066x',
-                      class: 'motion-reduce'
+                      class: 'motion-reduce',
+                      preload: 'auto'
                   }}
                 {% endunless %}
               {%- endif -%}
