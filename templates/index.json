@@ -173,7 +173,6 @@
       ],
       "settings": {
         "title": "Featured products",
-        "heading_size": "h1",
         "collection": "frontpage",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -184,10 +183,10 @@
         "enable_desktop_slider": false,
         "image_ratio": "4:3",
         "show_secondary_image": true,
-        "show_vendor": false,
+        "button_text": "Shop now",
         "enable_quick_add": true,
         "swipe_on_mobile": true,
-        "page_width": 960,
+        "page_width": 1020,
         "padding_top": 36,
         "padding_bottom": 36
       }
