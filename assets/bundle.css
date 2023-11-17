@@ -6,16 +6,16 @@ padding: 30px;
   margin-top: 0;
   margin-bottom: 20px;
 }
-.compl-container {
+/* .compl-container {
 display: flex;
   gap: 36px;
-}
+} */
 
-/* .total-cont {
+.total-cont {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
-} */
+}
 
 /* .card-wrapper::after {
   content: "+";
