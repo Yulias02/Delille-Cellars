@@ -136,32 +136,28 @@
           "type": "featured_product",
           "settings": {
             "product": "meet-the-2012-la-blanc",
-            "product_image": "shopify:\/\/shop_images\/the-blowup-xXTLmxuwaH8-unsplash.jpg",
-            "full_width": true
+            "product_image": "shopify:\/\/shop_images\/the-blowup-xXTLmxuwaH8-unsplash.jpg"
           }
         },
         "efd242ed-ac12-4de8-abd8-d4f1f78f56e7": {
           "type": "featured_product",
           "settings": {
             "product": "order-your-ladell-2010-release-today",
-            "product_image": "shopify:\/\/shop_images\/wine-bottle-label-mockup-db.jpg",
-            "full_width": true
+            "product_image": "shopify:\/\/shop_images\/wine-bottle-label-mockup-db.jpg"
           }
         },
         "63ea8842-7747-46ed-96d0-a734cce34727": {
           "type": "featured_product",
           "settings": {
             "product": "order-your-crest-2010-release",
-            "product_image": "shopify:\/\/shop_images\/wine_bottle_mockup_04.jpg",
-            "full_width": true
+            "product_image": "shopify:\/\/shop_images\/wine_bottle_mockup_04.jpg"
           }
         },
         "71be7f84-f655-4a3f-91a0-1d9b0fa8f585": {
           "type": "featured_product",
           "settings": {
             "product": "meet-the-2012-chaleur-estate-blanc",
-            "product_image": "shopify:\/\/shop_images\/chaleur-estate-white.jpg",
-            "full_width": true
+            "product_image": "shopify:\/\/shop_images\/chaleur-estate-white.jpg"
           }
         }
       },
