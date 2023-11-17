@@ -1,4 +1,4 @@
-<h2 class="collection-heading">DISCOVER THE COLLECTION</h2>
+<h2 class="collection-heading">{{ section.settings.heading }}</h2>
 {%- for block in section.blocks -%}
   {%
     render 'card-collection-clean',
@@ -15,6 +15,14 @@
   "disabled_on": {
     "groups": ["header", "footer"]
   },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Discover the collection",
+      "label": "Heading"
+    }
+  ],
   "blocks": [
     {
       "type": "custom-text",
