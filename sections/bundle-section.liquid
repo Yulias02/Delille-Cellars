@@ -1,6 +1,7 @@
 {{ 'bundle.css' | asset_url | stylesheet_tag }}
 <h1 class="compl-heading">{{ section.settings.heading }}</h1>
 <div class="compl-container">
+  {% assign total_price = 0 %}
   {%- for block in section.blocks -%}
     {% render 'bundle', card_product: block.settings.product %}
     {% assign total_price = total_price | plus: block.settings.product.price %}
