@@ -6,11 +6,14 @@ padding: 30px;
   margin-top: 0;
   margin-bottom: 20px;
 }
-.compl-container {
+/* .compl-container {
 display: flex;
   gap: 36px;
+} */
+.prod-cont {
+  display: flex;
+  gap: 36px;
 }
-
 .total-cont {
   display: flex;
   flex-direction: column;

@@ -1,10 +1,12 @@
 {{ 'bundle.css' | asset_url | stylesheet_tag }}
 <h1 class="compl-heading">{{ section.settings.heading }}</h1>
 <div class="compl-container">
+  <div class="prod-cont">
   {%- for block in section.blocks -%}
     {% render 'bundle', card_product: block.settings.product %}
     {% assign total_price = total_price | plus: block.settings.product.price %}
   {% endfor %}
+  <div>
   <div class="total-cont">
     <p>{{ section.settings.text }}: {{ total_price | money }}</p>
     <button type="submit" class="button button--secondary adds-btn">Add to cart</button>
