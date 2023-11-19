@@ -182,7 +182,7 @@
         "button_text": "Shop now",
         "enable_quick_add": true,
         "swipe_on_mobile": true,
-        "page_width": 960,
+        "page_width": 1020,
         "padding_top": 36,
         "padding_bottom": 36
       }
