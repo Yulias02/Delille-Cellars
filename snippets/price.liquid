@@ -75,7 +75,7 @@
         {%- endif -%}
 
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        {% if product.price_varies and template == 'collection' %}
+        {% if product.price_varies %}
           <span class="price-item price-item--regular">
             From {{ products.product.price_min | money }} to {{ products.product.price_max | money }}
           </span>
