@@ -74,9 +74,18 @@
           {%- endunless -%}
         {%- endif -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular">
-          {{- 'products.product.volume_pricing.price_range' | t: minimum: money_price_min, maximum: money_price_max -}}
-        </span>
+        {% if product.price_varies %}
+          <span class="price-item price-item--regular">
+            From {{ product.price_min | money }} to {{ product.price_max | money }}
+          </span>
+        {% else %}
+          <span class="price-item price-item--regular">
+            {{-
+              'products.product.volume_pricing.price_range'
+              | t: minimum: money_price_min, maximum: money_price_max
+            -}}
+          </span>
+        {% endif %}
       {%- else -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span class="price-item price-item--regular">
