@@ -2,6 +2,40 @@
   {% render 'custom-product', placeholder_image: placeholder_image, card_product: block.settings.product %}
 {% endfor %}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script>
+    const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
+  const enteredQty = document.querySelector('.qty-input');
+    addToCartForms.forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const productAvailable = {{product.variant.inventory_quantity}};
+        console.log(productAvailable)
+
+        const submitButton = form.querySelector('.buy-now');
+        const spinner = form.querySelector('.loading-overlay__spinner');
+
+          submitButton.classList.add('hidden');
+          spinner.classList.remove('hidden');
+
+        fetch("/cart/add.js", {
+          method: "post",
+          body: new FormData(form),
+        })
+          .then((response) => {
+              return response.json();
+          })
+          .then((data) => {
+              spinner.classList.add('hidden');
+              submitButton.classList.remove('hidden');
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+              spinner.classList.add('hidden');
+              submitButton.classList.add('hidden');
+          });
+      });
+    });
+</script>
 {% schema %}
  {
   "name": "Product Section",
@@ -264,35 +298,37 @@
   }
 {% endstylesheet %}
 
-{% javascript %}
-  const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
+<!--
+  {% javascript %}
+    const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
 
-  addToCartForms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
+    addToCartForms.forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-      const submitButton = form.querySelector('.buy-now');
-      const spinner = form.querySelector('.loading-overlay__spinner');
+        const submitButton = form.querySelector('.buy-now');
+        const spinner = form.querySelector('.loading-overlay__spinner');
 
-        submitButton.classList.add('hidden');
-        spinner.classList.remove('hidden');
+          submitButton.classList.add('hidden');
+          spinner.classList.remove('hidden');
 
-      fetch("/cart/add.js", {
-        method: "post",
-        body: new FormData(form),
-      })
-        .then((response) => {
-            return response.json();
+        fetch("/cart/add.js", {
+          method: "post",
+          body: new FormData(form),
         })
-        .then((data) => {
-            spinner.classList.add('hidden');
-            submitButton.classList.remove('hidden');
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-            spinner.classList.add('hidden');
-            submitButton.classList.add('hidden');
-        });
+          .then((response) => {
+              return response.json();
+          })
+          .then((data) => {
+              spinner.classList.add('hidden');
+              submitButton.classList.remove('hidden');
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+              spinner.classList.add('hidden');
+              submitButton.classList.add('hidden');
+          });
+      });
     });
-  });
-{% endjavascript %}
+  {% endjavascript %}
+-->
