@@ -10,12 +10,8 @@
       form.addEventListener("submit", (event) => {
         event.preventDefault();
         const enteredValue = qtyEl.value;
-        console.log(123445);
-        const productAvailable = {{product.variant.inventory_quantity}};
+        console.log(enteredValue);
 
-        if(enteredValue > productAvailable) {
-          alert('1234')
-        }
 
         const submitButton = form.querySelector('.buy-now');
         const spinner = form.querySelector('.loading-overlay__spinner');
