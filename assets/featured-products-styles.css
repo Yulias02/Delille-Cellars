@@ -56,6 +56,9 @@
     color: rgb(var(--color-badge-foreground));
   border-radius: 0;
 }
+.left {
+    text-align: right;
+}
 @media screen and (max-width: 768px) {
   .featured-prod-list {
     display: table;
