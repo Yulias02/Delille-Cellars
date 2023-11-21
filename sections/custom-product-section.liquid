@@ -11,7 +11,7 @@
         event.preventDefault();
         const enteredValue = qtyEl.value;
         console.log(enteredValue);
-        const available = {{product.variant.inventory_quantity}};
+        const available = {{ section.blocks.settings.product.variant.inventory_quantity}};
         if(enteredValue > available) {
           console.log('No products')
         }
