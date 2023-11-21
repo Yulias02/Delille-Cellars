@@ -74,57 +74,16 @@
       {%- endif -%}
     </div>
 
-    <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      <ul
-        id="Slider-{{ section.id }}"
-        class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
-        role="list"
-        aria-label="{{ 'general.slider.name' | t }}"
-      >
-        {%- for block in section.blocks limit: section.settings.products_to_show -%}
-          <li
-            id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {%
-              render 'custom-card-product',
-              card_product: block.settings.product,
-              media_aspect_ratio: section.settings.image_ratio,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating,
-              show_quick_add: section.settings.enable_quick_add,
-              section_id: section.id,
-              selected_photo: block.settings.product_image,
-              full_width: block.settings.full_width,
-            %}
-          </li>
-
-        {%- else -%}
-          {%- for i in (1..4) -%}
-            <li
-              class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-              {% if settings.animations_reveal_on_scroll %}
-                data-cascade
-                style="--animation-order: {{ forloop.index }};"
-              {% endif %}
-            >
-              {%- assign placeholder_image = 'product-apparel-' | append: forloop.rindex -%}
-              {% render 'custom-card-product',
-                show_vendor: section.settings.show_vendor,
-                placeholder_image: placeholder_image
-              %}
-            </li>
-          {% endfor %}
-        {% endfor %}
-      </ul>
-
+    <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}">
       {%- if show_mobile_slider or show_desktop_slider -%}
         <div class="slider-buttons no-js-hidden">
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.settings.collection.all_products_count | minus: 1 }} </span>
+          </div>
+
           <button
             type="button"
             class="slider-button slider-button--prev"
@@ -132,14 +91,12 @@
             aria-label="{{ 'general.slider.previous_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
-            {% render 'icon-caret' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 24 24">
+              <g fill="#AFB1BD" fill-rule="evenodd">
+                <path d="M56.555 6.283a.968.968 0 0 0-1.368 1.369l3.509 3.509H42.968a.968.968 0 0 0-.961.855L42 12.13c0 .535.433.968.968.968l15.729-.001-3.51 3.51a.968.968 0 0 0-.08 1.277l.08.092a.968.968 0 0 0 1.368 0l5.162-5.162.07-.079A.975.975 0 0 0 62 12.13l-.004.086a.973.973 0 0 0 .004-.067v-.019a.987.987 0 0 0-.118-.463.893.893 0 0 0-.165-.221l.073.083a.973.973 0 0 0-.073-.083zM7.445 6.283a.968.968 0 0 1 1.368 1.369l-3.509 3.509h15.728c.497 0 .906.374.961.855l.007.113a.968.968 0 0 1-.968.968l-15.729-.001 3.51 3.51a.968.968 0 0 1 .08 1.277l-.08.092a.968.968 0 0 1-1.368 0l-5.162-5.162-.07-.079A.975.975 0 0 1 2 12.13l.004.086A.973.973 0 0 1 2 12.148v-.019a.987.987 0 0 1 .118-.463.893.893 0 0 1 .165-.221l-.073.083a.973.973 0 0 1 .073-.083z"/>
+              </g>
+            </svg>
           </button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ products_to_display }}</span>
-          </div>
           <button
             type="button"
             class="slider-button slider-button--next"
@@ -147,10 +104,44 @@
             aria-label="{{ 'general.slider.next_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
-            {% render 'icon-caret' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="20" viewBox="0 0 24 24">
+              <g fill="#AFB1BD" fill-rule="evenodd" style="&#10;    transform: rotate(180deg);&#10;    transform-origin: center;&#10;">
+                <path d="M56.555 6.283a.968.968 0 0 0-1.368 1.369l3.509 3.509H42.968a.968.968 0 0 0-.961.855L42 12.13c0 .535.433.968.968.968l15.729-.001-3.51 3.51a.968.968 0 0 0-.08 1.277l.08.092a.968.968 0 0 0 1.368 0l5.162-5.162.07-.079A.975.975 0 0 0 62 12.13l-.004.086a.973.973 0 0 0 .004-.067v-.019a.987.987 0 0 0-.118-.463.893.893 0 0 0-.165-.221l.073.083a.973.973 0 0 0-.073-.083zM7.445 6.283a.968.968 0 0 1 1.368 1.369l-3.509 3.509h15.728c.497 0 .906.374.961.855l.007.113a.968.968 0 0 1-.968.968l-15.729-.001 3.51 3.51a.968.968 0 0 1 .08 1.277l-.08.092a.968.968 0 0 1-1.368 0l-5.162-5.162-.07-.079A.975.975 0 0 1 2 12.13l.004.086A.973.973 0 0 1 2 12.148v-.019a.987.987 0 0 1 .118-.463.893.893 0 0 1 .165-.221l-.073.083a.973.973 0 0 1 .073-.083z"/>
+              </g>
+            </svg>
           </button>
         </div>
       {%- endif -%}
+
+      <ul
+        id="Slider-{{ section.id }}"
+        class="grid product-grid contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+        role="list"
+        aria-label="{{ 'sections.featured_collection.slider' | t }}"
+      >
+        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="grid__item slider__slide--optimize{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
+          >
+            {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: section.settings.image_ratio,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              show_quick_add: section.settings.enable_quick_add,
+              section_id: section.id
+            %}
+          </li>
+        {%- else -%}
+          {%- for i in (1..4) -%}
+            <li class="grid__item">
+              {% render 'card-product', show_vendor: section.settings.show_vendor %}
+            </li>
+          {%- endfor -%}
+        {%- endfor -%}
+      </ul>
     </slider-component>
 
     {%- if section.settings.show_view_all and more_in_collection -%}
