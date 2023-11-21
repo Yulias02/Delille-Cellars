@@ -45,7 +45,7 @@
   .centered {
      margin: 0 auto; 
   }
-.badge {
+/* .badge {
     display: inline-block;
     font-size: 1.2rem;
     letter-spacing: .1rem;
@@ -58,7 +58,7 @@
 }
 .left {
     text-align: right;
-}
+} */
 @media screen and (max-width: 768px) {
   .featured-prod-list {
     display: table;
