@@ -5,6 +5,8 @@
 <script>
     const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
   const enteredQty = document.querySelector('.qty-input');
+   const productAvailable = {{product.variant.inventory_quantity}};
+        console.log(productAvailable);
     addToCartForms.forEach((form) => {
       form.addEventListener("submit", (event) => {
         event.preventDefault();
