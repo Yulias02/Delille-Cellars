@@ -92,8 +92,8 @@
     "drawer_shadow_vertical_offset": 4,
     "drawer_shadow_blur": 5,
     "badge_position": "top right",
-    "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "accent-2",
+    "badge_corner_radius": 0,
+    "sale_badge_color_scheme": "scheme-96ff0e18-d194-40e9-8fba-86ac22311f40",
     "sold_out_badge_color_scheme": "inverse",
     "brand_description": "",
     "social_facebook_link": "https:\/\/uk-ua.facebook.com\/",
@@ -183,6 +183,39 @@
           "button": "#ffffff",
           "button_label": "#334fb4",
           "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-fc4bd7b6-1f8c-4070-9a3b-e20fad2141c5": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-a2630211-7288-4347-9e9d-f5b2269a92b1": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-96ff0e18-d194-40e9-8fba-86ac22311f40": {
+        "settings": {
+          "background": "#dd1d1d",
+          "background_gradient": "",
+          "text": "#fff",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
           "shadow": "#121212"
         }
       }
