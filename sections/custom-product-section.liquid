@@ -12,6 +12,7 @@
         const enteredValue = qtyEl.value;
         console.log(enteredValue);
         const available = {{ section.blocks.settings.product.variant.inventory_quantity}};
+        console.log(available)
         if(enteredValue > available) {
           console.log('No products')
         }
