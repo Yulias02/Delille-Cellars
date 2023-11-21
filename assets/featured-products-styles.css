@@ -45,6 +45,20 @@
   .centered {
      margin: 0 auto; 
   }
+.badge {
+    border: 1px solid transparent;
+    border-radius: var(--badge-corner-radius);
+    display: inline-block;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    line-height: 1;
+    padding: 0.5rem 1.3rem 0.6rem;
+    text-align: center;
+    background-color: red;
+    border-color: rgba(var(--color-badge-border),var(--alpha-badge-border));
+    color: rgb(var(--color-badge-foreground));
+    word-break: break-word;
+}
 @media screen and (max-width: 768px) {
   .featured-prod-list {
     display: table;
