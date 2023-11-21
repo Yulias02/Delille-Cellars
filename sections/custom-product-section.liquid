@@ -9,12 +9,9 @@
     addToCartForms.forEach((form) => {
       form.addEventListener("submit", (event) => {
         event.preventDefault();
+
         const enteredValue = qtyEl.value;
         console.log(enteredValue);
-        const available = {{ section.block.settings.product.variant.inventory_quantity}};
-        console.log(available)
-
-
 
         const submitButton = form.querySelector('.buy-now');
         const spinner = form.querySelector('.loading-overlay__spinner');
