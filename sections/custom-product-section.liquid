@@ -3,40 +3,40 @@
 {% endfor %}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script>
-    const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
-  const qtyEl = document.querySelector('.qty-input');
+      const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
+    const qtyEl = document.querySelector('.qty-input');
 
-    addToCartForms.forEach((form) => {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const enteredValue = qtyEl.value;
-        console.log(enteredValue);
+      addToCartForms.forEach((form) => {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const enteredValue = qtyEl.value;
+          console.log(enteredValue);
+  console.log({{product.variant.inventory_quantity}});
 
+          const submitButton = form.querySelector('.buy-now');
+          const spinner = form.querySelector('.loading-overlay__spinner');
 
-        const submitButton = form.querySelector('.buy-now');
-        const spinner = form.querySelector('.loading-overlay__spinner');
+            submitButton.classList.add('hidden');
+            spinner.classList.remove('hidden');
 
-          submitButton.classList.add('hidden');
-          spinner.classList.remove('hidden');
-
-        fetch("/cart/add.js", {
-          method: "post",
-          body: new FormData(form),
-        })
-          .then((response) => {
-              return response.json();
+          fetch("/cart/add.js", {
+            method: "post",
+            body: new FormData(form),
           })
-          .then((data) => {
-              spinner.classList.add('hidden');
-              submitButton.classList.remove('hidden');
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-              spinner.classList.add('hidden');
-              submitButton.classList.add('hidden');
-          });
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                spinner.classList.add('hidden');
+                submitButton.classList.remove('hidden');
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+                spinner.classList.add('hidden');
+                submitButton.classList.add('hidden');
+            });
+        });
       });
-    });
 </script>
 {% schema %}
  {
