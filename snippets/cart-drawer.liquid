@@ -251,9 +251,11 @@
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.sale_price' | t }}
                                 </span>
-                                <span class="price price--end">
-                                  {{ item.final_line_price | money }}
-                                </span>
+                                {% if line.variant.compare_at_price != line.final_line_price %}
+                                  <del class="order-list__line.variant.compare_at_price">
+                                    {{- line.variant.compare_at_price | money -}}
+                                  </del>
+                                {% endif %}
                               </div>
                             {%- else -%}
                               <span class="price price--end">
