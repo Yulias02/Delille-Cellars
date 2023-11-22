@@ -229,6 +229,7 @@
                               <svg
                                 aria-hidden="true"
                                 focusable="false"
+                                role="presentation"
                                 class="spinner"
                                 viewBox="0 0 66 66"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -244,19 +245,13 @@
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.regular_price' | t }}
                                 </span>
-                                <span>
-          <s class="price-item price-item--regular">
-            {% if settings.currency_code_enabled %}
-              {{ compare_at_price | money_with_currency }}
-            {% else %}
-              {{ compare_at_price | money }}
-            {% endif %}
-          </s>
-        </span>
+                                <s class="cart-item__old-price price price--end">
+                                  {{ item.original_line_price | money }}
+                                </s>
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.sale_price' | t }}
                                 </span>
-                                 <span class="price price--end">
+                                <span class="price price--end">
                                   {{ item.final_line_price | money }}
                                 </span>
                               </div>
@@ -269,15 +264,15 @@
                             {%- if item.variant.available and item.unit_price_measurement -%}
                               <div class="unit-price caption">
                                 <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-                                {{ item.unit_price | money }}
+                                {{ item.variant.unit_price | money }}
                                 <span aria-hidden="true">/</span>
                                 <span class="visually-hidden"
                                   >&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span
                                 >
-                                {%- if item.unit_price_measurement.reference_value != 1 -%}
-                                  {{- item.unit_price_measurement.reference_value -}}
+                                {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
+                                  {{- item.variant.unit_price_measurement.reference_value -}}
                                 {%- endif -%}
-                                {{ item.unit_price_measurement.reference_unit }}
+                                {{ item.variant.unit_price_measurement.reference_unit }}
                               </div>
                             {%- endif -%}
                           </div>
