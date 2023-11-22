@@ -146,7 +146,18 @@
 
                           {%- if item.original_price != item.final_price -%}
                             <div class="cart-item__discounted-prices">
-                             
+                              <span class="visually-hidden">
+                                {{ 'products.product.price.regular_price' | t }}
+                              </span>
+                              <s class="cart-item__old-price product-option">
+                                {{- item.original_price | money -}}
+                              </s>
+                              <span class="visually-hidden">
+                                {{ 'products.product.price.sale_price' | t }}
+                              </span>
+                              <strong class="cart-item__final-price product-option">
+                                {{ item.final_price | money }}
+                              </strong>
                             </div>
                           {%- else -%}
                             <div class="product-option">
@@ -230,10 +241,24 @@
                           <div class="cart-item__price-wrapper">
                             {%- if item.original_line_price != item.final_line_price -%}
                               <div class="cart-item__discounted-prices">
-                                
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.regular_price' | t }}
+                                </span>
+                                <s class="cart-item__old-price price price--end">
+                                  {{ item.original_line_price | money }}
+                                </s>
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.sale_price' | t }}
+                                </span>
+                                 <span class="price price--end">
+                                  {{ item.final_line_price | money }}
+                                </span>
                               </div>
                             {%- else -%}
-                              
+                              <span class="cart__price">
+{{ item.final_line_price | money }}
+<del>{{ item.original_price | money }}</del>
+</span>
                             {%- endif -%}
 
                             {%- if item.variant.available and item.unit_price_measurement -%}
