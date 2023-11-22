@@ -27,9 +27,9 @@
   assign money_price_min = price_min | money
   assign money_price_max = price_max | money
   if settings.currency_code_enabled
-    assign money_price = price | money
+    assign money_price = price | money_with_currency
     assign money_price_min = price_min
-    assign money_price_max = price_max 
+    assign money_price_max = price_max
   endif
 
   if target == product and product.price_varies
