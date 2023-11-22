@@ -55,7 +55,7 @@
         - div.price__sale: Displayed when a variant is a sale
     {%- endcomment -%}
     <div class="price__regular">
-      {%- if product.quantity_price_breaks_configured? -%}
+      {%- if product.price_varies -%}
         {%- if show_compare_at_price -%}
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
             <span class="visually-hidden visually-hidden--inline">
@@ -79,9 +79,7 @@
       {%- else -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span class="price-item price-item--regular">
-          {% if product.price_varies and template == 'collection' %}
-            From {{ product.price_min | money }} to {{ product.price_max | money }}
-          {%- endif -%}
+          {{ money_price }}
         </span>
       {%- endif -%}
     </div>
