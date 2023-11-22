@@ -161,7 +161,16 @@
                             </div>
                           {%- else -%}
                             <div class="product-option">
-                              {{ item.original_price | money }}
+                              {%- if item.original_price == item.variant.compare_at_price -%}
+                                {{ item.original_price | money }}
+                              {%- else -%}
+                                <span class="price-compare">
+                                  {{ item.variant.compare_at_price | money }}
+                                </span>
+                                <span class="price-origin">
+                                  {{ item.original_price | money }}
+                                </span>
+                              {%- endif -%}
                             </div>
                           {%- endif -%}
 
@@ -252,18 +261,12 @@
                                   {{ 'products.product.price.sale_price' | t }}
                                 </span>
                                 <span class="price price--end">
-                                  {% if line.variant.compare_at_price != line.final_line_price %}
-                                    <del class="order-list__line.variant.compare_at_price">
-                                      {{- line.variant.compare_at_price | money -}}
-                                    </del>
-                                  {% endif %}
+                                  {{ item.final_line_price | money }}
                                 </span>
                               </div>
                             {%- else -%}
                               <span class="price price--end">
-                                <del class="order-list__line.variant.compare_at_price">
-                                  {{- line.variant.compare_at_price | money -}}
-                                </del>
+                                {{ item.original_line_price | money }}
                               </span>
                             {%- endif -%}
 
