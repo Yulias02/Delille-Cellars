@@ -178,9 +178,9 @@
         "title": "Featured products",
         "collection": "frontpage",
         "products_to_show": 3,
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "columns_mobile": "1",
-        "full_width": true,
+        "full_width": false,
         "show_view_all": false,
         "view_all_style": "link",
         "enable_desktop_slider": true,
@@ -222,7 +222,7 @@
         "template--20761380520238__090f684e-6094-4a77-8384-5b031cfdb595-featured_collection-3"
       ],
       "settings": {
-        "heading": "Discover the collection"
+        "heading": "DISCOVER THE COLLECTION"
       }
     }
   },
