@@ -213,7 +213,9 @@
               </div>
             {%- endif -%}
             {% if product.price_min != product.price_max %}
-              <div class="price-range">{{ card_product.price_min | money }} - {{ card_product.price_max | money }}</div>
+              <div class="price-range">
+                {{ products.product.price_min | money }} - {{ products.product.price_max | money }}
+              </div>
             {% endif %}
 
             <p class="shop-now-link">{{ section.settings.button_text }}</p>
