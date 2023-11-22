@@ -261,7 +261,9 @@
                               </div>
                             {%- else -%}
                               <span class="price price--end">
-                                {{ item.original_line_price | money }}
+                                <del class="order-list__line.variant.compare_at_price">
+                                  {{- line.variant.compare_at_price | money -}}
+                                </del>
                               </span>
                             {%- endif -%}
 
