@@ -250,16 +250,14 @@
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.sale_price' | t }}
                                 </span>
-                                <span class="cart__price">
-{{ item.final_line_price | money }}
-<del>{{ item.original_price | money }}</del>
-</span>
+                                <!-- <span class="price price--end">
+                                  {{ item.final_line_price | money }}
+                                </span> -->
                               </div>
                             {%- else -%}
-                              <span class="cart__price">
-{{ item.final_line_price | money }}
-<del>{{ item.original_price | money }}</del>
-</span>
+                              <span class="price price--end">
+                                {{ item.original_line_price | money }}
+                              </span>
                             {%- endif -%}
 
                             {%- if item.variant.available and item.unit_price_measurement -%}
