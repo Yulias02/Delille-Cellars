@@ -120,29 +120,6 @@
               %}
             </li>
           {% endfor %}
-          <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              const videoTimes = {};
-
-              document.querySelectorAll('.card').forEach((card) => {
-                const video = card.querySelector('video');
-
-                card.addEventListener('mouseover', function() {
-                  const productId = card.dataset.productId;
-
-                  video.currentTime = videoTimes[productId] || 0;
-                  video.play();
-                });
-
-                card.addEventListener('mouseout', function() {
-                  const productId = card.dataset.productId;
-                  videoTimes[productId] = video.currentTime;
-
-                  video.pause();
-                });
-              });
-            });
-          </script>
         {% endfor %}
       </ul>
 
