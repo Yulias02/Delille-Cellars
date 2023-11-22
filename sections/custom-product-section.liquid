@@ -4,14 +4,18 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script>
     const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
-  const qtyEl = document.querySelector('.qty-input');
+
 
     addToCartForms.forEach((form) => {
       form.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        const enteredValue = qtyEl.value;
-        console.log(enteredValue);
+         let inputQuantity = parseInt(document.querySelectorAll('.qty-input').value);
+    let availableQuantity = 4;
+  console.log(availableQuantity)
+    if (inputQuantity > availableQuantity) {
+      alert("You can only add " + availableQuantity + " of this item to your cart.");
+    }
 
         const submitButton = form.querySelector('.buy-now');
         const spinner = form.querySelector('.loading-overlay__spinner');
