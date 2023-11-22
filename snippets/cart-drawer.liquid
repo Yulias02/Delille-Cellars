@@ -167,9 +167,11 @@
                                 <span class="price-compare">
                                   {{ item.variant.compare_at_price | money }}
                                 </span>
-                                <span class="price-origin">
-                                  {{ item.original_price | money }}
-                                </span>
+                                <s>
+                                  <span class="price-origin">
+                                    {{ item.original_price | money }}
+                                  </span></s
+                                >
                               {%- endif -%}
                             </div>
                           {%- endif -%}
