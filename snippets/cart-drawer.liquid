@@ -269,6 +269,7 @@
 
                             {%- else -%}
                               <span class="price price--end">
+                                {{ item.variant.compare_at_price | money }}
                                 {{ item.original_line_price | money }}
                               </span>
                             {%- endif -%}
