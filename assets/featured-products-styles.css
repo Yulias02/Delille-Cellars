@@ -25,12 +25,13 @@
   }
 
   .featured-prod-title {
-  font-family: "High Tower" ;
-  text-transform: uppercase;
-  font-size: 37px;
-  line-height: 42px;
   text-align: center;
   margin-top: 0;
+    color: #4b4b4b;
+    font: 400 60px/72px "High Tower" !important;
+    padding-top: 16px;
+    padding-bottom: 21px;
+   
   }
 
   .adding-to-cart,
