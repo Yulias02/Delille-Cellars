@@ -213,13 +213,7 @@
               </div>
             {%- endif -%}
             {% if product.price_min != product.price_max %}
-              <div class="price-range">
-                {% if settings.currency_code_enabled %}
-                  {{ product.price_min | money_with_currency }} - {{ product.price_max | money_with_currency }}
-                {% else %}
-                  {{ product.price_min | money }} - {{ product.price_max | money }}
-                {% endif %}
-              </div>
+              <div class="price-range">{{ product.price_min | money }} - {{ product.price_max | money }}</div>
             {% endif %}
 
             <p class="shop-now-link">{{ section.settings.button_text }}</p>
