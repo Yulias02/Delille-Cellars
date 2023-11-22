@@ -155,9 +155,10 @@
                               <span class="visually-hidden">
                                 {{ 'products.product.price.sale_price' | t }}
                               </span>
-                              <strong class="cart-item__final-price product-option">
-                                {{ item.final_price | money }}
-                              </strong>
+                              <span class="cart__price">
+{{ item.final_line_price | money }}
+<del>{{ item.original_price | money }}</del>
+</span>
                             </div>
                           {%- else -%}
                             <div class="product-option">
@@ -250,9 +251,9 @@
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.sale_price' | t }}
                                 </span>
-                                <!-- <span class="price price--end">
+                                 <span class="price price--end">
                                   {{ item.final_line_price | money }}
-                                </span> -->
+                                </span>
                               </div>
                             {%- else -%}
                               <span class="price price--end">
