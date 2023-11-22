@@ -267,7 +267,7 @@
                                 </span>
                               </div>
                             {%- else -%}
-                              <div class="product-option">
+                              <span class="price price--end">
                                 {%- if item.original_price == item.variant.compare_at_price -%}
                                   {{ item.original_price | money }}
                                 {%- else -%}
@@ -280,7 +280,7 @@
                                     {{ item.original_price | money }}
                                   </span>
                                 {%- endif -%}
-                              </div>
+                              </span>
                             {%- endif -%}
 
                             {%- if item.variant.available and item.unit_price_measurement -%}
