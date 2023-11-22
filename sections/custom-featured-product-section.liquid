@@ -409,7 +409,7 @@
         form.addEventListener("submit", (event) => {
           event.preventDefault();
     let inputQuantity = parseInt(document.querySelectorAll('.qty-input').value);
-    let availableQuantity = parseInt({{ product.variant.inventory_quantity }});
+    let availableQuantity = 4;
   console.log(availableQuantity)
     if (inputQuantity > availableQuantity) {
       alert("You can only add " + availableQuantity + " of this item to your cart.");
