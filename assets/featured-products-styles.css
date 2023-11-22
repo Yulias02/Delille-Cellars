@@ -45,9 +45,9 @@
   .centered {
      margin: 0 auto; 
   }
-.slider-item:first-child {
+/* .slider-item:first-child {
   margin-left: 0 !important;
-}
+} */
 .grid-centered {
   justify-content: center;
 }
