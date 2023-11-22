@@ -164,9 +164,11 @@
                               {%- if item.original_price == item.variant.compare_at_price -%}
                                 {{ item.original_price | money }}
                               {%- else -%}
-                                <span class="price-compare">
-                                  {{ item.variant.compare_at_price | money }}
-                                </span>
+                                <s>
+                                  <span class="price-compare">
+                                    {{ item.variant.compare_at_price | money }}
+                                  </span></s
+                                >
                                 <span class="price-origin">
                                   {{ item.original_price | money }}
                                 </span>
@@ -264,10 +266,14 @@
                                   {{ item.final_line_price | money }}
                                 </span>
                               </div>
+
                             {%- else -%}
-                              <span class="price price--end">
-                                {{ item.original_line_price | money }}
-                              </span>
+                              <div class="price price--end">
+                                <s
+                                  ><span> {{ item.variant.compare_at_price | money }}</span></s
+                                >
+                                <span>{{ item.original_line_price | money }}</span>
+                              </div>
                             {%- endif -%}
 
                             {%- if item.variant.available and item.unit_price_measurement -%}
