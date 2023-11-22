@@ -212,13 +212,6 @@
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
               </div>
             {%- endif -%}
-
-            {% if product.price_min != product.price_max %}
-              <div class="price-range">
-                {{ card_product.product.price_min | money }} - {{ card_product.product.price_max | money }}
-              </div>
-            {% endif %}
-
             <p class="shop-now-link">{{ section.settings.button_text }}</p>
           </div>
         </div>
