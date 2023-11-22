@@ -244,9 +244,10 @@
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.regular_price' | t }}
                                 </span>
-                                <s class="cart-item__old-price price price--end">
-                                  {{ item.original_line_price | money }}
-                                </s>
+                                <span class="cart__price">
+                                  {{ item.final_line_price | money }}
+                                    <del>{{ item.original_price | money }}</del>
+                                  </span>
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.sale_price' | t }}
                                 </span>
