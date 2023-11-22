@@ -31,7 +31,6 @@
         {% if horizontal_class %} card--horizontal{% endif %}
       "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
-      data-id="{{ card_product.id }}"
     >
       <div
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
