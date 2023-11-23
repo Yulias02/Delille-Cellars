@@ -64,6 +64,11 @@
     display: table;
   }
 }
+@media screen and (max-width: 430px) {
+  featured-prod-title   {
+    font-size: 25px; 
+  }
+}
 
 
 
