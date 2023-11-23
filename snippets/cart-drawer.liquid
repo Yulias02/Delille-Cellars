@@ -274,8 +274,15 @@
                                     {{ item.variant.compare_at_price | money }}
                                   </span></s
                                 >
+
                                 <span>{{ item.original_line_price | money }}</span>
                               </div>
+                              <script>
+                                let myLiquidVariable = {{ item.original_line_price | money }};
+
+
+                                console.log(myLiquidVariable);
+                              </script>
                             {%- endif -%}
 
                             {%- if item.variant.available and item.unit_price_measurement -%}
