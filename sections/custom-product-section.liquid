@@ -11,7 +11,7 @@
         event.preventDefault();
 
          let inputQuantity = parseInt(document.querySelectorAll('.qty-input').value);
-    let availableQuantity = Number({{ product.selected_or_first_available_variant.inventory_quantity }});
+    let availableQuantity = ParseInt({{ product.selected_or_first_available_variant.inventory_quantity }});
   console.log(availableQuantity)
     if (inputQuantity > availableQuantity) {
       alert("You can only add " + availableQuantity + " of this item to your cart.");
