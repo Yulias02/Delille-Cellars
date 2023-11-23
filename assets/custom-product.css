@@ -1,9 +1,10 @@
  .product-form__error-message-wrapper:not([hidden]) {
-  display: flex;
-  align-items: flex-start;
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
+    font-size: 1.2rem;
+    position: absolute;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+}
 }
 
 .product-form__error-message-wrapper svg {
