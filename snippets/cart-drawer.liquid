@@ -353,34 +353,6 @@
                                     {% render 'icon-plus' %}
                                   </button>
                                 </quantity-input>
-                                <script>
-                                  document.addEventListener('DOMContentLoaded', function() {
-                                    // Find the quantity input
-                                    var quantityInput = document.querySelector('.quantity__input');
-
-                                    // Find the price elements
-                                    var originalPrice = document.querySelector('.price span');
-                                    var discountedPrice = document.querySelector('.price s span');
-
-                                    // Initial price values
-                                    var initialOriginalPrice = parseFloat(originalPrice.textContent.replace('$', '').replace(',', ''));
-                                    var initialDiscountedPrice = parseFloat(discountedPrice.textContent.replace('$', '').replace(',', ''));
-
-                                    // Add an event listener to the quantity input
-                                    quantityInput.addEventListener('input', function() {
-                                      // Get the current quantity value
-                                      var quantity = parseInt(this.value);
-
-                                      // Update the prices based on the quantity
-                                      var newOriginalPrice = initialOriginalPrice * quantity;
-                                      var newDiscountedPrice = initialDiscountedPrice * quantity;
-
-                                      // Display the updated prices
-                                      originalPrice.textContent = '$' + newOriginalPrice.toFixed(2);
-                                      discountedPrice.textContent = '$' + newDiscountedPrice.toFixed(2);
-                                    });
-                                  });
-                                </script>
                               </div>
                               <cart-remove-button
                                 id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
