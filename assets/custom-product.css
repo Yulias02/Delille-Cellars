@@ -1,7 +1,4 @@
  .product-form__error-message-wrapper:not([hidden]) {
-   display: flex;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
     font-size: 1.2rem;
     position: absolute;
     background-color: #fff;
@@ -11,7 +8,7 @@
     bottom: 14px;
     left: 22px;
 }
-}
+
 
 .product-form__error-message-wrapper svg {
   flex-shrink: 0;
