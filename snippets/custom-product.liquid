@@ -32,6 +32,7 @@
             data-type: 'add-to-cart-form'
           -%}
             <label for="qty" class="qty-label">QTY</label>
+          
             <!-- <input
               class="qty-input"
               type="number"
@@ -41,6 +42,7 @@
               max="100"
               value="1"
             > -->
+
 <div
                 id="Quantity-Form-{{ section.id }}"
                 class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
@@ -52,14 +54,9 @@
                 {% # theme-check-enable %}
                 <div class="price-per-item__container">
                   <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
-                    <button class="quantity__button no-js-hidden" name="minus" type="button">
-                      <span class="visually-hidden">
-                        {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
-                      </span>
-                      {% render 'icon-minus' %}
-                    </button>
+                   
                     <input
-                      class="quantity__input"
+                      class="quantity__input qty-input"
                       type="number"
                       name="quantity"
                       id="Quantity-{{ section.id }}"
@@ -74,14 +71,12 @@
                       value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                       form="{{ product_form_id }}"
                     />
-                    <button class="quantity__button no-js-hidden" name="plus" type="button">
-                      <span class="visually-hidden">
-                        {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
-                      </span>
-                      {% render 'icon-plus' %}
-                    </button>
+                   
                   </quantity-input>
-            <div>
+            </div>
+            </div>
+
+          
           
             <input
               type="hidden"
