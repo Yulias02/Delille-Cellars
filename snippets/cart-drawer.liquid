@@ -277,14 +277,13 @@
 
                                 <span>{{ item.original_line_price | money }}</span>
                               </div>
-                              <script>
-                                let myLiquidVariable = {{ item.original_line_price | money }};
-
-
-                                console.log(myLiquidVariable);
-                              </script>
                             {%- endif -%}
+                            <script>
+                              let myLiquidVariable = {{ item.original_line_price | money }};
 
+
+                              console.log(myLiquidVariable);
+                            </script>
                             {%- if item.variant.available and item.unit_price_measurement -%}
                               <div class="unit-price caption">
                                 <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
