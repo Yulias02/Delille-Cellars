@@ -3,6 +3,7 @@
     <h3 class="new-wine-header">
       {{ card_product.title | escape }}
     </h3>
+    {{ product.selected_or_first_available_variant.inventory_quantity }}
     <img
       class="new-wine-img"
       src="{{ card_product.featured_image | image_url: width: 1500 }}"
