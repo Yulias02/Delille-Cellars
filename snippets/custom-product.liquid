@@ -49,8 +49,11 @@
             >
             <div class="product-form__error-message-wrapper" role="alert" hidden>
               {% render 'icon-error' %}
-              <span class="">
-                {{- 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' -}}
+              <span>
+                {{-
+                  'sections.cart.cart_quantity_error_html'
+                  | t: quantity: '[card_product.first_available_variant.inventory]'
+                -}}
               </span>
             </div>
             <button
