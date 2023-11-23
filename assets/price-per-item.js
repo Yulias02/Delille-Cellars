@@ -79,7 +79,7 @@ if (!customElements.get('price-per-item')) {
             break;
           }
         }
-        const compareAtPriceElement = document.querySelector(`s .variant-item__price-per-item span`);
+        const compareAtPriceElement = document.querySelector(`.price-compare`);
         if (compareAtPriceElement) {
           // Update the compare-at price based on the current quantity
           for (let pair of this.qtyPricePairs) {
