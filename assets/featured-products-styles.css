@@ -6,12 +6,12 @@
   }
 .slider-button--next {
   position: absolute;
-      bottom: 289px;
-    left: 836px;;
+      bottom: 306px;
+    left: 790px;;
 }
 .slider-button--prev {
   position: absolute;
-  bottom: 289px;
+  bottom: 306px;
     left: 6px;
 }
 }
