@@ -2,6 +2,7 @@
   {% render 'custom-product', placeholder_image: placeholder_image, card_product: block.settings.product %}
 {% endfor %}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 <script>
     const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
 
