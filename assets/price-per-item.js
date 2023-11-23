@@ -79,6 +79,16 @@ if (!customElements.get('price-per-item')) {
             break;
           }
         }
+        const compareAtPriceElement = document.querySelector(`s .variant-item__price-per-item span`);
+        if (compareAtPriceElement) {
+          // Update the compare-at price based on the current quantity
+          for (let pair of this.qtyPricePairs) {
+            if (this.currentQtyForVolumePricing >= pair[0]) {
+              compareAtPriceElement.innerHTML = window.quickOrderListStrings.each.replace('[money]', pair[1]);
+              break;
+            }
+          }
+        }
       }
 
       getCartQuantity(updatedCartQuantity) {
