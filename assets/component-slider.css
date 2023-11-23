@@ -371,7 +371,7 @@ slider-component.slider-component-full-width {
 }
 
 .slider-button .icon {
-  height: 30px;
+  height: 0.6rem;
 }
 
 .slider-button[disabled] .icon {
