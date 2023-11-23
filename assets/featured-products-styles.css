@@ -6,8 +6,12 @@
   }
 .slider-button--next {
   position:relative;
+  bottom: 362px;
+  left: 395px;
 }
-
+.slider-button--next {
+  position: absolute;
+}
 
   .quick-add {
   width: 100%;
