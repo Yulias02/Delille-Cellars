@@ -5,11 +5,11 @@
   text-align: center;
   }
 .slider-button--next {
-  position:relative;
+  position: absolute;
   bottom: 362px;
   left: 395px;
 }
-.slider-button--next {
+.slider-button--prev {
   position: absolute;
 }
 
