@@ -25,7 +25,7 @@ if (!customElements.get('quick-add-modal')) {
           .then((response) => response.text())
           .then((responseText) => {
             const responseHTML = new DOMParser().parseFromString(responseText, 'text/html');
-            this.productElement = responseHTML.querySelector('.modal-pr');
+            this.productElement = responseHTML.querySelector('section[id^="MainProduct-"]');
             this.preventDuplicatedIDs();
             this.removeDOMElements();
             this.setInnerHTML(this.modalContent, this.productElement.innerHTML);
@@ -37,7 +37,7 @@ if (!customElements.get('quick-add-modal')) {
             if (window.ProductModel) window.ProductModel.loadShopifyXR();
 
             this.removeGalleryListSemantic();
-            this.updateImageSizes();
+            this.updateImageSizes(); 
             this.preventVariantURLSwitching();
             super.show(opener);
           })
