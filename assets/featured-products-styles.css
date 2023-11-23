@@ -4,7 +4,12 @@
   width: 100%;
   text-align: center;
   }
-
+.slider-button--next {
+  position:relative;
+}
+.slider-button--prev {
+  position: relative;
+}
 
   .quick-add {
   width: 100%;
