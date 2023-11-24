@@ -254,9 +254,13 @@
                   </div>
                 </button>
               </modal-opener>
+
               <div class="popup-modal" data-menu>
-                <p>hello</p>
+                <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+                  {% render 'product-media-gallery', variant_images: variant_images %}
+                </div>
               </div>
+
               <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
                 <div
                   role="dialog"
