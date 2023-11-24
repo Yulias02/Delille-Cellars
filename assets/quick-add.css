@@ -4,12 +4,10 @@
   margin: 0 0 1rem;
   z-index: 1;
 }
-.modal-popup {
+/* .modal-popup {
   background-color: #fff;
   box-shadow:  0px -1px 43px -18px rgba(0,0,0,0.75);
-  
-  
-}
+} */
 .quick-add-modal {
   box-sizing: border-box;
   opacity: 0;
