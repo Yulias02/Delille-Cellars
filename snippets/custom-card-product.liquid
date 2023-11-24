@@ -255,10 +255,6 @@
                 </button>
               </modal-opener>
 
-              <div class="popup-modal" data-menu>
-                <h1>{{ product.title | escape }}</h1>
-              </div>
-
               <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
                 <div
                   role="dialog"
@@ -276,7 +272,7 @@
                   >
                     {% render 'icon-close' %}
                   </button>
-                  <!-- <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info"></div> -->
+                  <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info"></div>
                 </div>
               </quick-add-modal>
 
