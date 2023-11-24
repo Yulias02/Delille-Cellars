@@ -4,7 +4,7 @@
   margin: 0 0 1rem;
   z-index: 1;
 }
-
+/*
 .card--card .quick-add {
   margin: 0 1.3rem 1rem;
 }
@@ -19,7 +19,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  /* background: rgba(var(--color-foreground), 0.2); */
+  background: rgba(var(--color-foreground), 0.2);
   height: 100%;
 }
 
@@ -42,12 +42,12 @@
   transform: translateX(-50%);
   margin: var(--modal-height-offset) auto 0;
   width: 100%;
-  /* background-color: rgb(var(--color-background)); */
+  background-color: rgb(var(--color-background));
   overflow: hidden;
   max-width: var(--page-width);
   width: calc(100% - 3rem);
 }
-/*
+
 @media screen and (min-width: 750px) {
   .quick-add-modal__content {
     --modal-height-offset: 10rem;
