@@ -1,4 +1,4 @@
- /*.quick-add {
+ .quick-add {
   position: relative;
   grid-row-start: 4;
   margin: 0 0 1rem;
@@ -23,7 +23,7 @@
   height: 100%;
 }
 
-.quick-add-modal[open] {
+/*.quick-add-modal[open] {
   opacity: 1;
   visibility: visible;
   z-index: 101;
