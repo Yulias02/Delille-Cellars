@@ -256,13 +256,7 @@
               </modal-opener>
 
               <div class="popup-modal" data-menu>
-                {%- form 'product',
-                  card_product,
-                  id: product_form_id,
-                  class: 'prod-form',
-                  novalidate: 'novalidate',
-                  data-type: 'add-to-cart-form'
-                -%}{%- endform -%}
+                <h1>{{ product.title | escape }}</h1>
               </div>
 
               <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
