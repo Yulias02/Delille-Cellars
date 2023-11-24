@@ -23,7 +23,7 @@
   height: 100%;
 }
 
-/*.quick-add-modal[open] {
+.quick-add-modal[open] {
   opacity: 1;
   visibility: visible;
   z-index: 101;
@@ -47,7 +47,7 @@
   max-width: var(--page-width);
   width: calc(100% - 3rem);
 }
-
+/*
 @media screen and (min-width: 750px) {
   .quick-add-modal__content {
     --modal-height-offset: 10rem;
