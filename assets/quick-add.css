@@ -48,7 +48,7 @@
   width: calc(100% - 3rem);
 }
 .pad {
-  background-color: tranparent;
+  background-color: transparent;
 }
 @media screen and (min-width: 750px) {
   .quick-add-modal__content {
