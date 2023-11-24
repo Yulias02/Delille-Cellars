@@ -184,7 +184,7 @@ class QuantityInput extends HTMLElement {
     event.preventDefault();
     const previousValue = this.input.value;
     const oldPrise = this.querySelector('.compare-price');
-    console.log(parseIn(oldPrise))
+    console.log(Number(oldPrise))
 
     event.target.name === 'plus' ? this.input.stepUp() : this.input.stepDown();
     if (previousValue !== this.input.value) this.input.dispatchEvent(this.changeEvent);
