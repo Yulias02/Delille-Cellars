@@ -22,7 +22,7 @@
   background: rgba(var(--color-foreground), 0.2);
   height: 100%;
 }
-
+/*
 .quick-add-modal[open] {
   opacity: 1;
   visibility: visible;
