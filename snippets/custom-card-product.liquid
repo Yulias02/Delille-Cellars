@@ -255,7 +255,7 @@
                 </button>
               </modal-opener>
 
-              <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
+              <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal" data-popup>
                 <div
                   role="dialog"
                   aria-label="{{ 'products.product.choose_product_options' | t: product_name: card_product.title | escape }}"
@@ -272,7 +272,7 @@
                   >
                     {% render 'icon-close' %}
                   </button>
-                  <div class="modal-popup hidden" data-popup>
+                  <div class="modal-popup hidden">
                     <h1>product title</h1>
                     <p>price</p>
                     <p>image</p>
