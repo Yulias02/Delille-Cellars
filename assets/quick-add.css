@@ -20,6 +20,7 @@
   height: 100%;
   
 }
+/*
 .quick-add-modal {
   box-sizing: border-box;
   opacity: 0;
@@ -33,7 +34,7 @@
   background: rgba(var(--color-foreground), 0.2);
   height: 100%;
 }
-/*
+
 .card--card .quick-add {
   margin: 0 1.3rem 1rem;
 }
