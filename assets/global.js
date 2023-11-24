@@ -184,7 +184,7 @@ class QuantityInput extends HTMLElement {
     event.preventDefault();
     const previousValue = this.input.value;
     const oldPrise = this.querySelector('.compare-price');
-    const priceValue = {{ item.variant.compare_at_price | money }};
+    const priceValue = '{{ item.variant.compare_at_price | money }}';
     console.log(priceValue)
 
     event.target.name === 'plus' ? this.input.stepUp() : this.input.stepDown();
