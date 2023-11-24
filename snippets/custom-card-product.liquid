@@ -255,6 +255,11 @@
                 </button>
               </modal-opener>
 
+              <div class="modal-popup hidden" data-popup>
+                <h1>product title</h1>
+                <p>price</p>
+                <p>image</p>
+              </div>
               <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
                 <div
                   role="dialog"
@@ -272,12 +277,7 @@
                   >
                     {% render 'icon-close' %}
                   </button>
-                  <div class="modal-popup hidden" data-popup>
-                    <h1>product title</h1>
-                    <p>price</p>
-                    <p>image</p>
-                  </div>
-                  <!-- <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info"></div> -->
+                  <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info"></div>
                 </div>
               </quick-add-modal>
             {%- else -%}
