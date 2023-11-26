@@ -119,16 +119,7 @@
                       </div>
                     {%- else -%}
                       <div class="product-option">
-                        {%- if item.original_price == item.variant.compare_at_price -%}
-                          {{ item.original_price | money }}
-                        {%- else -%}
-                          <span class="price-compare">
-                            {{ item.variant.compare_at_price | money }}
-                          </span>
-                          <span class="price-origin">
-                            {{ item.original_price | money }}
-                          </span>
-                        {%- endif -%}
+                        {{ item.original_price | money }}
                       </div>
                     {%- endif -%}
 
@@ -206,12 +197,12 @@
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
-                          <dd class="price price--end">
+                          <dd class="price price--end1">
                             {{ item.final_line_price | money }}
                           </dd>
                         </dl>
                       {%- else -%}
-                        <span class="price price--end">
+                        <span class="price price--end2">
                           {{ item.original_line_price | money }}
                         </span>
                       {%- endif -%}
