@@ -119,7 +119,16 @@
                       </div>
                     {%- else -%}
                       <div class="product-option">
-                        {{ item.original_price | money }}
+                        {%- if item.original_price == item.variant.compare_at_price -%}
+                          {{ item.original_price | money }}
+                        {%- else -%}
+                          <span class="price-compare">
+                            {{ item.variant.compare_at_price | money }}
+                          </span>
+                          <span class="price-origin">
+                            {{ item.original_price | money }}
+                          </span>
+                        {%- endif -%}
                       </div>
                     {%- endif -%}
 
@@ -430,11 +439,6 @@
                           </dd>
                         </dl>
                       {%- else -%}
-                        {% assign total_cart_compare_price = 0 %}
-                        {% assign compare_price = item.variant.compare_at_price | times: item.quantity %} 
-                        <span class="price-compare">
-                          {{ compare_price | money }}
-                        </span>
                         <span class="price price--end">
                           {{ item.original_line_price | money }}
                         </span>
