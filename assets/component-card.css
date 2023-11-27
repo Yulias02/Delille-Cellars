@@ -181,7 +181,7 @@
   object-position: center center;
   width: 100%;
 }
-.image-stretched {
+.media > .image-stretched {
   height: 100%;
   object-fit: cover;
   object-position: center center;
