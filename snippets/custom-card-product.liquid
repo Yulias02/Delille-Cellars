@@ -56,7 +56,7 @@
                 alt="{{ card_product.featured_media.alt | escape }}"
                 class="
                   motion-reduce {% if settings.stretch_image == false %}
-                    image-stretched
+                    image-not-stretched
                   {% endif %}
                 "
                 {% unless lazy_load == false %}
