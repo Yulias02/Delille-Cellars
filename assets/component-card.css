@@ -169,10 +169,7 @@
 .card__badge.right {
   justify-self: flex-end;
 }
-.cart_badge_unstretched {
-  align-self: center;
-    grid-row-start: 1;
-} 
+
 .card:not(.card--horizontal)>.card__content>.card__badge {
   margin: 1.3rem;
 }
