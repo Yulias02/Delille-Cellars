@@ -1,15 +1,14 @@
-/* .quick-add__submit {
+.quick-add-button {
       position: absolute;
     bottom: 20px;
-} */
-
-.quick-add {
-   position: absolute; 
-   bottom: 20px;
-  /* grid-row-start: 4;
-  margin: 0 0 1rem;
-  z-index: 1; */
 }
+
+/* .quick-add {
+   position: relative; 
+  grid-row-start: 4;
+  margin: 0 0 1rem;
+  z-index: 1;
+} */
  /* .modal-popup {
   background-color: #fff;
   box-shadow:  0px -1px 43px -18px rgba(0,0,0,0.75);
