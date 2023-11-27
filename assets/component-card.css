@@ -187,7 +187,7 @@
   object-position: center center;
   width: 100%;
 }
-.image-not-stretched {
+.media .image-not-stretched {
   height: 100%;
   object-fit: contain;
   object-position: center center;
