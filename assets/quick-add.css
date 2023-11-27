@@ -24,6 +24,19 @@
   visibility: visible;
   z-index: 101;
 }
+.quick-add-modal__content {
+  --modal-height-offset: 3.2rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: var(--modal-height-offset) auto 0;
+  width: 100%;
+  background-color: rgb(var(--color-background));
+  overflow: hidden;
+  max-width: var(--page-width);
+  width: calc(100% - 3rem);
+}
  /* .modal-popup {
   background-color: #fff;
   box-shadow:  0px -1px 43px -18px rgba(0,0,0,0.75);
