@@ -47,7 +47,7 @@
  .grid-centered {
   justify-content: center;
 } 
- .shop-now-overlay {
+.media .shop-now-overlay {
   background-color: #d1c0a7;
     padding: 10px 20px;
     text-align: center;
