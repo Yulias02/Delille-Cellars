@@ -357,10 +357,7 @@
           </div>
         {%- endif -%}
         <div
-          class="
-            card__badge
-            {% if section.settings.stretch_image == false %}cart_badge_unstretched {% else %}  {{ settings.badge_position }} {% endif %}
-          "
+          class="            card__badge {{ settings.badge_position }}"
         >
           {%- if card_product.available == false -%}
             <span
