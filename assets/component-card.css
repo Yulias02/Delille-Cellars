@@ -202,6 +202,8 @@
 .card__heading {
   margin-top: 0;
   margin-bottom: 0;
+  text-align: center;
+  font-size: 16px;
 }
 
 .card__heading:last-child {
@@ -367,6 +369,8 @@
 
 .card-information {
   width: 100%;
+  text-align: center;
+    font-size: 16px;
 }
 
 .card-information>* {
