@@ -18,6 +18,9 @@
     padding-right: 40px;
     padding-left: 40px;
   }
+  .title-margin {
+    margin: 0;
+  }
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -33,7 +36,7 @@
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %} cart-margin">
-  <div class="title-wrapper-with-link">
+  <div class="title-wrapper-with-link title-margin">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
     <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
   </div>
