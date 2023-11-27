@@ -279,6 +279,10 @@
 
                                 <span>{{ item.original_line_price | money }}</span>
                               </div>
+                            {%- else -%}
+                              <span class="price price--end">
+                                {{ item.final_line_price | money }}
+                              </span>
                             {%- endif -%}
 
                             {%- if item.variant.available and item.unit_price_measurement -%}
