@@ -220,5 +220,6 @@ cart-items {
   .cart__ctas {
     display: flex;
     gap: 1rem;
+    align-items: flex-end;
   }
 }
