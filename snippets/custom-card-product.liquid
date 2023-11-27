@@ -358,7 +358,7 @@
         {%- endif -%}
         <div
           class="
-                        card__badge {{ settings.badge_position }} {% if section.settings.stretch_image == false %}cart_badge_unstretched{% endif %}
+                                {% if section.settings.stretch_image == false %}cart_badge_unstretched {% else %} card__badge {{ settings.badge_position }} {% endif %}
           "
         >
           {%- if card_product.available == false -%}
