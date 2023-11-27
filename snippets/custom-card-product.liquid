@@ -358,9 +358,10 @@
         {%- endif -%}
         <div
           class="
-            card__badge {{ settings.badge_position }} {% if section.settings.stretch_image == false %}
+            {% if section.settings.stretch_image == false %}
               cart_badge_unstretched
             {% endif %}
+            card__badge {{ settings.badge_position }}
           "
         >
           {%- if card_product.available == false -%}
