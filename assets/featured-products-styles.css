@@ -53,7 +53,7 @@
     text-align: center;
     font-weight: 500;
     font-size: 18px;
- top: 127px !important;
+ top: 127px !important; 
 transform: translateY(100%);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
