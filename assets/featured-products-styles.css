@@ -47,6 +47,22 @@
  .grid-centered {
   justify-content: center;
 } 
+.shop-now-overlay {
+  background-color: #f7e7d0;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+position: absolute;
+top: 0;
+transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product-card-wrapper:hover .shop-now-overlay {
+   transform: translate(0);
+}
+
 @media screen and (max-width: 768px) {
   .featured-prod-list {
     display: table;
