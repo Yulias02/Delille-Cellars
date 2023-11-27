@@ -53,13 +53,11 @@
     text-align: center;
     font-weight: 500;
     font-size: 18px;
-position: absolute !important;
 top: 0;
 transform: translateY(100%);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
-  height: 50px !important;
 }
 .product-card-wrapper:hover .shop-now-overlay {
    transform: translate(0);
