@@ -44,9 +44,9 @@
 .slider-item:first-child {
   margin-left: 0 !important;
 }
-.grid-centered {
+/* .grid-centered {
   justify-content: center;
-}
+} */
 @media screen and (max-width: 768px) {
   .featured-prod-list {
     display: table;
