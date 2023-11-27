@@ -1,4 +1,9 @@
- /* .quick-add {
+.quick-add-button {
+      position: absolute;
+    bottom: 20px;
+}
+
+/* .quick-add {
    position: relative; 
   grid-row-start: 4;
   margin: 0 0 1rem;
