@@ -29,8 +29,8 @@
   id="main-cart-footer"
   data-id="{{ section.id }}"
 >
-  <div class="cart-footer-position">
-    <div class="cart__footer section-{{ section.id }}-padding">
+  <div>
+    <div class="cart__footer section-{{ section.id }}-padding cart-footer-position">
       {%- if settings.show_cart_note -%}
         <cart-note class="cart__note field">
           <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
