@@ -57,6 +57,7 @@
 transform: translateY(100%);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  height: 30px !important;
 }
 .product-card-wrapper:hover .shop-now-overlay {
    transform: translate(0);
