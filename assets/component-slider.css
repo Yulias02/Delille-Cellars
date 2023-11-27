@@ -182,7 +182,7 @@ slider-component.slider-component-full-width {
   }
 
   .slider-component-full-width .slider--desktop .slider__slide:first-child {
-    margin-left: 43.5rem;
+    margin-left: 1.5rem;
     scroll-margin-left: 1.5rem;
   }
 
