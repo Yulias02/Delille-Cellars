@@ -181,7 +181,9 @@
   object-position: center center;
   width: 100%;
 }
-
+.image-stretched {
+  object-fit: contain;
+}
 .card__inner:not(.ratio)>.card__content {
   height: 100%;
 }
