@@ -48,7 +48,7 @@
   max-width: var(--page-width);
   width: calc(100% - 3rem);
 }
-
+/*
 @media screen and (min-width: 750px) {
   .quick-add-modal__content {
     --modal-height-offset: 10rem;
@@ -89,7 +89,7 @@
   max-width: 100%;
   width: 100%;
 }
-/*
+
 @media screen and (max-width: 749px) {
   quick-add-modal .slider .product__media-item.grid__item {
     margin-left: 1.5rem;
