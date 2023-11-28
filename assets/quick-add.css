@@ -44,7 +44,7 @@
    background: rgba(var(--color-foreground), 0.8);
  }
 .quick-add-hidden {
-  display: none;
+  display: none !important;
 }
 /* .quick-add-modal .scroll-trigger.scroll-trigger {
   animation: none;
