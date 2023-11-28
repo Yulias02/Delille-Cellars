@@ -70,12 +70,23 @@ transform: translateY(100%);
   .featured-prod-list {
      margin-top: 3883px !important; 
   }
- 
+}
+@media screen and (max-width: 585px) {
+  .featured-prod-list {
+     margin-top: 4077px !important; 
+  }
+}
+@media screen and (max-width: 585px) {
+  .featured-prod-list {
+     margin-top: 3858px !important;
+    font-size: 25px !important; 
+    line-height: 27px !important;
+  }
 }
 @media screen and (max-width: 430px) {
   .featured-prod-title   {
-    font-size: 25px !important; 
-    line-height: 27px !important;
+     margin-top: 3899px !important;
+   
   }
 }
 
