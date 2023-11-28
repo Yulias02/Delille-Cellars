@@ -24,13 +24,13 @@
   height: 100%;
 }
 
-/* .quick-add-modal[open] {
+.quick-add-modal[open] {
   opacity: 1;
   visibility: visible;
   z-index: 101;
 }
 
-.quick-add-modal .scroll-trigger.scroll-trigger {
+/* .quick-add-modal .scroll-trigger.scroll-trigger {
   animation: none;
   opacity: 1;
 } */
