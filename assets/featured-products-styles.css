@@ -67,7 +67,6 @@ transform: translateY(100%);
 
 @media screen and (max-width: 585px) {
   .featured-prod-list {
-   
     font-size: 25px !important; 
     line-height: 27px !important;
   }
