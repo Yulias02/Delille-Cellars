@@ -72,9 +72,7 @@ transform: translateY(100%);
 }
 }
 @media screen and (max-width: 768px) {
-  .featured-prod-list {
-    display: flex;
-  }
+ 
 }
 @media screen and (max-width: 430px) {
   .featured-prod-title   {
