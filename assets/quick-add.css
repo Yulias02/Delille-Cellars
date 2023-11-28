@@ -15,8 +15,7 @@
   margin: 0 auto;
   height: 100%;
   width: 100%;
-  background: rgba(var(--color-foreground), 0.2);
-  
+  background: rgba(var(--color-foreground), 0.2)
 }
 
 .quick-add-modal[open] {
@@ -29,7 +28,18 @@
   width: 100%;
   overflow: hidden;
   max-width: var(--page-width);
-
+}
+.quick-add-modal__toggle {
+    position: fixed;
+    right: 431px;
+    top: 0px;
+    width: 48px;
+    border: none;
+    padding: 10px;
+    background: rgba(var(--color-foreground), 0.5);
+    color: #FFF;
+    cursor: pointer;
+}
   
 /* .quick-add-modal .scroll-trigger.scroll-trigger {
   animation: none;
