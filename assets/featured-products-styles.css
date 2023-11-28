@@ -67,7 +67,7 @@ transform: translateY(100%);
 
 @media screen and (max-width: 423px) {
   .featured-prod-title {
-    font-size: 25px ; 
+    font-size: 25px !important; 
     line-height: 27px !important;
   }
 }
