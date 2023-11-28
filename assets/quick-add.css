@@ -31,14 +31,12 @@
 } */
 
 .quick-add-modal__content {
-  --modal-height-offset: 3.2rem;
-  position: absolute;
+ 
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  margin: var(--modal-height-offset) auto 0;
+  margin: 0 auto;
   width: 100%;
-  background-color: rgb(var(--color-background));
   overflow: hidden;
   max-width: var(--page-width);
   width: calc(100% - 3rem);
