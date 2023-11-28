@@ -38,7 +38,7 @@
     width: 48px;
     border: none;
     padding: 10px;
-    background: rgba(var(--color-foreground), 0.5);
+    background: rgba(var(--color-foreground), 0.3);
     color: #FFF;
     cursor: pointer;
 }
@@ -50,6 +50,15 @@ quick-add-modal .product__modal-opener:not(.product__modal-opener--image),
 quick-add-modal .product__media-item:not(:first-child) {
   display: none !important;
 }
+
+@media screen and (min-width: 990px) {
+  .quick-add-modal__content {
+    width: 80%
+  }
+}
+
+
+
 /* .quick-add-modal .scroll-trigger.scroll-trigger {
   animation: none;
   opacity: 1;
