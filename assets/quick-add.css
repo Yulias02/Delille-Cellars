@@ -11,6 +11,22 @@
     height: 100%;
 }
 
+.quick-add-modal__toggle {
+   border: none;
+  background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 1.2000000000000028rem;
+    z-index: 5;
+    width: 42px;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+   
+
 /* .card--card .quick-add {
   margin: 0 1.3rem 1rem;
 }
