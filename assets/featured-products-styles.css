@@ -64,15 +64,10 @@ transform: translateY(100%);
 .product-card-wrapper:hover .shop-now-overlay {
    transform: translate(0);
 }
-@media screen and (max-width: 990px) {
-  .shop-now-overlay {
 
- top: 570px !important; 
 
-}
-}
 @media screen and (max-width: 768px) {
- overflow: hidden; 
+  
 }
 @media screen and (max-width: 430px) {
   .featured-prod-title   {
