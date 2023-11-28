@@ -186,7 +186,7 @@
         "enable_desktop_slider": true,
         "image_ratio": "4:3",
         "show_secondary_image": true,
-        "stretch_image": false,
+        "stretch_image": true,
         "button_text": "Shop now",
         "enable_quick_add": true,
         "swipe_on_mobile": true,
