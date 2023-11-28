@@ -53,10 +53,15 @@ quick-add-modal .product__media-item:not(:first-child) {
 
 @media screen and (max-width: 990px) {
   .quick-add-modal__content {
-    width: 80%
+    width: 80%;
   }
 }
-
+@media screen and (max-width: 750px) {
+  .quick-add-modal__toggle {
+    width: 30px;
+    padding: 5px;
+  }
+}
 
 
 /* .quick-add-modal .scroll-trigger.scroll-trigger {
