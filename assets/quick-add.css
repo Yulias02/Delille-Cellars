@@ -9,6 +9,8 @@
     width: 100%;
     background-color: #FFFF;
     height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .quick-add-modal__toggle {
@@ -17,7 +19,7 @@
     cursor: pointer;
     width: 35px;
     position: fixed;
-    bottom: 1px;
+    top: 30px;
     right: 30px;
 }
    
