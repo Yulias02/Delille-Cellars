@@ -174,12 +174,12 @@
   margin: 1.3rem;
 }
 
-.card__media .media img {
+/* .card__media .media img {
   height: 100%;
   object-fit: cover;
   object-position: center center;
   width: 100%;
-}
+} */
 .image-stretched {
    height: 100%;
   object-fit: cover;
