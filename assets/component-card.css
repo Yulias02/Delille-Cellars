@@ -180,7 +180,12 @@
   object-position: center center;
   width: 100%;
 }
-
+.image-not-stretched {
+   height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  width: 100%;
+}
 .card__inner:not(.ratio)>.card__content {
   height: 100%;
 }
