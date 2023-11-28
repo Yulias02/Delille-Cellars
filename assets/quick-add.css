@@ -28,6 +28,7 @@
   width: 100%;
   overflow: hidden;
   max-width: var(--page-width);
+  margin-top: 50px;
 }
 .quick-add-modal__toggle {
     position: fixed;
