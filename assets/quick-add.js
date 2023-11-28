@@ -98,8 +98,8 @@ if (!customElements.get('quick-add-modal')) {
 
       updateImageSizes() {
         const product = this.modalContent.querySelector('.product');
-        const desktopColumns = product.classList.contains('product--columns');
-        if (!desktopColumns) return;
+        // const desktopColumns = product.classList.contains('product--columns');
+        // if (!desktopColumns) return;
 
         const mediaImages = product.querySelectorAll('.product__media img');
         if (!mediaImages.length) return;
