@@ -25,7 +25,7 @@ if (!customElements.get('quick-add-modal')) {
           .then((response) => response.text())
           .then((responseText) => {
             const responseHTML = new DOMParser().parseFromString(responseText, 'text/html');
-            this.productElement = responseHTML.querySelector('.modal-popup-wrapper');
+            this.productElement = responseHTML.querySelector('[id^="MainProduct-"]');
             this.preventDuplicatedIDs();
             this.removeDOMElements();
             this.setInnerHTML(this.modalContent, this.productElement.innerHTML);
@@ -98,8 +98,8 @@ if (!customElements.get('quick-add-modal')) {
 
       updateImageSizes() {
         const product = this.modalContent.querySelector('.product');
-        // const desktopColumns = product.classList.contains('product--columns');
-        // if (!desktopColumns) return;
+        const desktopColumns = product.classList.contains('product--columns');
+        if (!desktopColumns) return;
 
         const mediaImages = product.querySelectorAll('.product__media img');
         if (!mediaImages.length) return;
