@@ -44,9 +44,9 @@
 /* .slider-item:first-child {
   margin-left: 0 !important;
 } */
- /* .grid-centered {
+ .grid-centered {
   justify-content: center;
-}  */
+} 
  .shop-now-overlay {
    position: absolute;
    width: 100%;
