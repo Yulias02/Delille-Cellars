@@ -71,11 +71,11 @@ transform: translateY(100%);
      margin-top: 3883px !important; 
   }
 }
-@media screen and (max-width: 586px) {
+/* @media screen and (max-width: 586px) {
   .featured-prod-list {
      margin-top: 4077px !important; 
   }
-}
+} */
 @media screen and (max-width: 585px) {
   .featured-prod-list {
      margin-top: 3858px !important;
