@@ -12,10 +12,10 @@
   top: 0;
   left: 0; */
    box-sizing: border-box;
-  /* opacity: 0; */
+  opacity: 0;
   position: fixed;
-  /* visibility: hidden; */
-  /* z-index: -1; */
+  visibility: hidden; */
+  /* z-index: -1;
   margin: 0 auto;
   top: 0;
   left: 0;
@@ -33,7 +33,11 @@
     top: 30px;
     right: 30px;
 }
-   
+   .quick-add-modal[open] {
+  opacity: 1;
+  visibility: visible;
+  z-index: 101;
+}
 
 /* .card--card .quick-add {
   margin: 0 1.3rem 1rem;
