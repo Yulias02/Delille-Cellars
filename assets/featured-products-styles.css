@@ -7,7 +7,9 @@
   .quick-add {
   width: 100%;
   }
-
+.featured-prod-list {
+    display: table;
+  }
   .quick-add-button {
   color: #fff;
   background-color: #121212 ;
