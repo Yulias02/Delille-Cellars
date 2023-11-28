@@ -51,7 +51,7 @@ quick-add-modal .product__media-item:not(:first-child) {
   display: none !important;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (max-width: 990px) {
   .quick-add-modal__content {
     width: 80%
   }
