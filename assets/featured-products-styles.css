@@ -41,6 +41,10 @@
   .centered {
      margin: 0 auto; 
   }
+.adding-to-cart,
+.added-to-cart {
+  color: #FFFF;
+}
 /* .slider-item:first-child {
   margin-left: 0 !important;
 } */
