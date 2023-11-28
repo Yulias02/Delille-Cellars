@@ -68,14 +68,14 @@ transform: translateY(100%);
 
 @media screen and (max-width: 768px) {
   .featured-prod-list {
-     margin-top: 3883px; 
+     margin-top: 3883px !important; 
   }
  
 }
 @media screen and (max-width: 430px) {
   .featured-prod-title   {
     font-size: 25px !important; 
-    line-height: 27px;
+    line-height: 27px !important;
   }
 }
 
