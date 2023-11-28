@@ -1,4 +1,4 @@
- /* .quick-add {
+ .quick-add {
   position: relative; 
   grid-row-start: 4;
   margin: 0 0 1rem;
@@ -62,5 +62,5 @@ quick-add-modal .product__media-item:not(:first-child) {
     padding: 5px;
   }
 }
- */
+
 
