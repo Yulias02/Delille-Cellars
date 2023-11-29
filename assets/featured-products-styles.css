@@ -75,7 +75,11 @@ transform: translateY(100%);
     line-height: 27px !important;
   }
 }
-
+@media screen and (max-width: 990px) {
+  .quick-add-button {
+    padding: 0;
+  }
+}
 
 
 
