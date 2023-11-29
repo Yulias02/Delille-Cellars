@@ -64,7 +64,6 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="product-wrapper-pad pad product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-  <div class="modal-popup-wrapper product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
@@ -442,7 +441,7 @@
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
-                {% liquid 
+                {% liquid
                   assign rating_decimal = 0
                   assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
                   if decimal >= 0.3 and decimal <= 0.7
@@ -556,7 +555,7 @@
                   {{ 'quick-add.css' | asset_url | stylesheet_tag }}
                   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
                 {%- endif -%}
-              </product-recommendations> 
+              </product-recommendations>
             {%- when 'icon-with-text' -%}
               {% render 'icon-with-text',
                 block: block
@@ -575,7 +574,6 @@
         {% render 'product-media-gallery', variant_images: variant_images, is_duplicate: true %}
       </div>
     {%- endif -%}
-    </div>
   </div>
 
   {% render 'product-media-modal' variant_images: variant_images %}
