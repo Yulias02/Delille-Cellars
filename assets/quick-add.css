@@ -50,9 +50,9 @@ quick-add-modal .product__modal-opener:not(.product__modal-opener--image),
 quick-add-modal .product__media-item:not(:first-child) {
   display: none !important;
 } */
-quick-add-modal .quick-add-hidden {
+/* quick-add-modal .quick-add-hidden {
   display: none !important;
-}
+} */
 @media screen and (max-width: 990px) {
   .quick-add-modal__content {
     width: 80%;
