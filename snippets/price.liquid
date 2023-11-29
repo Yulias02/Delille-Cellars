@@ -55,9 +55,9 @@
         - div.price__sale: Displayed when a variant is a sale
     {%- endcomment -%}
 
-    {% if section.class == 'product-container' %}
+    {% if section.settings.show_price_range %}
       <div class="price__regular">
-        {%- if product.quantity_price_breaks_configured? -%}
+        {%- if product.price_varies -%}
           {%- if show_compare_at_price -%}
             {%- unless product.price_varies == false and product.compare_at_price_varies %}
               <span class="visually-hidden visually-hidden--inline">
@@ -90,7 +90,7 @@
       </div>
     {% else %}
       <div class="price__regular">
-        {%- if product.price_varies -%}
+        {%- if product.quantity_price_breaks_configured? -%}
           {%- if show_compare_at_price -%}
             {%- unless product.price_varies == false and product.compare_at_price_varies %}
               <span class="visually-hidden visually-hidden--inline">
