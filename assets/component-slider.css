@@ -157,6 +157,7 @@ slider-component.slider-component-full-width {
     margin-bottom: 1rem;
     scroll-padding-left: var(--desktop-margin-left-first-item);
   }
+  
 
   /* Fix to show some space at the end of our sliders in all browsers */
   .slider--desktop:after {
