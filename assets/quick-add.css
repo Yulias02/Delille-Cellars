@@ -35,9 +35,9 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 48px;
+      width: 20px;
+    height: 18px;
   border: none;
-  padding: 10px;
   background: black;
   color: #FFF;
   cursor: pointer;
