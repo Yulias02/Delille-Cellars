@@ -39,6 +39,7 @@ if (!customElements.get('quick-add-modal')) {
             this.removeGalleryListSemantic();
             this.updateImageSizes(); 
             this.preventVariantURLSwitching();
+            opener.insertAdjacentElement('afterend', this);
             super.show(opener);
           })
           .finally(() => {
