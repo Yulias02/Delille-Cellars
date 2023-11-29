@@ -110,7 +110,6 @@
                   <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                 </div>
               {%- endif -%}
-            
                 <div class="product__tax caption rte">
                   {%- if cart.taxes_included -%}
                     {{ 'products.product.include_taxes' | t }}
@@ -400,7 +399,16 @@
                   </volume-pricing>
                 {%- endif -%}
               </div>
-           
+            <div>
+            <label for="message">Message:</label>
+            <div>
+            <textarea id="message" 
+                      name="properties[Message]"
+                      form="product-form-{{section.id}}"
+            
+             ></textarea>
+            </div>
+</div>
          
             {%- when 'popup' -%}
               <modal-opener
@@ -2192,12 +2200,6 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    },
-    {
-      "type": "checkbox",
-      "id": "show_price_range",
-      "default": false,
-      "label": "Price Range"
     }
   ]
 }
