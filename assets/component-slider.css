@@ -47,10 +47,10 @@ slider-component.slider-component-full-width {
     position: relative;
     flex-wrap: inherit;
     overflow-x: auto;
-    /* scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-padding-left: 1.5rem;
-    -webkit-overflow-scrolling: touch; */
+    -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
   }
 
@@ -80,10 +80,10 @@ slider-component.slider-component-full-width {
   .slider.slider--tablet-up {
     position: relative;
     flex-wrap: inherit;
-    /* overflow-x: auto; */
-    /* scroll-snap-type: x mandatory;
+    overflow-x: auto; 
+     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    scroll-padding-left: 1rem; */
+    scroll-padding-left: 1rem;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -97,10 +97,10 @@ slider-component.slider-component-full-width {
     position: relative;
     flex-wrap: inherit;
     overflow-x: auto;
-    /* scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-padding-left: 1.5rem;
-    -webkit-overflow-scrolling: touch; */
+    -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
   }
 
@@ -131,10 +131,10 @@ slider-component.slider-component-full-width {
   position: relative;
   flex-wrap: inherit;
   overflow-x: auto;
-  /* scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: 1rem; */
+  margin-bottom: 1rem;
 }
 
 .slider.slider--everywhere .slider__slide {
@@ -151,11 +151,11 @@ slider-component.slider-component-full-width {
     position: relative;
     flex-wrap: inherit;
     overflow-x: auto;
-    /* scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
-    scroll-padding-left: var(--desktop-margin-left-first-item); */
+    scroll-padding-left: var(--desktop-margin-left-first-item);
   }
   
 
