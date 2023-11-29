@@ -21,7 +21,9 @@
     margin-bottom: 50px !important;
   
   }
-
+.featured-prod-list .grid {
+  flex-wrap: no-wrap;
+}
   .featured-prod-title {
   text-align: center;
   margin: 0;
