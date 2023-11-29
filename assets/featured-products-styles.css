@@ -22,7 +22,7 @@
   
   }
 .featured-prod-list .grid {
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
 }
   .featured-prod-title {
   text-align: center;
