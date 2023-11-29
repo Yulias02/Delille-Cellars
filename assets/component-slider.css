@@ -143,7 +143,7 @@ slider-component.slider-component-full-width {
 }
 
 @media screen and (min-width: 990px) {
-  .slider-component-desktop.page-width {
+  /* .slider-component-desktop.page-width {
     max-width: none;
   }
 
@@ -156,15 +156,15 @@ slider-component.slider-component-full-width {
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
     scroll-padding-left: var(--desktop-margin-left-first-item);
-  }
+  } */
 
   /* Fix to show some space at the end of our sliders in all browsers */
-  .slider--desktop:after {
+  /* .slider--desktop:after {
     content: '';
     width: 0;
     padding-left: 5rem;
     margin-left: calc(-1 * var(--grid-desktop-horizontal-spacing));
-  }
+  } */
 
   .slider.slider--desktop .slider__slide {
     margin-bottom: 0;
