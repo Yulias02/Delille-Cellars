@@ -127,43 +127,19 @@
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 12
+        "padding_bottom": 12,
+        "show_price_range": false
       }
     },
     "fc8b7064-e78e-4a83-83ea-f3b7f11aca5a": {
       "type": "bundle-section",
-      "blocks": {
-        "template--21208364417326__fc8b7064-e78e-4a83-83ea-f3b7f11aca5a-featured_product-1": {
-          "type": "featured_product",
-          "settings": {
-            "product": "order-your-d2-2010-release-today"
-          }
-        },
-        "template--21208364417326__fc8b7064-e78e-4a83-83ea-f3b7f11aca5a-featured_product-2": {
-          "type": "featured_product",
-          "settings": {
-            "product": "cheese-set"
-          }
-        },
-        "template--21208364417326__fc8b7064-e78e-4a83-83ea-f3b7f11aca5a-featured_product-3": {
-          "type": "featured_product",
-          "settings": {
-            "product": "elegant-wine-glass"
-          }
-        }
-      },
-      "block_order": [
-        "template--21208364417326__fc8b7064-e78e-4a83-83ea-f3b7f11aca5a-featured_product-1",
-        "template--21208364417326__fc8b7064-e78e-4a83-83ea-f3b7f11aca5a-featured_product-2",
-        "template--21208364417326__fc8b7064-e78e-4a83-83ea-f3b7f11aca5a-featured_product-3"
-      ],
       "settings": {
       }
     },
