@@ -39,6 +39,8 @@ if (!customElements.get('quick-add-modal')) {
             this.removeGalleryListSemantic();
             this.updateImageSizes(); 
             this.preventVariantURLSwitching();
+            const parent = opener.parentNode;
+            parent.insertBefore(this, opener.nextSibling);
             super.show(opener);
           })
           .finally(() => {
