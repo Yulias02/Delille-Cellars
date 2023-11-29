@@ -98,24 +98,12 @@
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-               {%- if product.quantity_price_breaks_configured? -%}
-        {%- if show_compare_at_price -%}
-          {%- unless product.price_varies == false and product.compare_at_price_varies %}
-            <span class="visually-hidden visually-hidden--inline">
-              {{- 'products.product.price.regular_price' | t -}}
-            </span>
-            <span>
-              <s class="price-item price-item--regular variant-item__old-price">
-                {% if settings.currency_code_enabled %}
-                  {{ compare_at_price | money_with_currency }}
-                {% else %}
-                  {{ compare_at_price | money }}
-                {% endif %}
-              </s>
-            </span>
-          {%- endunless -%}
-        {%- endif -%}
-                 {%- endif -%}
+                {%- render 'price',
+                  product: product,
+                  use_variant: true,
+                  show_badges: true,
+                  price_class: 'price--large'
+                -%}
               </div>
               {%- if product.quantity_price_breaks_configured? -%}
                 <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
