@@ -60,12 +60,7 @@ quick-add-modal .product__accordion {
     width: 80%;
   }
  
-.swiper-slide img,
-.swiper-slide video {
-  width: 483px;
-  height: 500px;
-  object-fit: cover;
-}
+
 }
 @media screen and (max-width: 750px) {
   .quick-add-modal__toggle {

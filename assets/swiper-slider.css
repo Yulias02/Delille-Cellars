@@ -49,3 +49,12 @@
 .swiper .media>*:not(.zoom):not(.deferred-media__poster-button) {
   position: relative !important;
 }
+@media screen and (max-width: 990px) {
+ 
+.swiper-slide img,
+.swiper-slide video {
+  width: 483px;
+  height: 500px;
+  object-fit: cover;
+}
+}
