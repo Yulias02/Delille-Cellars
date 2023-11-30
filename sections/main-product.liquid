@@ -2,8 +2,7 @@
   id="MainProduct-{{ section.id }}"
   class="page-width section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
-> 
-
+>
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -11,7 +10,6 @@
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
- 
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
@@ -31,6 +29,7 @@
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
@@ -66,9 +65,50 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="product-wrapper-pad pad product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-    <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
-      {% render 'product-media-gallery', variant_images: variant_images %}
+
+
+      <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %} swiper">
+          <div class="swiper-wrapper">
+
+              {%- for media in product.media -%}
+                  {%- if media.media_type == 'model' -%}
+                  {%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}
+                      <div class="swiper-slide">
+
+                          {% render 'product-media', media: media, loop: true %}
+                      </div>
+                  {% else %}
+                      <div class="swiper-slide">
+                          <img
+                                  srcset="{%- if media.width >= 165 -%}{{ media | image_url: width: 165 }} 165w,{%- endif -%}
+              {%- if media.width >= 360 -%}{{ media | image_url: width: 360 }} 360w,{%- endif -%}
+              {%- if media.width >= 535 -%}{{ media | image_url: width: 535 }} 535w,{%- endif -%}
+              {%- if media.width >= 750 -%}{{ media | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if media.width >= 1070 -%}{{ media | image_url: width: 1070 }} 1070w,{%- endif -%}
+              {%- if media.width >= 1500 -%}{{ media | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {{ media | image_url }} {{ media.width }}w"
+                                  src="{{ media | image_url: width: 1500 }}"
+                                  sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                                  alt="{{ media.alt | escape }}"
+                                  loading="lazy"
+                                  width="{{ media.width }}"
+                                  height="{{ media.height }}"
+                          >
+                      </div>
+                  {%- endif -%}
+              {% endfor %}
+
+
+          </div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
     </div>
+
+
+
+
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <product-info
         id="ProductInfo-{{ section.id }}"
@@ -401,16 +441,7 @@
                   </volume-pricing>
                 {%- endif -%}
               </div>
-            <div>
-            <label for="message">Message:</label>
-            <div>
-            <textarea id="message" 
-                      name="properties[Message]"
-                      form="product-form-{{section.id}}"
-            
-             ></textarea>
-            </div>
-</div>
+
          
             {%- when 'popup' -%}
               <modal-opener
@@ -2219,3 +2250,5 @@
     width: 210px;
     margin: 0 -15px;
 {% endstylesheet %}
+
+
