@@ -55,6 +55,7 @@ quick-add-modal .product__description,
 quick-add-modal .product__accordion {
   display: none !important;
 }
+
 @media screen and (max-width: 990px) {
   .quick-add-modal__content {
     width: 80%;
