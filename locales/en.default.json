@@ -511,7 +511,7 @@
   "shopify": {
     "notices": {
       "cart": {
-        "too_many_items_in_cart": "You can only add {{ quantity }} of this item to your cart."
+        "too_many_items_in_cart": "You can only add {{ count}} of this item to your cart."
       }
     }
   }
