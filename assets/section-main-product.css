@@ -59,8 +59,8 @@
 
 .swiper-slide img,
 .swiper-slide video {
-  width: 585px !important;
-  height: 500px !important;
+  width: 585px;
+  height: 500px;
   object-fit: cover;
 }
 .swiper .deferred-media {
