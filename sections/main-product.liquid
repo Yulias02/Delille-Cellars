@@ -676,23 +676,7 @@
       });
     });
   </script>
-<script>
-document.querySelector('.shopify-payment-button__button').addEventListener('click', () => {
-let addToCartForm = document.querySelector('form[action$="/cart/add"]');
-let formData = new FormData(addToCartForm);
-fetch(window.Shopify.routes.root + 'cart/add.js', {
-method: 'POST',
-body: formData
-})
-.then(response => {
-window.location.href = '/checkout';
-return response.json();
-})
-.catch((error) => {
-console.error('Error:', error);
-});
-});
-</script>
+
 
   {%- liquid
     if product.selected_or_first_available_variant.featured_media
