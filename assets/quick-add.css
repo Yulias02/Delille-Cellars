@@ -59,12 +59,14 @@ quick-add-modal .product__accordion {
   .quick-add-modal__content {
     width: 80%;
   }
+  quick-add-modal img {
+    height: 400px;
+  }
 }
 @media screen and (max-width: 750px) {
   .quick-add-modal__toggle {
     width: 30px;
     padding: 5px;
-    height: 29px;
   }
 }
 
