@@ -597,7 +597,7 @@
             class="cart__checkout-button button"
             name="checkout"
             form="CartDrawer-Form"
-            data-buy-now
+
             {% if cart == empty %}
               disabled
             {% endif %}
@@ -631,7 +631,7 @@
   });
 </script>
 <script>
-  document.querySelector('[data-buy-now]').addEventListener('click', () => {
+  document.querySelector('.cart__checkout-button').addEventListener('click', () => {
   let addToCartForm = document.querySelector('form[action$="/cart/add"]');
   let formData = new FormData(addToCartForm);
   fetch(window.Shopify.routes.root + 'cart/add.js', {
