@@ -53,7 +53,6 @@ slider-component.slider-component-full-width {
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
   }
-   
 
   /* Fix to show some space at the end of our sliders in all browsers */
   .slider--mobile:after {
@@ -81,8 +80,8 @@ slider-component.slider-component-full-width {
   .slider.slider--tablet-up {
     position: relative;
     flex-wrap: inherit;
-    overflow-x: auto; 
-     scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-padding-left: 1rem;
     -webkit-overflow-scrolling: touch;
@@ -104,7 +103,7 @@ slider-component.slider-component-full-width {
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
   }
-    
+
   /* Fix to show some space at the end of our sliders in all browsers */
   .slider--tablet:after {
     content: '';
@@ -158,7 +157,6 @@ slider-component.slider-component-full-width {
     margin-bottom: 1rem;
     scroll-padding-left: var(--desktop-margin-left-first-item);
   }
-  
 
   /* Fix to show some space at the end of our sliders in all browsers */
   .slider--desktop:after {
