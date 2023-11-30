@@ -23,7 +23,7 @@
   border: 1px solid grey;
   text-align: center;
 }
-.swiper-button-next::after {
+.swiper-button-next::after { 
   content: 'next';
   color: black;
   font-size: 20px;
