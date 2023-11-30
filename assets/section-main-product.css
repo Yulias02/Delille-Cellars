@@ -59,7 +59,7 @@
 
 .swiper-slide img,
 .swiper-slide video {
-  width: 495px !important;
+  width: 585px !important;
   height: 500px !important;
   object-fit: cover;
 }
