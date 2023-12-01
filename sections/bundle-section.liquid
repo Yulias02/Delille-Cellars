@@ -1,61 +1,15 @@
-{{ 'bundle.css' | asset_url | stylesheet_tag }}
-<h1 class="compl-heading">{{ section.settings.heading }}</h1>
-<div class="compl-container">
-  {%- for block in section.blocks -%}
-    {% render 'bundle', card_product: block.settings.product %}
-    {% assign total_price = total_price | plus: block.settings.product.price %}
-  {% endfor %}
-</div>
+document.addEventListener("DOMContentLoaded", function () { const addToCartAddons =
+document.querySelectorAll('.add-ons-cont');
 
-{% schema %}
-{
-  "name": "Bundle",
-  "tag": "section",
-   "class": "container product-container pad",
-   "settings": [
-  {
-      "type": "inline_richtext",
-      "id": "heading",
-      "default": "Perfectly pairs with",
-      "label": "Heading"
-    },
-     {
-      "type": "inline_richtext",
-      "id": "text",
-      "default": "Total",
-      "label": "Total price"
-    }
-  ],
+const cart = document.querySelector('cart-drawer');
 
-  "blocks": [
-  {
-    "type": "featured_product",
-    "name": "t:sections.featured-product.name",
-    "settings": [
-      {
-        "type": "product",
-        "id": "product",
-        "label": "t:sections.featured-product.blocks.featured-product.settings.product.label"
-      }
-    ]
-  }
-],
-"presets": [
-  {
-    "name": "Product section",
-    "blocks": [
-      {
-        "type": "featured_product"
-      },
-      {
-        "type": "featured_product"
-      },
-      {
-        "type": "featured_product"
-      }
+addToCartAddons.forEach((addOn) => { addOn.addEventListener("click", (event) => { event.preventDefault();
 
-    ]
-  }
-]
-}
-{% endschema %}
+const productId = addOn.dataset.id; if (addOn.classList.contains('product-selected')) { return; }
+
+fetch("/cart/add.js", { method: "post", headers: { 'Content-Type': 'application/json', }, body: JSON.stringify({ id:
+productId, quantity: 1, sections: cart.getSectionsToRender().map((section) => section.id) }),
+
+}) .then((response) => { return response.json(); }) .then((response) => { cart.renderContents(response);
+addOn.classList.add('product-selected'); }) .catch((error) => { console.error('Error:', error); }) .finally(() => { if
+(cart && cart.classList.contains('is-empty')) cart.classList.remove('is-empty'); }); }); }); });
