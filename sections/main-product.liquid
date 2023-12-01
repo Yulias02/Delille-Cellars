@@ -473,27 +473,7 @@
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
-             <script>
-            
-            const addToCartForms = document.querySelectorAll('.buy-now-checkout-btn');
-
-    addToCartForms.forEach((form) => {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-     
-        fetch("/cart/add.js", {
-          method: "post",
-          body: new FormData(form),
-        })
-          .then((response) => {
-              return response.json();
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-      });
-    });
-</script>
+      
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -2274,4 +2254,21 @@
     margin: 0 -15px;
 {% endstylesheet %}
 
+{% javascript %}
+ document.addEventListener('DOMContentLoaded', function() {
+  let buyNowBtn = document.querySelector('.buy-now-checkout-btn');
+
+  if (buyNowBtn) {
+    buyNowBtn.addEventListener('click', function(event) {
+      event.preventDefault(); 
+      
+      let productForm = event.target.closest('.product-form');
+      if (productForm) {
+        productForm.submit();
+      }
+    });
+  }
+});
+  
+{% endjavascript %}
 
