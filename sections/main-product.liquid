@@ -2263,9 +2263,22 @@
       event.preventDefault(); 
       
       let productForm = event.target.closest('.form');
-      if (productForm) {
-        productForm.submit();
-      }
+      productForm.forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        fetch("/cart/add.js", {
+          method: "post",
+          body: new FormData(form),
+        })
+          .then((response) => {
+              return response.json();
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      });
+    });
     });
   }
 });
