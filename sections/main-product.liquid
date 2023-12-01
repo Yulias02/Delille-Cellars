@@ -2256,15 +2256,15 @@
 
 {% javascript %}
  document.addEventListener('DOMContentLoaded', function() {
-  // let buyNowBtn = document.querySelector('.buy-now-checkout-btn');
+  let buyNowBtn = document.querySelector('.buy-now-checkout-btn');
 
   // if (buyNowBtn) {
   //   buyNowBtn.addEventListener('click', function(event) {
   //     event.preventDefault(); 
       
-      let productForm = event.target.closest('.form');
+      // let productForm = event.target.closest('.form');
       
-      productForm.addEventListener("submit", (event) => {
+      buyNowBtn.addEventListener("submit", (event) => {
         event.preventDefault();
  
         fetch("/cart/add.js", {
