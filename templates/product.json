@@ -41,7 +41,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
@@ -134,8 +134,7 @@
         "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 12,
-        "padding_bottom": 12,
-        "show_price_range": false
+        "padding_bottom": 12
       }
     },
     "fc8b7064-e78e-4a83-83ea-f3b7f11aca5a": {
