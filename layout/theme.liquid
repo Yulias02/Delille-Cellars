@@ -309,7 +309,7 @@
       };
 
       window.cartStrings = {
-        error: `{{ 'sections.cart.cart_error' | t }}`,
+        error: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
         quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
       };
 
@@ -337,12 +337,6 @@
         recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
       };
-
-
-
-
-
-
     </script>
 
     {%- if settings.predictive_search_enabled -%}
