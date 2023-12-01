@@ -43,7 +43,6 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
-    console.log('arthur4');
     this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'), event.target.dataset.quantityVariantId);
   }
 
@@ -77,7 +76,7 @@ class CartItems extends HTMLElement {
           console.error(e);
         });
     }
-    console.log('arthur3');
+   
   }
 
   getSectionsToRender() {
