@@ -2266,7 +2266,8 @@
       productForm.forEach((form) => {
       form.addEventListener("submit", (event) => {
         event.preventDefault();
- 
+  
+
         fetch("/cart/add.js", {
           method: "post",
           body: new FormData(form),
