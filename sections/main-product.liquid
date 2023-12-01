@@ -2255,21 +2255,21 @@
 {% endstylesheet %}
 
 {% javascript %}
- document.addEventListener('DOMContentLoaded', function() {
-  let buyNowBtn = document.querySelector('.buy-now-checkout-btn');
+document.addEventListener('DOMContentLoaded', function() {
+  var buyNowBtn = document.querySelector('.buy-now-checkout-btn');
 
-  // if (buyNowBtn) {
-  //   buyNowBtn.addEventListener('click', function(event) {
-  //     event.preventDefault(); 
+  if (buyNowBtn) {
+    buyNowBtn.addEventListener('click', function(event) {
+      event.preventDefault(); 
       
-      // let productForm = event.target.closest('.form');
-      
-      buyNowBtn.addEventListener("submit", (event) => {
+      let productForm = event.target.closest('.product-form');
+      productForm.forEach((form) => {
+      form.addEventListener("submit", (event) => {
         event.preventDefault();
- 
+
         fetch("/cart/add.js", {
           method: "post",
-          body: new FormData(productForm),
+          body: new FormData(form),
         })
           .then((response) => {
               return response.json();
@@ -2279,7 +2279,8 @@
           });
       });
     });
-  // }
+    });
+  }
 });
   
 {% endjavascript %}
