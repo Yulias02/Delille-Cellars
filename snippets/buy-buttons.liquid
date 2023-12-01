@@ -101,17 +101,9 @@
                 <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
               </svg>
             </div>
-          </button> 
-          {%- if show_dynamic_checkout -%}
-            <button
-            type="submit"
-            id="CartDrawer-Checkout"
-            class="cart__checkout-button button buy-now-checkout-btn"
-            name="checkout"
-            form="CartDrawer-Form"
-          >
-            {{ 'sections.cart.checkout' | t }}
           </button>
+          {%- if show_dynamic_checkout -%}
+            {{ form | payment_button }}
           {%- endif -%}
         </div>
       {%- endform -%}
