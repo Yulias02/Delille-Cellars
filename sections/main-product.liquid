@@ -2255,7 +2255,7 @@
 {% endstylesheet %}
 
 {% javascript %}
- document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
   let buyNowBtn = document.querySelector('.buy-now-checkout-btn');
 
   if (buyNowBtn) {
@@ -2263,13 +2263,13 @@
       event.preventDefault(); 
       
       let productForm = event.target.closest('.form');
-      
-      productForm.addEventListener("submit", (event) => {
+      productForm.forEach((form) => {
+      form.addEventListener("submit", (event) => {
         event.preventDefault();
- 
+
         fetch("/cart/add.js", {
           method: "post",
-          body: new FormData(productForm),
+          body: new FormData(form),
         })
           .then((response) => {
               return response.json();
@@ -2278,6 +2278,7 @@
             console.error('Error:', error);
           });
       });
+    });
     });
   }
 });
