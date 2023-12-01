@@ -149,7 +149,7 @@ class CartItems extends HTMLElement {
         let message = '';
         if (items.length === parsedState.items.length && updatedValue !== parseInt(quantityElement.value)) {
           if (typeof updatedValue === 'undefined') {
-            message = window.cartStrings.error;
+             message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
           } else {
             message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
           }
@@ -173,7 +173,7 @@ class CartItems extends HTMLElement {
       .catch(() => {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
-        errors.textContent = window.cartStrings.error;
+        errors.textContent = window.cartStrings.quantityError;
       })
       .finally(() => {
         this.disableLoading(line);
