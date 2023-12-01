@@ -341,8 +341,7 @@ class QuickOrderList extends HTMLElement {
   updateError(updatedValue, id) {
     let message = '';
     if (typeof updatedValue === 'undefined') {
-      message = window.cartStrings.error;
-    } else {
+      
       message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
     }
     this.updateLiveRegions(id, message);
