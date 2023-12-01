@@ -2254,34 +2254,4 @@
     margin: 0 -15px;
 {% endstylesheet %}
 
-{% javascript %}
-document.addEventListener('DOMContentLoaded', function() {
-  var buyNowBtn = document.querySelector('.buy-now-checkout-btn');
-
-  if (buyNowBtn) {
-    buyNowBtn.addEventListener('click', function(event) {
-      event.preventDefault(); 
-      
-      let productForm = event.target.closest('.product-form');
-      productForm.forEach((form) => {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        fetch("/cart/add.js", {
-          method: "post",
-          body: new FormData(form),
-        })
-          .then((response) => {
-              return response.json();
-          })
-          .catch((error) => {
-            console.error('Error:', error); 
-          });
-      });
-    });
-    });
-  }
-});
-  
-{% endjavascript %}
 
