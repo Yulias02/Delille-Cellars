@@ -199,7 +199,7 @@ class QuickOrderList extends HTMLElement {
         const parsedState = JSON.parse(state);
         this.renderSections(parsedState);
       }).catch(() => {
-        this.setErrorMessage(window.cartStrings.error);
+        this.setErrorMessage(window.cartStrings.quantityError);
       })
       .finally(() => {
         this.querySelector('.variant-remove-total .loading-overlay').classList.add('hidden');
