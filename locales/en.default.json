@@ -360,6 +360,9 @@
       "cancel": "Cancel"
     }
   },
+  "checkouts": {
+    "only_n_items_available": "You can add only {{ quantity }} of this product to your cart."
+  },
   "localization": {
     "country_label": "Country\/region",
     "language_label": "Language",
@@ -511,7 +514,7 @@
   "shopify": {
     "notices": {
       "cart": {
-        "too_many_items_in_cart": "You can add only {{ quantity }} of {{ name }} to your cart."
+        "too_many_items_in_cart": "You can only add {{ quantity }} of this item to your cart."
       }
     }
   }
