@@ -2258,9 +2258,6 @@
  document.addEventListener('DOMContentLoaded', function() {
   let buyNowBtn = document.querySelector('.buy-now-checkout-btn');
 
-  if (buyNowBtn) {
-    buyNowBtn.addEventListener('click', function(event) {
-      event.preventDefault(); 
       
       let productForm = event.target.closest('.form');
       productForm.forEach((form) => {
