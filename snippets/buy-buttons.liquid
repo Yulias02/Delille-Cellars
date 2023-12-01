@@ -105,14 +105,10 @@
           {%- if show_dynamic_checkout -%}
             <button
             type="submit"
-            id="ProductSubmitButton-{{ section_id }}"
+            id="CartDrawer-Checkout"
             class="cart__checkout-button button"
             name="checkout"
             form="CartDrawer-Form"
-
-            {% if cart == empty %}
-              disabled
-            {% endif %}
           >
             {{ 'sections.cart.checkout' | t }}
           </button>
