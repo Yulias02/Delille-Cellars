@@ -11,8 +11,10 @@ slider-component.slider-component-full-width {
   --desktop-margin-left-first-item: 1.5rem;
 }
 .featured-prod-slider {
-  scroll-snap-type: x;
   cursor: grab;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 .featured-slide {
   scroll-snap-align: start;
