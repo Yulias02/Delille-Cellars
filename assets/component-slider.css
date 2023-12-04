@@ -10,7 +10,10 @@ slider-component {
 slider-component.slider-component-full-width {
   --desktop-margin-left-first-item: 1.5rem;
 }
-
+.featured-prod-slider {
+   transition: transform 0.3s ease-out;
+  cursor: grab;
+}
 @media screen and (max-width: 749px) {
   slider-component.page-width {
     padding: 0 1.5rem;
