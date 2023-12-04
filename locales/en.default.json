@@ -510,5 +510,12 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "shopify": {
+    "notices": {
+      "cart": {
+        "too_many_items_in_cart": "You can only add {{ quantity }} of this product"
+      }
+    }
   }
 }
