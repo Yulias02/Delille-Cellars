@@ -106,7 +106,7 @@ if (!customElements.get('product-form')) {
           });
       }
 
-      handleErrorMessage(errorMessage = false) {
+      handleErrorMessage(errorMessage = false, updatedValue) {
         if (this.hideErrors) return;
 
         this.errorMessageWrapper =
