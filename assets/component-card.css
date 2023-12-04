@@ -241,7 +241,10 @@
   right: calc(var(--border-width) * -1);
   top: calc(var(--border-width) * -1);
 }
-
+.card__heading a {
+  user-select: none;
+  webkit-user-drag: none;
+}
 .card__heading a::after {
   bottom: 0;
   content: '';
