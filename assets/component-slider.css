@@ -10,7 +10,14 @@ slider-component {
 slider-component.slider-component-full-width {
   --desktop-margin-left-first-item: 1.5rem;
 }
-
+.featured-prod-slider {
+  scroll-snap-type: x;
+  cursor: grab;
+}
+.featured-slide {
+  scroll-snap-align: start;
+  user-select: none;
+}
 @media screen and (max-width: 749px) {
   slider-component.page-width {
     padding: 0 1.5rem;
