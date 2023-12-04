@@ -106,18 +106,20 @@ if (!customElements.get('product-form')) {
           });
       } 
 
-      handleErrorMessage(errorMessage = false) {
-        if (this.hideErrors) return;
+     handleErrorMessage(errorMessage = false, updatedValue) {
+  if (this.hideErrors) return;
 
-        this.errorMessageWrapper =
-          this.errorMessageWrapper || this.querySelector('.product-form__error-message-wrapper');
-        if (!this.errorMessageWrapper) return;
-        this.errorMessage = this.errorMessage || this.errorMessageWrapper.querySelector('.product-form__error-message');
+  this.errorMessageWrapper =
+    this.errorMessageWrapper || this.querySelector('.product-form__error-message-wrapper');
+  if (!this.errorMessageWrapper) return;
+  this.errorMessage = this.errorMessage || this.errorMessageWrapper.querySelector('.product-form__error-message');
 
-        this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
+  this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
-       
-      }
-    }
+  // Set the text content with the updatedValue
+  if (errorMessage && updatedValue !== undefined) {
+    this.errorMessage.textContent = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
+  }
+}
   );
 }
