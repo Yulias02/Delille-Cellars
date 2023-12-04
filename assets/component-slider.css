@@ -12,7 +12,6 @@ slider-component.slider-component-full-width {
 }
 .featured-prod-slider {
   scroll-snap-type: x;
-  cursor: grab;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
