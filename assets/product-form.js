@@ -117,7 +117,7 @@ if (!customElements.get('product-form')) {
         this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
         if (errorMessage) {
-          this.errorMessage.textContent = 'You can only';
+          this.errorMessage.textContent = `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`;
         }
       }
     }
