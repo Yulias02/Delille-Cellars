@@ -58,6 +58,9 @@ quick-add-modal .product__accordion {
 quick-add-modal .product-form__quantity {
     margin-bottom: 0 !important;
   }
+quick-add-modal .product__info-container .product-form {
+  margin-bottom: 0;
+}
 
 @media screen and (max-width: 990px) {
   .quick-add-modal__content {
