@@ -259,6 +259,7 @@
   outline-offset: 0.3rem;
    -webkit-user-drag: none; 
   user-select: none;
+  cursor: grab;
 }
 
 .card__heading a:focus:after {
