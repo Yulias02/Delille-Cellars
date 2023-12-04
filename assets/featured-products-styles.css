@@ -70,7 +70,12 @@ transform: translateY(100%);
 .product-card-wrapper:hover .shop-now-overlay {
    transform: translate(0);
 }
-
+.featured-prod-slider {
+   transform: translateX(0);
+  will-change: transform;
+  transition: transform 0.3s ease-out;
+  cursor: grab;
+}
 @media screen and (max-width: 423px) {
   .featured-prod-title {
     font-size: 25px !important; 
