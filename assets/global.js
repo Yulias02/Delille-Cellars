@@ -1279,6 +1279,7 @@ let touchendX = 0;
 let slider = document.querySelector('.featured-prod-slider');
 
 slider.addEventListener('touchstart', (e) => {
+  console.log(1234)
   touchstartX = e.changedTouches[0].screenX;
 });
 
