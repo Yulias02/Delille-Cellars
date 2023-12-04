@@ -118,6 +118,7 @@ if (!customElements.get('product-form')) {
 
         if (errorMessage) {
           this.errorMessage.textContent = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
+          console.log(window.cartStrings.quantityError.replace('[quantity]', updatedValue))
         }
       }
     }
