@@ -3,21 +3,25 @@ const wrapper = document.querySelector('.featured-prod-slider')
 let pressed = false
 let startX = 0
 
-wrapper.addEventListener('touchstart', function (e) {
+wrapper.addEventListener('mousedown', function (e) {
   pressed = true
-  startX = e.touches[0].clientX
+  startX = e.clientX
+  this.style.cursor = 'grabbing'
 })
 
-wrapper.addEventListener('touchend', function () {
+wrapper.addEventListener('mouseleave', function (e) {
   pressed = false
 })
 
-wrapper.addEventListener('touchmove', function (e) {
-  if (!pressed || e.touches.length !== 1) {
+window.addEventListener('mouseup', function (e) {
+  pressed = false
+  wrapper.style.cursor = 'grab'
+})
+
+wrapper.addEventListener('mousemove', function (e) {
+  if(!pressed) {
     return
   }
 
-  this.scrollLeft += startX - e.touches[0].clientX
-  startX = e.touches[0].clientX
-    e.preventDefault();
+  this.scrollLeft += startX - e.clientX
 })
