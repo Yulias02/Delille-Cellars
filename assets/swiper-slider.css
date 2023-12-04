@@ -29,6 +29,9 @@
 }
 
 @media screen and (min-width: 750px) {
+  product-form__quantity {
+    margin-bottom: 0;
+  }
     .swiper-slide img,
     .swiper-slide video {
         height: 564px;
