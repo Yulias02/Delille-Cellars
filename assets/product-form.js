@@ -117,7 +117,7 @@ if (!customElements.get('product-form')) {
         this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
         if (errorMessage) {
-          this.errorMessage.textContent = ;
+          this.errorMessage.textContent = errorMessage;
         }
       }
     }
