@@ -243,7 +243,7 @@
 }
 .card__heading a {
   user-select: none;
-  webkit-user-drag: none;
+  webkit-user-drag: none; 
 }
 .card__heading a::after {
   bottom: 0;
