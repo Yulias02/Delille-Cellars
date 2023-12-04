@@ -23,7 +23,7 @@ if (!customElements.get('product-form')) {
         evt.preventDefault();
         if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
-        this.handleErrorMessage();
+        this.handleErrorMessage(parsedState.errors, updatedValue);
 
         this.submitButton.setAttribute('aria-disabled', true);
         
@@ -106,7 +106,7 @@ if (!customElements.get('product-form')) {
           });
       } 
 
-       handleErrorMessage(errorMessage = false) {
+      handleErrorMessage(errorMessage = false, updatedValue) {
         if (this.hideErrors) return;
 
         this.errorMessageWrapper =
@@ -116,8 +116,8 @@ if (!customElements.get('product-form')) {
 
         this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
-        if (errorMessage) {
-          this.errorMessage.textContent = errorMessage;
+        if (errorMessage && updatedValue !== undefined) {
+    this.errorMessage.textContent = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
         }
       }
     }
