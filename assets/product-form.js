@@ -57,7 +57,7 @@ if (!customElements.get('product-form')) {
                 errors: response.errors || response.description,
                 message: response.message,
               });
-              this.handleErrorMessage(response.description);
+              this.handleErrorMessage(response.errors);
 
               const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
               
