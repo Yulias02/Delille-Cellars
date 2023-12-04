@@ -23,7 +23,7 @@ if (!customElements.get('product-form')) {
         evt.preventDefault();
         if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
-        this.handleErrorMessage();
+        this.handleErrorMessage(parsedState.errors, updatedValue);
 
         this.submitButton.setAttribute('aria-disabled', true);
         
