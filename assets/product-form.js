@@ -83,7 +83,7 @@ if (!customElements.get('product-form')) {
                 'modalClosed',
                 () => {
                   setTimeout(() => {
-                    this.cart.renderContents(response); 
+                    this.cart.renderContents(response);
                   });
                 },
                 { once: true }
@@ -117,7 +117,7 @@ if (!customElements.get('product-form')) {
         this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
         if (errorMessage) {
-          this.errorMessage.textContent = `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`;
+          this.errorMessage.textContent = errorMessage;
         }
       }
     }
