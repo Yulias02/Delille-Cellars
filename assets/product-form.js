@@ -117,7 +117,7 @@ if (!customElements.get('product-form')) {
         this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
         if (errorMessage) {
-          this.errorMessage.textContent = window.cartStrings.quantityError;
+          this.errorMessage.textContent = window.cartStrings.quantityError.replace('[quantity]', updatedValue);;
         }
       }
     }
