@@ -83,7 +83,7 @@ if (!customElements.get('product-form')) {
                 'modalClosed',
                 () => {
                   setTimeout(() => {
-                    this.cart.renderContents(response);
+                    this.cart.renderContents(response); 
                   });
                 },
                 { once: true }
