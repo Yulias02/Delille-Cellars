@@ -1,37 +1,71 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var sliderContainer = document.querySelector('.featured-prod-slider');
-
-    if (sliderContainer) {
-      var startX, currentTranslateX = 0, isDragging = false;
-
-      sliderContainer.addEventListener('touchstart', function(e) {
-        var touch = e.touches[0];
-        startX = touch.clientX;
-        isDragging = true;
-      });
-
-      sliderContainer.addEventListener('touchmove', function(e) {
-        if (!isDragging) return;
-
-        var touch = e.touches[0];
-        var deltaX = touch.clientX - startX;
-
-        // Prevent default to avoid unwanted scroll behavior
-        e.preventDefault();
-
-        // Calculate the new transform value
-        var newTranslateX = currentTranslateX + deltaX;
-
-        // Apply the new transform value
-        sliderContainer.style.transform = 'translateX(' + newTranslateX + 'px)';
-      });
-
-      sliderContainer.addEventListener('touchend', function() {
-        isDragging = false;
-
-        // Update the currentTranslateX after the touch ends
-        var transformStyle = getComputedStyle(sliderContainer).transform;
-        currentTranslateX = parseInt(transformStyle.split(',')[4]) || 0;
-      });
-    }
-  });
+const slider = document.querySelector('.featured-prod-slider'),
+      slides = Array.from(document.querySelectorAll('.featured-slide'))
+let isDragging = false,
+  startPos = 0,
+  currentTranslate = 0,
+  prevTranslate = 0,
+  animationID,
+  currentIndex = 0
+slides.forEach((slide, index) => {
+  const slideImage = slide.querySelector('img')
+  // disable default image drag
+  slideImage.addEventListener('dragstart', (e) => e.preventDefault())
+  // touch events
+  slide.addEventListener('touchstart', touchStart(index))
+  slide.addEventListener('touchend', touchEnd)
+  slide.addEventListener('touchmove', touchMove)
+  // mouse events
+  slide.addEventListener('mousedown', touchStart(index))
+  slide.addEventListener('mouseup', touchEnd)
+  slide.addEventListener('mousemove', touchMove)
+  slide.addEventListener('mouseleave', touchEnd)
+})
+// make responsive to viewport changes
+window.addEventListener('resize', setPositionByIndex)
+// prevent menu popup on long press
+window.oncontextmenu = function (event) {
+  event.preventDefault()
+  event.stopPropagation()
+  return false
+}
+function getPositionX(event) {
+  return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
+}
+function touchStart(index) {
+  return function (event) {
+    currentIndex = index
+    startPos = getPositionX(event)
+    isDragging = true
+    animationID = requestAnimationFrame(animation)
+    slider.classList.add('grabbing')
+  }
+}
+function touchMove(event) {
+  if (isDragging) {
+    const currentPosition = getPositionX(event)
+    currentTranslate = prevTranslate + currentPosition - startPos
+  }
+}
+function touchEnd() {
+  cancelAnimationFrame(animationID)
+  isDragging = false
+  const movedBy = currentTranslate - prevTranslate
+  // if moved enough negative then snap to next slide if there is one
+  if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex += 1
+  // if moved enough positive then snap to previous slide if there is one
+  if (movedBy > 100 && currentIndex > 0) currentIndex -= 1
+  setPositionByIndex()
+  slider.classList.remove('grabbing')
+}
+function animation() {
+  setSliderPosition()
+  if (isDragging) requestAnimationFrame(animation)
+}
+function setPositionByIndex() {
+  currentTranslate = currentIndex * -window.innerWidth
+  prevTranslate = currentTranslate
+  setSliderPosition()
+}
+function setSliderPosition() {
+  slider.style.transform = `translateX(${currentTranslate}px)`
+}
