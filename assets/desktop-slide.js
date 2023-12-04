@@ -1,10 +1,10 @@
 
-const slider = document.querySelector('.featured-prod-slider'),
+const slider = document.querySelector('.featured-prod-slider');
   slider.addEventListener('click', handle);
   function handle() {
     console.log(123)
   }
-  slides = Array.from(document.querySelectorAll('.featured-slide'))
+  slides = Array.from(document.querySelectorAll('.featured-slide'));
 
 // set up our state
 let isDragging = false,
