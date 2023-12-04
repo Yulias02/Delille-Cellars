@@ -361,7 +361,7 @@
     }
   },
   "checkouts": {
-    "only_n_items_available": "You can add only {{ quantity }} of this product to your cart."
+    "only_n_items_available": ""
   },
   "localization": {
     "country_label": "Country\/region",
