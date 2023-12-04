@@ -31,12 +31,12 @@
 @media screen and (min-width: 750px) {
     .swiper-slide img,
     .swiper-slide video {
-        height: 719px;
+        height: 564px;
     }
     .swiper-button-prev,
     .swiper-button-next {
         display: block;
-        top: 356px;
+        top: 269px;
     }
     .swiper-button-next {
         right: 20px;
