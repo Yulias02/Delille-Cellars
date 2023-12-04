@@ -193,7 +193,7 @@
         "padding_top": 16,
         "padding_bottom": 16,
         "show_price_range": true,
-        "full_width": true
+        "full_width": false
       }
     },
     "090f684e-6094-4a77-8384-5b031cfdb595": {
