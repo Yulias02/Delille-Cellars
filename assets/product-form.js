@@ -57,7 +57,7 @@ if (!customElements.get('product-form')) {
                 errors: response.errors || response.description,
                 message: response.message,
               });
-              this.handleErrorMessage(response.description);
+              this.handleErrorMessage(response.description, updatedValue);
 
               const soldOutMessage = this.submitButton.querySelector('.sold-out-message');
               
@@ -118,7 +118,6 @@ if (!customElements.get('product-form')) {
 
         if (errorMessage) {
           this.errorMessage.textContent = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
-          console.log(window.cartStrings.quantityError.replace('[quantity]', updatedValue))
         }
       }
     }
