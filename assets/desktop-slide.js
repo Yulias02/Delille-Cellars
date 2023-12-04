@@ -19,4 +19,5 @@ wrapper.addEventListener('touchmove', function (e) {
 
   this.scrollLeft += startX - e.touches[0].clientX
   startX = e.touches[0].clientX
+    e.preventDefault();
 })
