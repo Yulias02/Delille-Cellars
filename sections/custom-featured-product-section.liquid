@@ -170,18 +170,47 @@
 </div>
 
 <script>
-    let touchstartX = 0;
-  let touchendX = 0;
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the slider container element
+    var sliderContainer = document.querySelector('.featured-prod-slider');
 
-  let slider = document.querySelector('.featured-prod-slider');
+    if (sliderContainer) {
+      var startX, startY, isDragging = false;
 
-  slider.addEventListener('touchstart', (e) => {
-    console.log(1234)
-    touchstartX = e.changedTouches[0].screenX;
-  });
+      // Handle touchstart event
+      sliderContainer.addEventListener('touchstart', function(e) {
+        var touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        isDragging = true;
+      });
 
-  slider.addEventListener('touchend', (e) => {
-    touchendX = e.changedTouches[0].screenX;
+      // Handle touchmove event
+      sliderContainer.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+
+        var touch = e.touches[0];
+        var deltaX = touch.clientX - startX;
+        var deltaY = touch.clientY - startY;
+
+        // Adjust the threshold to control sensitivity
+        if (Math.abs(deltaX) > 10) {
+          // Prevent default to avoid unwanted scroll behavior
+          e.preventDefault();
+
+          // Implement your own logic for moving the slider here
+          // For example, adjust the slider position based on deltaX
+          // You may want to update the translateX property of the slider
+          // element or use a different approach based on your structure
+          // sliderContainer.style.transform = 'translateX(' + deltaX + 'px)';
+        }
+      });
+
+      // Handle touchend event
+      sliderContainer.addEventListener('touchend', function() {
+        isDragging = false;
+      });
+    }
   });
 </script>
 
