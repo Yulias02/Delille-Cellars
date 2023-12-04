@@ -5,8 +5,6 @@ slider-component {
   );
   position: relative;
   display: block;
-  scroll-behavior: smooth;
-}
 
 slider-component.slider-component-full-width {
   --desktop-margin-left-first-item: 1.5rem;
