@@ -105,7 +105,7 @@ if (!customElements.get('product-form')) {
             this.querySelector('.loading-overlay__spinner').classList.add('hidden');
           });
       }
- const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
+
       handleErrorMessage(errorMessage = false, updatedValue) {
         if (this.hideErrors) return;
 
