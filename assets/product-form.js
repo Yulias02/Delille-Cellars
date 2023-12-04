@@ -117,7 +117,8 @@ if (!customElements.get('product-form')) {
         this.errorMessageWrapper.toggleAttribute('hidden', !errorMessage);
 
         if (errorMessage) {
-          this.errorMessage.textContent = errorMessage;
+          const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
+          this.errorMessage.textContent = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
         }
       }
     }
