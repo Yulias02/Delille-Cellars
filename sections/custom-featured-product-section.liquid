@@ -171,6 +171,10 @@
 
 <script>
 const slider = document.querySelector('.featured-prod-slider'),
+  slider.addEventListener('click', handle);
+  function handle() {
+    console.log(123)
+  }
   slides = Array.from(document.querySelectorAll('.featured-slide'))
 
 // set up our state
