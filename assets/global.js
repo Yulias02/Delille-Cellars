@@ -1272,3 +1272,27 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+let touchstartX = 0;
+let touchendX = 0;
+
+let slider = document.querySelector('.featured-prod-slider');
+
+slider.addEventListener('touchstart', (e) => {
+  touchstartX = e.changedTouches[0].screenX;
+});
+
+slider.addEventListener('touchend', (e) => {
+  touchendX = e.changedTouches[0].screenX;
+});
+
+
+
+
+
+
+
+
+
+
+
