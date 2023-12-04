@@ -118,7 +118,7 @@ if (!customElements.get('product-form')) {
 
         if (errorMessage) {
           const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
-          this.errorMessage.textContent = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
+          this.errorMessage.textContent = `You can add only ${updatedValue} of this profuct`;
         }
       }
     }
