@@ -129,8 +129,8 @@ class CartItems extends HTMLElement {
 
         if (parsedState.errors) {
           quantityElement.value = quantityElement.getAttribute('value');
-          this.updateLiveRegions(line, parsedState.errors);
-          return;
+          //this.updateLiveRegions(line, parsedState.errors);
+          //return;
         }
 
         this.classList.toggle('is-empty', parsedState.item_count === 0);
