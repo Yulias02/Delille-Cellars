@@ -168,7 +168,7 @@ class CartItems extends HTMLElement {
 
         publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState, variantId: variantId });
       })
-      .catch((error) => {
+      .catch(() => {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         errors.textContent = window.cartStrings.quantityError;
