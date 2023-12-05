@@ -93,10 +93,10 @@
                 width="{{ media.width }}"
                 height="{{ media.height }}"
               >
+              {% if media[1].media_type == 'video' %}
+                {{ media[1] | video_tag: controls: false, muted: true, loop: true, autoplay: true }}
+              {%- endif -%}
             </div>
-            {% if media[1].media_type == 'video' %}
-              {{ media[1] | video_tag: controls: false, muted: true, loop: true, autoplay: true }}
-            {%- endif -%}
           {%- endif -%}
         {% endfor %}
       </div>
