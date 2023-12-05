@@ -105,6 +105,7 @@ class CartItems extends HTMLElement {
   }
 
   updateQuantity(line, quantity, name, variantId) {
+    console('updateQuantity');
     this.enableLoading(line);
 
     const body = JSON.stringify({
@@ -148,10 +149,13 @@ class CartItems extends HTMLElement {
         const updatedValue = parsedState.items[line - 1] ? parsedState.items[line - 1].quantity : undefined;
         let message = '';
         if (items.length === parsedState.items.length && updatedValue !== parseInt(quantityElement.value)) {
+          console.log('message');
           if (typeof updatedValue === 'undefined') {
              message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
           } 
         }
+        console.log('message1');
+        console.log(message);
         this.updateLiveRegions(line, message);
 
         const lineItem =
@@ -168,11 +172,11 @@ class CartItems extends HTMLElement {
 
         publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState, variantId: variantId });
       })
-      .catch(() => {
+      .catch((error) => {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         errors.textContent = window.cartStrings.quantityError;
-      console.log('test')
+      console.error(error)
       })
       .finally(() => {
         this.disableLoading(line);
