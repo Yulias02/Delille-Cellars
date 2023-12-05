@@ -427,18 +427,24 @@
     </div>
   </div>
 {%- endif -%}
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', function () {
+
+  <script>
+ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.card').forEach((video) => {
-    video.addEventListener('mouseover', function() {
-      let playItem = this.querySelector('video');
-      playItem.currentTime = 0;
+    let playItem = video.querySelector('video');
+    let currentTime = 0;
+
+    video.addEventListener('mouseover', function () {
+      currentTime = playItem.currentTime;
       playItem.play();
     });
 
-    video.addEventListener('mouseout', function() {
-      this.querySelector('video').pause();
+    video.addEventListener('mouseout', function () {
+      playItem.pause();
+      playItem.currentTime = currentTime;
     });
   });
-  });
-</script> -->
+});
+
+  </script>
+
