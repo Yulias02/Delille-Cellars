@@ -30,7 +30,7 @@
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script>
+  <!-- <script src="{{ 'swiper.js' | asset_url }}" defer="defer"></script> -->
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
@@ -813,6 +813,16 @@
         {%- endfor -%}
       ]
     }
+  </script>
+  <script>
+    
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
   </script>
 </section>
 
