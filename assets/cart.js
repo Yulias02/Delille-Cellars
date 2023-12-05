@@ -150,7 +150,7 @@ class CartItems extends HTMLElement {
         if (items.length === parsedState.items.length && updatedValue !== parseInt(quantityElement.value)) {
           if (typeof updatedValue === 'undefined') {
              message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
-            console.log(message)
+            console.log(message);
           } 
         }
         this.updateLiveRegions(line, message);
