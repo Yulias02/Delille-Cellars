@@ -1,5 +1,5 @@
 
-const swiper = new Swiper('.swiper', {
+const newswiper = new Swiper('.swiper', {
     loop: true,
     navigation: {
         nextEl: '.swiper-button-next',
