@@ -24,7 +24,6 @@ class CartDrawer extends HTMLElement {
   }
 
   open(triggeredBy) {
-    console.log('arthur');
     if (triggeredBy) this.setActiveElement(triggeredBy);
     const cartDrawerNote = this.querySelector('[id^="Details-"] summary');
     if (cartDrawerNote && !cartDrawerNote.hasAttribute('role')) this.setSummaryAccessibility(cartDrawerNote);
@@ -49,7 +48,6 @@ class CartDrawer extends HTMLElement {
   }
 
   close() {
-    console.log('arthur2');
     this.classList.remove('active');
     removeTrapFocus(this.activeElement);
     document.body.classList.remove('overflow-hidden');
@@ -71,7 +69,6 @@ class CartDrawer extends HTMLElement {
   }
 
   renderContents(parsedState) {
-    console.log('renderContents');
     this.querySelector('.drawer__inner').classList.contains('is-empty') &&
       this.querySelector('.drawer__inner').classList.remove('is-empty');
     this.productId = parsedState.id;
@@ -117,7 +114,6 @@ customElements.define('cart-drawer', CartDrawer);
 
 class CartDrawerItems extends CartItems {
   getSectionsToRender() {
-    console.log('CartDrawerItems');
     return [
       {
         id: 'CartDrawer',
