@@ -150,10 +150,10 @@ class CartItems extends HTMLElement {
         if (items.length === parsedState.items.length && updatedValue !== parseInt(quantityElement.value)) {
           if (typeof updatedValue === 'undefined') {
              message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
-            console.log("error": message);
           } 
         }
         this.updateLiveRegions(line, message);
+            console.log("error": message);
 
         const lineItem =
           document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
