@@ -62,7 +62,7 @@ class CartItems extends HTMLElement {
           }
         })
         .catch((e) => {
-          console.error(e);
+          // console.error(e);
         });
     } else {
       fetch(`${routes.cart_url}?section_id=main-cart-items`)
@@ -73,7 +73,7 @@ class CartItems extends HTMLElement {
           this.innerHTML = sourceQty.innerHTML;
         })
         .catch((e) => {
-          console.error(e);
+          // console.error(e);
         });
     }
    
