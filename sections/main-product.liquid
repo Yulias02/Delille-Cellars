@@ -284,6 +284,11 @@
                     >
                   </span>
                 </label>
+                <p>
+                  (Only
+                  {{- product.selected_or_first_available_variant.inventory_quantity -}}
+                  of the product left)
+                </p>
                 <div class="price-per-item__container">
                   <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">
@@ -292,6 +297,7 @@
                       </span>
                       {% render 'icon-minus' %}
                     </button>
+
                     <input
                       class="quantity__input"
                       type="number"
