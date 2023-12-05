@@ -30,10 +30,7 @@
   overflow: hidden;
   max-width: var(--page-width);
   margin-top: 50px;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
-}
+  
 }
 .quick-add-modal__toggle {
   position: absolute;
