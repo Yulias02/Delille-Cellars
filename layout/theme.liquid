@@ -309,8 +309,8 @@
       };
 
       window.cartStrings = {
-        error: "You can only add [quantity] of this item to your cart."
-        quantityError: "You can only add [quantity] of this item to your cart."
+        error:  "You can only add [quantity] of this item to your cart.",
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
       };
 
       window.variantStrings = {
