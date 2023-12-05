@@ -152,8 +152,9 @@ class CartItems extends HTMLElement {
              message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
           } 
         }
+        console.log('message');
+        console.log(message);
         this.updateLiveRegions(line, message);
-            console.log("error": message);
 
         const lineItem =
           document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
@@ -169,11 +170,11 @@ class CartItems extends HTMLElement {
 
         publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState, variantId: variantId });
       })
-      .catch(() => {
+      .catch((error) => {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         errors.textContent = window.cartStrings.quantityError;
-      console.log('test')
+      console.error(error)
       })
       .finally(() => {
         this.disableLoading(line);
