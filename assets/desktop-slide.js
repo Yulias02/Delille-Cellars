@@ -3,7 +3,6 @@ const wrapper = document.querySelector('.featured-prod-slider')
 let pressed = false
 let startX = 0
 
-// Mouse events
 wrapper.addEventListener('mousedown', function (e) {
   pressed = true
   startX = e.clientX
@@ -28,7 +27,6 @@ wrapper.addEventListener('mousemove', function (e) {
   this.scrollLeft += startX - e.clientX
 })
 
-// Touch events
 wrapper.addEventListener('touchstart', function (e) {
   pressed = true
   startX = e.touches[0].clientX
