@@ -153,7 +153,6 @@ class CartItems extends HTMLElement {
           } 
         }
         this.updateLiveRegions(line, message);
-            console.log("error:" message);
 
         const lineItem =
           document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
