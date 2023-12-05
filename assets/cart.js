@@ -129,7 +129,10 @@ class CartItems extends HTMLElement {
 
         if (parsedState.errors) {
           quantityElement.value = quantityElement.getAttribute('value');
-          this.updateLiveRegions(line, parsedState.errors);
+          this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
+        const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
+        errors.textContent = window.cartStrings.quantityError;
+          //this.updateLiveRegions(line, parsedState.errors);
           return;
         }
 
