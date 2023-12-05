@@ -122,17 +122,14 @@ class CartItems extends HTMLElement {
       .then((state) => {
         const parsedState = JSON.parse(state);
         console.log('parsedState');
-        console.log(parsedState);
+        console.log(parsedState');
         const quantityElement =
           document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
         const items = document.querySelectorAll('.cart-item');
 
         if (parsedState.errors) {
           quantityElement.value = quantityElement.getAttribute('value');
-          this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
-        const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
-        errors.textContent = window.cartStrings.quantityError;
-          //this.updateLiveRegions(line, parsedState.errors);
+          this.updateLiveRegions(line, parsedState.errors);
           return;
         }
 
