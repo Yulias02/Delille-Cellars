@@ -429,18 +429,30 @@
 {%- endif -%}
 
  <script>
-    document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.card').forEach((video) => {
+      let playItem = video.querySelector('video');
+      let startTime = 0;
+
       video.addEventListener('mouseover', function() {
-        let playItem = this.querySelector('video');
-        playItem.currentTime = 0;
+        startTime = playItem.currentTime;
         playItem.play();
       });
 
       video.addEventListener('mouseout', function() {
-        this.querySelector('video').pause();
+        playItem.pause();
+      });
+
+      playItem.addEventListener('timeupdate', function() {
+        startTime = playItem.currentTime;
+      });
+
+      playItem.addEventListener('ended', function() {
+        // Reset start time when the video ends
+        startTime = 0;
       });
     });
-    });
-  </script> 
+  });
+</script>
+
 
