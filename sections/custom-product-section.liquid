@@ -1,42 +1,7 @@
 {%- for block in section.blocks -%}
   {% render 'custom-product', placeholder_image: placeholder_image, card_product: block.settings.product %}
 {% endfor %}
-{{ 'custom-product.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-
-<script>
-  const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
-
-
-  addToCartForms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const submitButton = form.querySelector('.buy-now');
-      const spinner = form.querySelector('.loading-overlay__spinner');
-
-        submitButton.classList.add('hidden');
-        spinner.classList.remove('hidden');
-
-      fetch("/cart/add.js", {
-        method: "post",
-        body: new FormData(form),
-      })
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            spinner.classList.add('hidden');
-            submitButton.classList.remove('hidden');
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-            spinner.classList.add('hidden');
-            submitButton.classList.add('hidden');
-        });
-    });
-  });
-</script>
 {% schema %}
  {
   "name": "Product Section",
@@ -76,37 +41,270 @@
 {% endschema %}
 
 {% stylesheet %}
+  .path {
+    stroke: #fff !important;
+  }
+  .loading-overlay__spinner {
+    margin-left: 35px !important;
+  }
+   .section+.section {
+    padding: 0;
+  }
+    .background {
+    position: relative;
+    background-color: #303030;
+    width: 430px;
+    margin: 0 auto;
+    display: table;
+  }
+  .new-wine {
+    margin-top: 50px !important;
+    margin-bottom: 0 !important;
+    display: table;
+  }
+  .new-wine > .pad {
+    width: 470px;
+    padding: 20px 0;
+    float: left;
+  }
+  .new-wine > .pad:nth-child(2n + 1) {
+    margin-right: 20px;
+  }
+  .new-wine-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    font-family: "High Tower" !important;
+    color: #fff;
+    padding: 15px 0 16px;
+    margin: 0 !important;
+  }
+  .new-wine-img {
+    display: block;
+    margin-bottom: 16px;
+  }
+  .new-wine-desc { 
+    font-family: "Neutra Text";
+    color: aliceblue;
+    padding: 0 25px;
+    margin-bottom: 13px;
+  }
+  .purchase {
+    padding: 0 25px 22px;
+  }
+  .purchase-element:not(:last-child) {
+    float: left;
+    margin-right: 23px;
+    margin-top: 12px;
+  }
+  .price-element {
+     font-family: "High Tower";
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+     margin: 0 !important;
+  }
+  .qty-label {
+    color: #fff;
+    font-size: 18px;
+    font-family: "Neutra Text";
+    line-height: 1.5;
+    margin-right: 9px;
+  }
+  .qty-input {
+    height: 30px;
+    width: 50px;
+    box-shadow: inset 1px 1.7px 5px rgba(0, 1, 1, 0.23);
+    font-family: "Neutra Text";
+    font-size: 18px;
+    padding: 6px 0 6px 5px !important;
+    line-height: 1;
+    box-sizing: border-box;
+    border: none;
+  }
+  .submit {
+    display: block;
+    border: transparent;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px; 
+    font-family: "Neutra Text";
+    line-height: 1.5;
+    margin-top: 26px;
+    cursor: pointer;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .submit:is(:hover, :focus) {
+    text-decoration: underline;
+    color: #fff;
+  }
+  .wine-promo {
+    margin-bottom: 50px;
+  }
+  /* Form */
+  .qty-form {
+
+    background-color: #e9e8e8;
+    padding: 2px 15px 20px 15px;
+    width: 131px !important;
+
+  }
+  .form-title {
+    font-size: 16px;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  .form-lable {
+    font-size: 16px;
+  }
+  .form-lable:not(:first-child) {
+    margin-top: 4px;
+  }
+  .form-input {
+    display: block;
+    height: 30px;
+    width: 100%;
+    box-shadow: inset 1px 1.7px 5px rgba(0, 1, 1, 0.23);
+    border: none;
+    padding: 7px 0 7px 10px;
+    box-sizing: border-box;
+  }
+  @media screen and (min-width: 769px) and (max-width: 960px) {
+  .container {
+    width: 768px;
+  }
+  .new-wine > .pad {
+    width: 374px !important;
+  }
+  .background,
+  .new-wine-img {
+    width: 340px;
+  }
+  .new-wine-header {
+    font-size: 18px;
+  }
+  .new-wine-desc {
+    font-size: 13px;
+  }
+  .price-element,
+  .qty-label,
+  .submit {
+    font-size: 14px;
+  }
+  .submit {
+    margin-top: 14px;
+  }
+  .purchase-element:not(:last-child) {
+    margin-right: 12px;
+  }
+  .crest-emblem {
+    width: 91px;
+  }
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+    width: 96% !important;
+
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+    .new-wine > .pad {
+    float: none;
+    display: inline-block;
+  }
+  .new-wine {
+    text-align: center;
+  }
+  .new-wine-desc {
+    text-align: left;
+    font-size: 14px;
+  }
+  .about-us-heding {
+    width: max-content;
+  }
+    .new-wine>.pad:nth-child(odd) {
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+     .new-wine-header {
+    font-size: 20px;
+  }
+  .new-wine > .pad:nth-child(2n + 1) {
+    margin-right: 0;
+  }
+  .about-container:nth-child(2) {
+    margin-left: calc(50% - 170px);
+  }
+  }
+  @media screen and (max-width: 480px) {
+     .background {
+    width: 93% !important;
+    display: table;
+  }
+  .new-wine-img {
+    width: 100%;
+  }
+  .new-wine > .pad {
+    width: 100%;
+    padding: 14px 0;
+  }
+  .crest-emblem {
+    width: 73px;
+  }
+  .purchase-element:not(:last-child) {
+    margin-right: 16px;
+  }
+  .qty-label,
+  .submit,
+  .price-element {
+    font-size: 14px;
+  }
+  .submit {
+    margin-top: 14px;
+  }
+  .new-wine > .pad:nth-child(2n + 1) {
+    margin-right: 0;
+  }
+  }
 {% endstylesheet %}
 
 {% javascript %}
-  // const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
+  const addToCartForms = document.querySelectorAll('form[action^="/cart/add"]');
 
-  // addToCartForms.forEach((form) => {
-  //   form.addEventListener("submit", (event) => {
-  //     event.preventDefault();
+  addToCartForms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-  //     const submitButton = form.querySelector('.buy-now');
-  //     const spinner = form.querySelector('.loading-overlay__spinner');
+      const submitButton = form.querySelector('.buy-now');
+      const spinner = form.querySelector('.loading-overlay__spinner');
 
-  //       submitButton.classList.add('hidden');
-  //       spinner.classList.remove('hidden');
 
-  //     fetch("/cart/add.js", {
-  //       method: "post",
-  //       body: new FormData(form),
-  //     })
-  //       .then((response) => {
-  //           return response.json();
-  //       })
-  //       .then((data) => {
-  //           spinner.classList.add('hidden');
-  //           submitButton.classList.remove('hidden');
-  //       })
-  //       .catch((error) => {
-  //         console.error('Error:', error);
-  //           spinner.classList.add('hidden');
-  //           submitButton.classList.add('hidden');
-  //       });
-  //   });
-  // });
+        submitButton.classList.add('hidden');
+        spinner.classList.remove('hidden');
+
+      fetch("/cart/add.js", {
+        method: "post",
+        body: new FormData(form),
+      })
+        .then((response) => {
+
+            return response.json();
+
+        })
+        .then((data) => {
+            spinner.classList.add('hidden');
+          
+            submitButton.classList.remove('hidden');
+
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+
+            spinner.classList.add('hidden');
+            submitButton.classList.add('hidden');
+
+        });
+    });
+  });
 {% endjavascript %}

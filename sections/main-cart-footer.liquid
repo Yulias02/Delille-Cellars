@@ -4,33 +4,22 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-    }
-    .cart-footer-position {
-      margin: 0 auto;
-      background-color: #FFFF;
-      padding-right: 40px;
-      padding-left: 40px;
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-
-    @media screen and (min-width: 750px) {
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
-      }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+  }
 {%- endstyle -%}
 
-<div
-  class="page-width{% if cart == empty %} is-empty{% endif %} cart-footer-position"
-  id="main-cart-footer"
-  data-id="{{ section.id }}"
->
+<div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
   <div>
-    <div class="cart__footer section-{{ section.id }}-padding ">
+    <div class="cart__footer section-{{ section.id }}-padding">
       {%- if settings.show_cart_note -%}
         <cart-note class="cart__note field">
           <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>

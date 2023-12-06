@@ -205,7 +205,6 @@
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
               </div>
             {%- endif -%}
-            <p class="shop-now-link">Shop now</p>
           </div>
         </div>
         {%- if show_quick_add -%}
@@ -273,6 +272,7 @@
                   novalidate: 'novalidate',
                   data-type: 'add-to-cart-form'
                 -%}
+  
                   <input
                     type="hidden"
                     name="id"
@@ -280,7 +280,7 @@
                     class="product-variant-id"
                     disabled
                   >
-
+    
                   <button
                     id="{{ product_form_id }}-submit"
                     type="submit"
@@ -304,10 +304,6 @@
                     <span class="sold-out-message hidden">
                       {{ 'products.product.sold_out' | t }}
                     </span>
-
-                    <span class="adding-to-cart hidden">Adding to cart</span>
-                    <span class="added-to-cart hidden">Added to cart</span>
-
                     {%- if horizontal_quick_add -%}
                       <span class="icon-wrap">{% render 'icon-plus' %}</span>
                     {%- endif -%}

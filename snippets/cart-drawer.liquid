@@ -161,18 +161,7 @@
                             </div>
                           {%- else -%}
                             <div class="product-option">
-                              {%- if item.original_price == item.variant.compare_at_price -%}
-                                {{ item.original_price | money }}
-                              {%- else -%}
-                                <s>
-                                  <span class="price-compare variant-item__price-per-item">
-                                    {{ item.variant.compare_at_price | money }}
-                                  </span></s
-                                >
-                                <span class="price-origin">
-                                  {{ item.original_price | money }}
-                                </span>
-                              {%- endif -%}
+                              {{ item.original_price | money }}
                             </div>
                           {%- endif -%}
 
@@ -240,7 +229,6 @@
                               <svg
                                 aria-hidden="true"
                                 focusable="false"
-                                role="presentation"
                                 class="spinner"
                                 viewBox="0 0 66 66"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -266,37 +254,24 @@
                                   {{ item.final_line_price | money }}
                                 </span>
                               </div>
-
-                            {%- elsif item.variant.compare_at_price %}
-                              <div class="price price--end">
-                                {% assign total_cart_compare_price = 0 %}
-                                {% assign compare_price = item.variant.compare_at_price | times: item.quantity %}
-                                <s
-                                  ><span class="compare-price">
-                                    {{ compare_price | money }}
-                                  </span></s
-                                >
-
-                                <span>{{ item.original_line_price | money }}</span>
-                              </div>
                             {%- else -%}
                               <span class="price price--end">
-                                {{ item.final_line_price | money }}
+                                {{ item.original_line_price | money }}
                               </span>
                             {%- endif -%}
 
                             {%- if item.variant.available and item.unit_price_measurement -%}
                               <div class="unit-price caption">
                                 <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-                                {{ item.variant.unit_price | money }}
+                                {{ item.unit_price | money }}
                                 <span aria-hidden="true">/</span>
                                 <span class="visually-hidden"
                                   >&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span
                                 >
-                                {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
-                                  {{- item.variant.unit_price_measurement.reference_value -}}
+                                {%- if item.unit_price_measurement.reference_value != 1 -%}
+                                  {{- item.unit_price_measurement.reference_value -}}
                                 {%- endif -%}
-                                {{ item.variant.unit_price_measurement.reference_unit }}
+                                {{ item.unit_price_measurement.reference_unit }}
                               </div>
                             {%- endif -%}
                           </div>
@@ -487,7 +462,7 @@
               {{ 'accessibility.loading' | t }}
             </p>
           </div>
-
+                                  
           <div id="CartDrawer-CartErrors" role="alert"></div>
           <div>
             <label for="delivery-details">Choose desirable delivery time:</label>
@@ -495,6 +470,7 @@
               <input type="datetime-local" name="attributes[Delivery details]" id="delivery-details">
             </div>
           </div>
+                                  
         </form>
         {%- if cart != empty -%}
           <h2>You may also like</h2>
@@ -508,7 +484,7 @@
                 != blank
             %}
               {% for prod in product_recommendation.metafields['shopify--discovery--product_recommendation'].related_products.value %}
-                <li class="grid__item related-grid">
+                <li class="grid__item">
                   {%
                     render 'card-product',
                     card_product: prod,
@@ -585,19 +561,13 @@
               {{ 'sections.cart.update' | t }}
             </button>
           </noscript>
-          <a
-            href="{{ routes.cart_url }}"
-            id="cart-notification-button"
-            class="button button--secondary button--full-width view-cart-btn"
-            >View Cart</a
-          >
+
           <button
             type="submit"
             id="CartDrawer-Checkout"
             class="cart__checkout-button button"
             name="checkout"
             form="CartDrawer-Form"
-
             {% if cart == empty %}
               disabled
             {% endif %}

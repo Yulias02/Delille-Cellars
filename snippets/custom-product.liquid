@@ -1,4 +1,4 @@
-<div class="pad wine-promo">
+<article class="pad wine-promo">
   <div class="background">
     <h3 class="new-wine-header">
       {{ card_product.title | escape }}
@@ -31,7 +31,6 @@
             data-type: 'add-to-cart-form'
           -%}
             <label for="qty" class="qty-label">QTY</label>
-
             <input
               class="qty-input"
               type="number"
@@ -47,16 +46,6 @@
               value="{{ card_product.first_available_variant.id }}"
               class="product-variant-id"
             >
-            <div class="product-form__error-message-wrapper" role="alert" hidden>
-              {% render 'icon-error' %}
-              <span>
-                {{-
-                  'sections.cart.cart_quantity_error_html'
-                  | t: quantity: card_product.first_available_variant.inventory_quantity
-                -}}
-              </span>
-            </div>
-
             <button
               type="submit"
               value="BUY NOW"
@@ -75,7 +64,12 @@
               <span class="buy-now">
                 {%- if card_product.selected_or_first_available_variant.available -%}
                   BUY NOW
+                {%- else -%}
+                  {{ 'products.product.sold_out' | t }}
                 {%- endif -%}
+              </span>
+              <span class="sold-out-message hidden">
+                {{ 'products.product.sold_out' | t }}
               </span>
 
               <div class="loading-overlay__spinner hidden">
@@ -109,4 +103,4 @@
       </div>
     </div>
   </div>
-</div>
+</article>

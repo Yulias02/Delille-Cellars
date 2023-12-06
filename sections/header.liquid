@@ -1,204 +1,227 @@
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link
-  rel="stylesheet"
-  href="{{ 'component-cart-notification.css' | asset_url }}"
-  media="print"
-  onload="this.media='all'"
+        rel="stylesheet"
+        href="{{ 'component-cart-notification.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'"
 >
+{{ 'header.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- if settings.cart_type == 'drawer' -%}
-  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
-  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
-  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
-  {{ 'component-price.css' | asset_url | stylesheet_tag }}
-  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
-  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+    {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+    {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+    {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+    {{ 'component-price.css' | asset_url | stylesheet_tag }}
+    {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+    {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 <noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
-
+<script src="{{ 'mobile-menu.js' | asset_url }}" defer="defer"></script>
 <style>
-  header-drawer {
-    justify-self: start;
-    margin-left: -1.2rem;
-  }
+    header-drawer {
+        justify-self: start;
+        margin-left: -1.2rem;
+    }
 
-  .menu-drawer-container {
-    display: flex;
-  }
+    .menu-drawer-container {
+        display: flex;
+    }
 
-  .list-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+    .list-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-  .list-menu--inline {
-    display: inline-flex;
-    flex-wrap: wrap;
-  }
+    .list-menu--inline {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
 
-  summary.list-menu__item {
-    padding-right: 2.7rem;
-  }
+    summary.list-menu__item {
+        padding-right: 2.7rem;
+    }
 
-  .list-menu__item {
-    display: flex;
-    align-items: center;
-    line-height: calc(1 + 0.3 / var(--font-body-scale));
-  }
+    .list-menu__item {
+        display: flex;
+        align-items: center;
+        line-height: calc(1 + 0.3 / var(--font-body-scale));
+    }
 
-  .list-menu__item--link {
-    text-decoration: none;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    line-height: calc(1 + 0.8 / var(--font-body-scale));
-  }
+    .list-menu__item--link {
+        text-decoration: none;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        line-height: calc(1 + 0.8 / var(--font-body-scale));
+    }
 </style>
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
 {%- if settings.cart_type == 'drawer' -%}
-  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 <header>
-  <div class="page-header container ">
-    <a href="{{ routes.root_url }}" class="logo">
-      <img
-        class="logo-img"
-        src="{{ settings.logo | image_url }}"
-        alt="{{ settings.logo.alt | default: shop.name | escape }}"
-        width="{{ settings.logo_width }}"
-        loading="lazy"
-        height="{{ settings.logo_height }}"
-      >
-    </a>
-    <div class="header-cont">
-      <div class="authorization">
-        <!-- Login -->
-
-        <a
-          href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-          class="link"
-        >
-          {%- liquid
-            if customer
-              echo customer.first_name
-            else
-              echo 'customer.log_in' | t
-            endif
-          -%}
-        </a>
-
-        <span>|</span>
-
-        <!-- Cart -->
-
-        <a href="{{ routes.cart_url }}" class="link focus-inset cart-link" id="cart-icon-bubble">
-          {%- if cart != empty -%}
-            <div class="cart-count-bubble">
-              {%- if cart.item_count < 100 -%}
-                <span aria-hidden="true">{{ cart.item_count }}</span>
-              {%- endif -%}
-              <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-            </div>
-          {%- endif -%}
-          Cart
-        </a>
-      </div>
-
-      <nav class="navigation">
-        <ul class="menu-list">
-          {% for link in linklists['main-menu'].links %}
-            <li class="list-item">
-              <a href="{{ link.url }}" class="link">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
-
-      <button
-        type="button"
-        class="mob-menu-btn"
-        data-menu-open
-      ></button>
-      <div class="mob-menu is-hidden" data-menu>
+    <div class="page-header container ">
         <button
-          type="button"
-          class="menu-close-btn"
-          data-menu-close
-        ></button>
+                type="button"
+                class="mob-menu-btn"
+                data-menu-open
 
-        <ul class="mobile-menu-list">
-          {% for link in linklists['main-menu'].links %}
-            <li class="mobile-list-item">
-              <a href="{{ link.url }}" class="link">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        <div class="mobile-list-item mobile-auth">
-          <!-- Login -->
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none">
+                <path d="M1.1111 0.166626C0.963755 0.166626 0.822447 0.225158 0.71826 0.329344C0.614074 0.433531 0.555542 0.574839 0.555542 0.722182C0.555542 0.869524 0.614074 1.01083 0.71826 1.11502C0.822447 1.21921 0.963755 1.27774 1.1111 1.27774H18.5667C18.714 1.27774 18.8553 1.21921 18.9595 1.11502C19.0637 1.01083 19.1222 0.869524 19.1222 0.722182C19.1222 0.574839 19.0637 0.433531 18.9595 0.329344C18.8553 0.225158 18.714 0.166626 18.5667 0.166626H1.1111ZM0.555542 8.49996C0.555542 8.35262 0.614074 8.21131 0.71826 8.10712C0.822447 8.00294 0.963755 7.9444 1.1111 7.9444H18.5667C18.714 7.9444 18.8553 8.00294 18.9595 8.10712C19.0637 8.21131 19.1222 8.35262 19.1222 8.49996C19.1222 8.6473 19.0637 8.78861 18.9595 8.8928C18.8553 8.99698 18.714 9.05552 18.5667 9.05552H1.1111C0.963755 9.05552 0.822447 8.99698 0.71826 8.8928C0.614074 8.78861 0.555542 8.6473 0.555542 8.49996ZM0.555542 16.2777C0.555542 16.1304 0.614074 15.9891 0.71826 15.8849C0.822447 15.7807 0.963755 15.7222 1.1111 15.7222H18.5667C18.714 15.7222 18.8553 15.7807 18.9595 15.8849C19.0637 15.9891 19.1222 16.1304 19.1222 16.2777C19.1222 16.4251 19.0637 16.5664 18.9595 16.6706C18.8553 16.7748 18.714 16.8333 18.5667 16.8333H1.1111C0.963755 16.8333 0.822447 16.7748 0.71826 16.6706C0.614074 16.5664 0.555542 16.4251 0.555542 16.2777Z"
+                      fill="#121212"/>
+            </svg>
+        </button>
 
-          <a
-            href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-            class="link"
-          >
-            {%- liquid
-              if customer
-                echo customer.first_name
-              else
-                echo 'customer.log_in' | t
-              endif
-            -%}
-          </a>
-
-          <span>|</span>
-
-          <!-- Cart -->
-
-          <a
-            href="{{ routes.cart_url }}"
-            class="header__icon header__icon--cart link focus-inset"
-            id="cart-icon-bubble"
-          >
-            {%- liquid
-              if cart == empty
-                render 'icon-cart-empty'
-              else
-                render 'icon-cart'
-              endif
-            -%}
-            <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
-            {%- if cart != empty -%}
-              <div class="cart-count-bubble">
-                {%- if cart.item_count < 100 -%}
-                  <span aria-hidden="true">{{ cart.item_count }}</span>
-                {%- endif -%}
-                <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-              </div>
-            {%- endif -%}
-          </a>
-
-          <!--
-            <a href="{{ routes.cart_url }}" class="link focus-inset cart-link" id="cart-icon-bubble">
-              {%- if cart != empty -%}
-                <div class="cart-count-bubble">
-                  {%- if cart.item_count < 100 -%}
-                    <span aria-hidden="true">{{ cart.item_count }}</span>
-                  {%- endif -%}
-                  <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-                </div>
-              {%- endif -%}
-              Cart</a
+        <a href="{{ routes.root_url }}" class="logo">
+            <img
+                    class="logo-img"
+                    src="{{ settings.logo | image_url }}"
+                    alt="{{ settings.logo.alt | default: shop.name | escape }}"
+                    width="{{ settings.logo_width }}"
+                    loading="lazy"
+                    height="{{ settings.logo_height }}"
             >
-          -->
+        </a>
+        <div class="header-mobile-icons">
+            {% render 'header-search', input_id: 'Search-In-Modal' %}
+
+            <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset"
+               id="cart-icon-bubble">
+                {%- liquid
+                    if cart == empty
+                        render 'icon-cart-empty'
+                    else
+                        render 'icon-cart'
+                    endif
+                -%}
+                <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+                {%- if cart != empty -%}
+                    <div class="cart-count-bubble">
+                        {%- if cart.item_count < 100 -%}
+                            <span aria-hidden="true">{{ cart.item_count }}</span>
+                        {%- endif -%}
+                        <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                    </div>
+                {%- endif -%}
+            </a>
         </div>
-      </div>
+
+        <div class="mob-menu is-hidden" data-menu>
+            <button type="button" class="menu-close-btn" data-menu-close></button>
+
+            <ul class="mobile-menu-list">
+                {% for link in linklists['main-menu'].links %}
+                    <li class="mobile-list-item">
+                        <a href="{{ link.url }}" class="link">{{ link.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="authorization">
+                <!-- Login -->
+                <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+                        class="link">
+                    {%- liquid
+                        if customer
+                            echo customer.first_name
+                        else
+                            echo 'customer.log_in' | t
+                        endif
+                    -%}
+                </a>
+                <span>|</span>
+
+                <!-- Cart -->
+
+                <a href="{{ routes.cart_url }}" class="link focus-inset cart-link" id="cart-icon-bubble">
+                    {%- if cart != empty -%}
+                        <div class="cart-count-bubble">
+                            {%- if cart.item_count < 100 -%}
+                                <span aria-hidden="true">{{ cart.item_count }}</span>
+                            {%- endif -%}
+                            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                        </div>
+                    {%- endif -%}
+                    Cart
+                </a>
+            </div>
+        </div>
+
+
+        <div class="header-cont">
+            <div class="authorization">
+                <!-- Login -->
+
+                <a
+                        href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+                        class="link"
+                >
+                    {%- liquid
+                        if customer
+                            echo customer.first_name
+                        else
+                            echo 'customer.log_in' | t
+                        endif
+                    -%}
+                </a>
+
+                <span>|</span>
+
+                <!-- Cart -->
+
+                <a href="{{ routes.cart_url }}" class="link focus-inset cart-link" id="cart-icon-bubble">
+                    {%- if cart != empty -%}
+                        <div class="cart-count-bubble">
+                            {%- if cart.item_count < 100 -%}
+                                <span aria-hidden="true">{{ cart.item_count }}</span>
+                            {%- endif -%}
+                            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+                        </div>
+                    {%- endif -%}
+                    Cart
+                </a>
+            </div>
+
+            <nav class="navigation">
+                <ul class="menu-list">
+                    {% for link in linklists['main-menu'].links %}
+                        <li class="list-item">
+                            <a href="{{ link.url }}" class="link">{{ link.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+
+
+        </div>
     </div>
-  </div>
 </header>
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z"
+              fill="currentColor"/>
+    </symbol>
+
+    <symbol id="icon-reset" class="icon icon-close" fill="none" viewBox="0 0 18 18" stroke="currentColor">
+        <circle r="8.5" cy="9" cx="9" stroke-opacity="0.2"/>
+        <path d="M6.82972 6.82915L1.17193 1.17097" stroke-linecap="round" stroke-linejoin="round"
+              transform="translate(5 5)"/>
+        <path d="M1.22896 6.88502L6.77288 1.11523" stroke-linecap="round" stroke-linejoin="round"
+              transform="translate(5 5)"/>
+    </symbol>
+
+    <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+        <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+              fill="currentColor">
+    </symbol>
+</svg>
+
 
 {% comment %}
   <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -801,7 +824,7 @@
       "label": "t:sections.all.colors.label",
       "default": "background-1"
     },
-      {
+    {
       "type": "color_scheme",
       "id": "menu_color_scheme",
       "label": "t:sections.header.settings.menu_color_scheme.label",
@@ -895,197 +918,4 @@
   ]
 }
 {% endschema %}
-{% stylesheet %}
-         .container {
-         margin: 0 auto;
-       }
-           ul {
-           margin: 0;
-           padding: 0;
-           list-style: none;
-         }
-        body  .link {
-           text-decoration: none;
-           color: #303030;
-         }
-       .authorization .link,
-     .menu-list .link {
-       transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-       text-transform: uppercase;
-       font-family: 'High Tower';
-       font-size: 14px;
-     }
-     .authorization .link:is(:hover, :focus),
-     .menu-list .link:is(:hover, :focus) {
-       color: #855861;
-     }
-       header {
-       background-color: rgba(255, 255, 255, 0.8);
-       width: 100%;
-       backdrop-filter: blur(4px);
-         position: absolute;
-       z-index: 1;
-     }
 
-     .logo-img {
-       display: block;
-       float: left;
-       width: 456px;
-       padding-left: 15px;
-       margin-top: 1px;
-       margin-bottom: 4px;
-     }
-     .authorization {
-       float: right;
-       padding-top: 8px;
-     }
-     .navigation {
-       margin-top: 8px;
-       float: right;
-       clear: right;
-
-     }
-     .list-item {
-       float: left;
-
-     }
-     .list-item:not(:last-child) {
-       margin-right: 15px;
-     }
-     .cart-link {
-       position: relative;
-     }
-     .hamburger-menu {
-     position: relative;
-   }
-
-   .mob-menu {
-     position: fixed;
-     top: 0;
-     right: 0;
-     width: 200px;
-     height: 100vh;
-     margin: 0;
-     padding: 30px 0 200px 20px;
-     list-style: none;
-     background-color: #eceff1;
-     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-     transition-duration: 0.25s;
-     z-index: 1;
-   }
-   .is-hidden {
-     opacity: 0;
-     visibility: hidden;
-     pointer-events: none;
-   }
-   .menu-close-btn {
-     position: relative;
-     background-image: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/icons8-close-30.png?v=1694161516);
-     width: 30px;
-     height: 30px;
-     border: none;
-     background-color: transparent;
-     top: -18px;
-     cursor: pointer;
-   }
-   .mobile-auth {
-     font-weight: 600;
-     text-decoration: underline;
-   }
-   .mobile-list-item {
-     font-size: 16px;
-     display: block;
-     padding: 10px 50px;
-     transition-duration: 0.25s;
-   }
-   .mob-menu-btn {
-     display: none;
-   }
-  @media screen and (min-width: 960px) {
-    .container {
-      width: 960px
-    }
-  .logo-img {
-     width: 456px;
-   }
-  .cart-count-bubble {
-    bottom: 1.7999999999999998rem;
-    left: 2.5rem;
-  }
-     .navigation {
-    float: right;
-    clear: right;
-    margin-top: 8px;
-  }
-  .authorization {
-    float: right;
-    padding-top: 0;
-    margin-top: 8px;
-  }
-  .list-item:not(:last-child) {
-    margin-right: 24px;
-  }
-  }
-   @media screen and (min-width: 769px) and (max-width: 960px) {
-   .page-width {
-     width: 768px
-   }
-   .logo-img {
-     width: 356px;
-   }
-   .navigation {
-     float: right;
-     clear: right;
-     margin-top: 3px;
-   }
-   .authorization {
-     padding-top: 1px ;
-   }
-   .list-item {
-     padding-bottom: 4px;
-   }
-   }
-  @media screen and (max-width: 768px) {
-  .mob-menu-btn {
-    background-image: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/icons8-hamburger-menu-30.png?v=1694161515);
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    margin-top: -13px;
-    right: 15px;
-    display: block ;
-    cursor: pointer;
-  }
-
-  .container {
-    width: 96%;
-    margin-left: 2%;
-    margin-right: 2%;
-  }
-  .header-cont {
-    display: none;
-  }
-  header {
-    float: left;
-  }
-  }
-  @media screen and (min-width: 480px) and (max-width: 768px) {
-  .logo-img {
-    width: 356px;
-    margin-bottom: 5px;
-  }
-  .mob-menu-btn {
-    top: 33px;
-  }
-  }
-  @media screen and (max-width: 480px) {
-  .logo-img {
-    width: 237px;
-  }
-    .mob-menu-btn {
-    margin-top: 10px;
-  }
-  }
-{% endstylesheet %}

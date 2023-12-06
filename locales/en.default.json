@@ -360,9 +360,6 @@
       "cancel": "Cancel"
     }
   },
-  "checkouts": {
-    "only_n_items_available": ""
-  },
   "localization": {
     "country_label": "Country\/region",
     "language_label": "Language",
