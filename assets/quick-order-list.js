@@ -199,7 +199,7 @@ class QuickOrderList extends HTMLElement {
         const parsedState = JSON.parse(state);
         this.renderSections(parsedState);
       }).catch(() => {
-        this.setErrorMessage(window.cartStrings.quantityError);
+        this.setErrorMessage(window.cartStrings.error);
       })
       .finally(() => {
         this.querySelector('.variant-remove-total .loading-overlay').classList.add('hidden');
@@ -288,7 +288,7 @@ class QuickOrderList extends HTMLElement {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         this.resetQuantityInput(id);
         console.error(error);
-        this.setErrorMessage(window.cartStrings.quantityError);
+        this.setErrorMessage(window.cartStrings.error);
       })
       .finally(() => {
         this.toggleLoading(id);
@@ -341,7 +341,8 @@ class QuickOrderList extends HTMLElement {
   updateError(updatedValue, id) {
     let message = '';
     if (typeof updatedValue === 'undefined') {
-      
+      message = window.cartStrings.error;
+    } else {
       message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
     }
     this.updateLiveRegions(id, message);

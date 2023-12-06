@@ -79,7 +79,6 @@ if (!customElements.get('price-per-item')) {
             break;
           }
         }
-     
       }
 
       getCartQuantity(updatedCartQuantity) {

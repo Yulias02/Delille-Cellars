@@ -182,13 +182,10 @@ class QuantityInput extends HTMLElement {
 
   onButtonClick(event) {
     event.preventDefault();
-    console.log('onButtonClick');
-    console.log(this);
     const previousValue = this.input.value;
-  
+
     event.target.name === 'plus' ? this.input.stepUp() : this.input.stepDown();
     if (previousValue !== this.input.value) this.input.dispatchEvent(this.changeEvent);
-    console.log(previousValue)
   }
 
   validateQtyRules() {
@@ -1272,4 +1269,3 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
-

@@ -16,11 +16,11 @@
   justify-content: center;
 }
 
-/*.deferred-media__poster img {*/
-/*  width: auto;*/
-/*  max-width: 100%;*/
-/*  height: 100%;*/
-/*}*/
+.deferred-media__poster img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+}
 
 .deferred-media {
   overflow: hidden;

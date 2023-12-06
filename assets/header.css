@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+}
+.container {
+    margin: 0 auto;
+    padding: 0 17px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body  .link {
+    text-decoration: none;
+    color: #303030;
+}
+.authorization .link,
+.menu-list .link {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    font-family: 'High Tower';
+    font-size: 14px;
+}
+.authorization .link:is(:hover, :focus),
+.menu-list .link:is(:hover, :focus) {
+    color: #855861;
+}
+header {
+    background-color: #FFFFFF;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    position: absolute;
+    z-index: 1;
+}
+.is-hidden {
+   display: none;
+    }
+.header-cont{
+    display: none;
+}
+.logo-img {
+    display: block;
+    width: 138px;
+}
+    .mob-menu-btn {
+        width: 16px;
+        height: 16px;
+        border: none;
+        background-color: transparent;
+    }
+ .page-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-top: 16px;
+     padding-bottom: 16px;
+ }
+ .header-mobile-icons {
+     display: flex;
+ }
+.mob-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 30px 0 20px 20px;
+    list-style: none;
+    background-color: #eceff1;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.25s;
+    z-index: 1;
+}
+
+.menu-close-btn {
+    position: relative;
+    background-image: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/icons8-close-30.png?v=1694161516);
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    top: -18px;
+    cursor: pointer;
+}
+.mobile-auth {
+    font-weight: 600;
+    text-decoration: underline;
+}
+.mobile-list-item {
+    font-size: 16px;
+    display: block;
+    padding: 10px 50px;
+    transition-duration: 0.25s;
+}
+.mobile-menu-list,
+.authorization {
+    text-align: center;
+}
+@media screen and (min-width: 768px) {
+    header {
+        background-color: #FFFFFF;
+        opacity: 0.8;
+    }
+    .page-header {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .header-mobile-icons,
+    .mob-menu-btn {
+        display: none;
+    }
+    .logo-img {
+        width: 240px;
+    }
+.header-cont {
+    display: block;
+}
+.navigation .menu-list {
+    display: flex;
+}
+.list-item:not(:last-child)  {
+    margin-right: 24px;
+}
+.authorization {
+    text-align: right;
+}
+}
+@media screen and (min-width: 960px) {
+    .container {
+        width: 960px
+    }
+    .logo-img {
+        width: 456px;
+    }
+}
