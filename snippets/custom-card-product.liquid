@@ -430,29 +430,21 @@
 
  <script>
   document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.card').forEach((video) => {
-      let playItem = video.querySelector('video');
-      let startTime = 0;
+  document.querySelectorAll('.card').forEach((video) => {
+    let playItem = video.querySelector('video');
+    let currentTime = 0;
 
-      video.addEventListener('mouseover', function() {
-        startTime = playItem.currentTime;
-        playItem.play();
-      });
+    video.addEventListener('mouseover', function () {
+      currentTime = playItem.currentTime;
+      playItem.play();
+    });
 
-      video.addEventListener('mouseout', function() {
-        playItem.pause();
-      });
-
-      playItem.addEventListener('timeupdate', function() {
-        startTime = playItem.currentTime;
-      });
-
-      playItem.addEventListener('ended', function() {
-        // Reset start time when the video ends
-        startTime = 0;
-      });
+    video.addEventListener('mouseout', function () {
+      playItem.pause();
+      playItem.currentTime = currentTime;
     });
   });
+});
 </script>
 
 
