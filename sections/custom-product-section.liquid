@@ -44,9 +44,6 @@
   .path {
     stroke: #fff !important;
   }
-  .loading-overlay__spinner {
-    margin-left: 35px !important;
-  }
    .section+.section {
     padding: 0;
   }
@@ -83,7 +80,7 @@
     display: block;
     margin-bottom: 16px;
   }
-  .new-wine-desc { 
+  .new-wine-desc {
     font-family: "Neutra Text";
     color: aliceblue;
     padding: 0 25px;
@@ -127,7 +124,7 @@
     border: transparent;
     background-color: transparent;
     color: #fff;
-    font-size: 18px; 
+    font-size: 18px;
     font-family: "Neutra Text";
     line-height: 1.5;
     margin-top: 26px;
@@ -143,7 +140,6 @@
   }
   /* Form */
   .qty-form {
-
     background-color: #e9e8e8;
     padding: 2px 15px 20px 15px;
     width: 131px !important;
@@ -204,7 +200,6 @@
   @media screen and (max-width: 768px) {
     .container {
     width: 96% !important;
-
     margin-left: 2%;
     margin-right: 2%;
   }
@@ -279,7 +274,6 @@
       const submitButton = form.querySelector('.buy-now');
       const spinner = form.querySelector('.loading-overlay__spinner');
 
-
         submitButton.classList.add('hidden');
         spinner.classList.remove('hidden');
 
@@ -288,22 +282,16 @@
         body: new FormData(form),
       })
         .then((response) => {
-
             return response.json();
-
         })
         .then((data) => {
             spinner.classList.add('hidden');
-          
             submitButton.classList.remove('hidden');
-
         })
         .catch((error) => {
           console.error('Error:', error);
-
             spinner.classList.add('hidden');
             submitButton.classList.add('hidden');
-
         });
     });
   });

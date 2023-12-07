@@ -1,3 +1,4 @@
+{{ 'footer.css' | asset_url | stylesheet_tag }}
 <footer class="footer">
   <div class="about container page-width">
     <div class="about-container">
@@ -17,11 +18,10 @@
         <a href="tel:+425-877-9472" class="address-art art link">425-877-9472</a>
       </address>
     </div>
-
     <div class="about-container">
       <h4 class="about-us-heding">Keep up with us Online</h4>
 
-      <ul>
+      <ul class="about-social-list">
         <li class="social-link-item">
           <a href="#" class="link social-facebook default" target="_blank"> </a>
         </li>
@@ -33,7 +33,11 @@
         </li>
       </ul>
     </div>
+   
   </div>
+   <div class="footer-text">
+      <p>© 2023, gwa-study-yulia-yar Powered by Shopify</p>
+    </div>
 </footer>
 
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
@@ -658,113 +662,4 @@
   }
 }
 {% endschema %}
-{% stylesheet %}
-        .footer {
-        background-color: #2d2d2d;
-        padding-top: 31px;
-        padding-bottom: 64px;
-        float: left;
-        width: 100%;
-        margin-top: 50px;
-      }
-      .about-us-heding {
-        color: #fff;
-        font: 500 18px/18px "Neutra Text";
-        width: 205px;
-        margin-bottom: 14px;
-        border-bottom: #fff 1px solid;
-      }
 
-      .about-container {
-        float: left;
-      }
-      .art {
-        clear: left;
-        float: left;
-        padding-left: 51px;
-        color: #fff !important;
-        font: normal 500 14px/43px "Neutra Text";
-        background-repeat: no-repeat;
-      }
-      .art:hover {
-        text-decoration: underline !important;
-      }
-      .about-list-link:hover {
-         text-decoration: underline !important;
-      }
-      .mail-art {
-        background-image: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/mail.png?v=1693995798);
-      }
-      .address-art {
-        background-image: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/phone.png?v=1693995799);
-      }
-      .about-list-link,
-      .address-link {
-        color: #fff !important;
-        font: normal 500 14px/18px "Neutra Text";
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .about-container:nth-child(3) {
-        float: right;
-      }
-      .social-link-item {
-        float: left;
-      }
-      .default {
-        display: inline-block !important;
-        width: 45px;
-        height: 45px;
-        background-size: contain;
-      }
-      .default:hover {
-        opacity: 0.8;
-      }
-      .social-facebook {
-        background: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/facebook.png?v=1694000459) no-repeat;
-      }
-      .social-twitter {
-        background: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/twitter.png?v=1694000467) no-repeat;
-      }
-      .social-pinterest {
-        background: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/pinterest.png?v=1694000450) no-repeat;
-      }
-      .social-link-item:not(:last-child) {
-        margin-right: 20px;
-      }
-      .about-container:nth-child(2) {
-        margin-left: calc(50% - 300px);
-      }
-      @media screen and (max-width: 768px) {
-        .container {
-        width: 96% !important;
-        margin-left: 2%;
-        margin-right: 2%;
-      }
-         .about-us-heding {
-        width: max-content;
-      }
-      }
-      @media screen and (min-width: 480px) and (max-width: 768px) {
-      .about-container:nth-child(2) {
-        margin-left: calc(50% - 210px);
-      }
-    }
-    @media screen and (max-width: 480px) {
-
-    .mail-cont > .address-link {
-      margin-left: 8px;
-    }
-    .about-container:nth-child(2) {
-      margin-left: calc(50% - 117px);
-      margin-bottom: 40px;
-    }
-    .about-container:nth-child(3) {
-      float: left;
-    }
-
-    .phone-icon {
-      margin-left: 9px;
-    }
-
-  }
-{% endstylesheet %}

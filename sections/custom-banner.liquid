@@ -1,0 +1,124 @@
+{{ 'custom-banner.css' | asset_url | stylesheet_tag }}
+<div
+  class="custom-banner"
+>
+  {%- if section.settings.image != blank -%}
+   
+       <img
+      src="{{ section.settings.image | image_url }}"
+      alt="{{ section.settings.image.alt }} "
+      height="450 " 
+      width="1200 "
+      loading="lazy"
+    >
+   
+  {%- endif -%}
+
+  <div class="custom-banner-content custom-banner-content--{{ section.settings.desktop_content_position }} page-width container">
+    <div class="banner-container">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2>
+              {{ block.settings.heading }}
+            </h2>
+          {%- when 'buttons' -%}
+           
+              {%- if block.settings.button_label_1 != blank -%}
+                <a href="{{ block.settings.button_link_1 }}" class="banner-button">
+                  {{- block.settings.button_label_1 | escape -}}
+                </a>
+              {%- endif -%}
+            
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+    
+{% schema %}
+  {
+    "name": "Custom banner",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+    "settings": [
+    
+       {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.image-banner.settings.image.label"
+    },
+       {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "middle-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
+        },
+        {
+          "value": "middle-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
+        },
+        {
+          "value": "middle-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+        }
+      ],
+      "default": "middle-left",
+      "label": "t:sections.image-banner.settings.desktop_content_position.label"
+    }
+    ],
+    "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.image-banner.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Image banner",
+          "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
+        }
+      ]
+    },
+    
+    {
+      "type": "buttons",
+      "name": "t:sections.image-banner.blocks.buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Button label",
+          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
+          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
+        }
+      ]
+    }
+  ],
+    "presets": [
+    {
+      "name": "t:sections.image-banner.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "buttons"
+        }
+      ]
+    }
+  ]
+  }
+{% endschema %}

@@ -462,7 +462,7 @@
               {{ 'accessibility.loading' | t }}
             </p>
           </div>
-                                  
+
           <div id="CartDrawer-CartErrors" role="alert"></div>
           <div>
             <label for="delivery-details">Choose desirable delivery time:</label>
@@ -470,7 +470,6 @@
               <input type="datetime-local" name="attributes[Delivery details]" id="delivery-details">
             </div>
           </div>
-                                  
         </form>
         {%- if cart != empty -%}
           <h2>You may also like</h2>
@@ -484,7 +483,7 @@
                 != blank
             %}
               {% for prod in product_recommendation.metafields['shopify--discovery--product_recommendation'].related_products.value %}
-                <li class="grid__item">
+                <li class="grid__item related-grid">
                   {%
                     render 'card-product',
                     card_product: prod,
