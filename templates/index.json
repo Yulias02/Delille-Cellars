@@ -129,6 +129,68 @@
       "settings": {
       }
     },
+    "ca8a67c2-aae3-4675-8760-597315d474ad": {
+      "type": "custom-featured-product-section",
+      "blocks": {
+        "0a799367-664f-4956-a0dc-d6d6bfd1602f": {
+          "type": "featured_product",
+          "settings": {
+            "product": "meet-the-2012-la-blanc",
+            "product_image": "shopify:\/\/shop_images\/the-blowup-xXTLmxuwaH8-unsplash.jpg",
+            "full_width": true
+          }
+        },
+        "efd242ed-ac12-4de8-abd8-d4f1f78f56e7": {
+          "type": "featured_product",
+          "settings": {
+            "product": "order-your-ladell-2010-release-today",
+            "product_image": "shopify:\/\/shop_images\/wine-bottle-label-mockup-db.jpg",
+            "full_width": true
+          }
+        },
+        "63ea8842-7747-46ed-96d0-a734cce34727": {
+          "type": "featured_product",
+          "settings": {
+            "product": "order-your-crest-2010-release",
+            "product_image": "shopify:\/\/shop_images\/wine_bottle_mockup_04.jpg",
+            "full_width": true
+          }
+        },
+        "71be7f84-f655-4a3f-91a0-1d9b0fa8f585": {
+          "type": "featured_product",
+          "settings": {
+            "product": "meet-the-2012-chaleur-estate-blanc",
+            "product_image": "shopify:\/\/shop_images\/chaleur-estate-white.jpg",
+            "full_width": true
+          }
+        }
+      },
+      "block_order": [
+        "0a799367-664f-4956-a0dc-d6d6bfd1602f",
+        "efd242ed-ac12-4de8-abd8-d4f1f78f56e7",
+        "63ea8842-7747-46ed-96d0-a734cce34727",
+        "71be7f84-f655-4a3f-91a0-1d9b0fa8f585"
+      ],
+      "settings": {
+        "title": "Featured products",
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "image_ratio": "4:3",
+        "show_secondary_image": true,
+        "button_text": "Shop now",
+        "enable_quick_add": true,
+        "swipe_on_mobile": true,
+        "page_width": 960,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "090f684e-6094-4a77-8384-5b031cfdb595": {
       "type": "collections-clean",
       "blocks": {
@@ -164,6 +226,7 @@
     "91519e57-1f17-4166-ba0d-ab8a39b2c817",
     "6e6e2690-021e-43a2-bfcb-eba8f787d18d",
     "e172517b-6347-4952-8b6c-e6dd9e432845",
+    "ca8a67c2-aae3-4675-8760-597315d474ad",
     "090f684e-6094-4a77-8384-5b031cfdb595"
   ]
 }
