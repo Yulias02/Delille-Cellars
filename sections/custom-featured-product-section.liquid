@@ -8,11 +8,12 @@
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
-
+<script src="{{ 'desktop-slide.js' | asset_url }}" defer="defer"></script>
 {%- if section.settings.enable_quick_add -%}
   {{ 'quick-add.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  <!-- <script src="{{ 'popup.js' | asset_url }}" defer="defer"></script> -->
 {%- endif -%}
 
 {%- style -%}
@@ -77,21 +78,20 @@
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
         id="Slider-{{ section.id }}"
-        class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+        class="featured-prod-slider  {% if section.settings.products_to_show <= 3 and section.settings.columns_desktop >= 3 %} grid-centered {% endif %} grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
         role="list"
         aria-label="{{ 'general.slider.name' | t }}"
       >
         {%- for block in section.blocks limit: section.settings.products_to_show -%}
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="featured-slide grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            {%
-              render 'custom-card-product',
+            {% render 'custom-card-product',
               card_product: block.settings.product,
               media_aspect_ratio: section.settings.image_ratio,
               show_secondary_image: section.settings.show_secondary_image,
@@ -99,8 +99,7 @@
               show_rating: section.settings.show_rating,
               show_quick_add: section.settings.enable_quick_add,
               section_id: section.id,
-              selected_photo: block.settings.product_image,
-              full_width: block.settings.full_width,
+              selected_photo: block.settings.product_image
             %}
           </li>
 
@@ -192,13 +191,7 @@
           "id": "product_image",
           "type": "image_picker",
           "label": "Select Image"
-        },
-        {
-      "type": "checkbox",
-      "id": "full_width",
-      "label": "t:sections.featured-collection.settings.full_width.label",
-      "default": false
-    }
+        }
       ]
     }
   ],
@@ -250,12 +243,7 @@
         }
       ]
     },
-    {
-      "type": "checkbox",
-      "id": "full_width",
-      "label": "t:sections.featured-collection.settings.full_width.label",
-      "default": false
-    },
+
     {
       "type": "checkbox",
       "id": "show_view_all",
@@ -324,6 +312,12 @@
       "default": false,
       "label": "t:sections.featured-collection.settings.show_secondary_image.label"
     },
+    {
+      "type": "checkbox",
+      "id": "stretch_image",
+      "default": true,
+      "label": "Stretch image"
+    },
      {
       "type": "inline_richtext",
       "id": "button_text",
@@ -381,6 +375,18 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price_range",
+      "default": false,
+      "label": "Price Range"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.featured-collection.settings.full_width.label",
+      "default": true
     }
   ],
   "presets": [
