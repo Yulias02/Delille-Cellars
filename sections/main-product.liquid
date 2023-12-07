@@ -441,7 +441,7 @@
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
-                {% liquid
+                {% liquid 
                   assign rating_decimal = 0
                   assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
                   if decimal >= 0.3 and decimal <= 0.7
@@ -555,7 +555,7 @@
                   {{ 'quick-add.css' | asset_url | stylesheet_tag }}
                   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
                 {%- endif -%}
-              </product-recommendations>
+              </product-recommendations> 
             {%- when 'icon-with-text' -%}
               {% render 'icon-with-text',
                 block: block
