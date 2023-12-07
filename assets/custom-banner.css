@@ -1,0 +1,64 @@
+.custom-banner img {
+    width: 100%;
+    object-fit: cover;
+}
+.custom-banner {
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.banner-container h2 {
+  color: #FFF;
+  font-family: "High Tower";
+  font-size: 44px;
+  line-height: 50px;
+  margin-bottom: 28px;
+  margin-top: 0;
+  max-width: 270px;
+}
+.banner-button {
+color: #121212;
+text-align: center;
+font-family: Assistant;
+font-size: 15px;
+font-weight: 400;
+line-height: 18px; 
+letter-spacing: 1px;
+background: #FFF;
+padding: 12px 32px;
+text-decoration: none;
+display: inline-block;
+}
+.custom-banner-content {
+  display: flex;
+}
+.banner-container {
+  position: absolute;
+  top: 0;
+  margin-top: 74px;
+}
+.custom-banner-content--middle-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+.custom-banner-content--middle-center {
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+ 
+.banner-container h2 {
+ font-size: 56px;
+ line-height: normal;
+ margin-bottom: 40px;
+ max-width: 384px;
+}
+.banner-button {
+  padding: 15px 38px;
+}
+
+}
+
+
+

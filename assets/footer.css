@@ -1,0 +1,106 @@
+
+        .footer {
+        background-color: #2d2d2d;
+        padding-top: 31px;
+        width: 100%;
+        margin-top: 50px;
+          
+      }
+.about {
+  text-align: center;
+}
+.about-container {
+  margin-bottom: 32px;
+}
+      .about-us-heding {
+        color: #fff;
+        font: 500 18px/18px "Neutra Text";
+        width: 205px;
+        margin-bottom: 14px;
+        border-bottom: #fff 1px solid;
+        margin: 0 auto;
+      }
+
+      .art {
+        padding-left: 51px;
+        color: #fff !important;
+        font: normal 500 14px/43px "Neutra Text";
+        background-repeat: no-repeat;
+      }
+      .art:hover {
+        text-decoration: underline !important;
+      }
+      .about-list-link:hover {
+         text-decoration: underline !important;
+      }
+      .mail-art {
+        background-image: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/mail.png?v=1693995798);
+      }
+      .address-art {
+        background-image: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/phone.png?v=1693995799);
+      }
+      .about-list-link,
+      .address-link {
+        color: #fff !important;
+        font: normal 500 14px/18px "Neutra Text";
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+address {
+  margin-top: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  .address-art {
+    padding-left: 80px;
+  }    
+      
+      .default {
+        display: inline-block !important;
+        width: 45px;
+        height: 45px;
+        background-size: contain;
+      }
+      .default:hover {
+        opacity: 0.8;
+      }
+      .social-facebook {
+        background: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/facebook.png?v=1694000459) no-repeat;
+      }
+      .social-twitter {
+        background: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/twitter.png?v=1694000467) no-repeat;
+      }
+      .social-pinterest {
+        background: url(https://cdn.shopify.com/s/files/1/0818/3467/2430/files/pinterest.png?v=1694000450) no-repeat;
+      }
+
+.about-social-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 21px;
+}
+.footer-text {
+  border-top: 1px solid #777;
+}
+.footer-text p {
+      margin: 0;
+    padding: 16px 0;
+    color: #FFF;
+    font-size: 11px;
+    text-align: center;
+
+}
+    
+      
+       @media screen and (min-width: 768px) {
+         .about {
+           display: flex;
+           justify-content: space-between;
+         }
+         .footer-text {
+           display: none;
+         }
+       }
+      
+    

@@ -21,6 +21,13 @@ body  .link {
     font-family: 'High Tower';
     font-size: 14px;
 }
+.authorization .link {
+  position: relative;
+}
+.cart-count-bubble {
+  bottom: 2.8rem;
+    left: 2.5rem;
+}
 .authorization .link:is(:hover, :focus),
 .menu-list .link:is(:hover, :focus) {
     color: #855861;
@@ -29,7 +36,6 @@ header {
     background-color: #FFFFFF;
     width: 100%;
     backdrop-filter: blur(4px);
-    position: absolute;
     z-index: 1;
 }
 .is-hidden {
@@ -102,6 +108,10 @@ header {
         background-color: #FFFFFF;
         opacity: 0.8;
     }
+  .cart-count-bubble {
+    bottom: 0.7999999999999972rem;
+    left: 4.5rem;
+}
     .page-header {
         padding-bottom: 0;
         padding-top: 0;
@@ -125,11 +135,16 @@ header {
 .authorization {
     text-align: right;
 }
+ 
 }
 @media screen and (min-width: 960px) {
     .container {
         width: 960px
     }
+ .cart-count-bubble {
+    right: 39.5rem;
+    left: 4.1rem;
+}
     .logo-img {
         width: 456px;
     }
