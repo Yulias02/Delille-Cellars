@@ -4,8 +4,6 @@
   width: 100%;
   text-align: center;
   }
-
-
   .quick-add {
   width: 100%;
   }
@@ -21,16 +19,16 @@
 
   .featured-prod-list {
     margin-bottom: 50px !important;
-    margin: 0 auto;
+  
   }
-
+.featured-prod-list .grid {
+  flex-wrap: nowrap;
+}
   .featured-prod-title {
-  font-family: "High Tower" ;
-  text-transform: uppercase;
-  font-size: 37px;
-  line-height: 42px;
   text-align: center;
-  margin-top: 0;
+  margin: 0;
+    color: #4b4b4b;
+    font: 400 60px/72px "High Tower" !important;   
   }
 
   .adding-to-cart,
@@ -45,11 +43,42 @@
   .centered {
      margin: 0 auto; 
   }
-@media screen and (max-width: 768px) {
-  .featured-prod-list {
-    display: table;
-  }
+.adding-to-cart,
+.added-to-cart {
+  color: #FFFF;
+}
+/* .slider-item:first-child {
+  margin-left: 0 !important;
+} */
+ .grid-centered {
+  justify-content: center;
+} 
+ .shop-now-overlay {
+   position: absolute;
+   width: 100%;
+   bottom: -20px;
+  background-color: #d1c0a7;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px; 
+transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  height: 50px !important;
+}
+.product-card-wrapper:hover .shop-now-overlay {
+   transform: translate(0);
 }
 
-
-
+@media screen and (max-width: 423px) {
+  .featured-prod-title {
+    font-size: 25px !important; 
+    line-height: 27px !important;
+  }
+}
+@media screen and (max-width: 990px) {
+  .quick-add-button {
+    padding: 0;
+  }
+}
